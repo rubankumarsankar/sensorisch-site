@@ -1,26 +1,114 @@
 @import "tailwindcss";
 
+/* ---------- Root Color Tokens ---------- */
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* 🎨 Brand Colors */
+  --primary: #D22422; 
+  --primary-light: #f84c49;
+  --primary-dark: #920d0b;
+
+  --secondary: #000; /* Orange */
+  --secondary-light: #3a393900;
+  --secondary-dark: #000;
 }
 
+/* ---------- Theme Tokens (Tailwind inline theme) ---------- */
 @theme inline {
+  /* 🎨 Map colors to Tailwind theme tokens */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-light: var(--primary-light);
+  --color-primary-dark: var(--primary-dark);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-light: var(--secondary-light);
+  --color-secondary-dark: var(--secondary-dark);
+
+  /* 🧩 Fonts */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
+/* ---------- Dark Mode ---------- */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+
+    /* Adjust brand shades for dark mode */
+    --primary: #D22422;
+    --secondary: #0000;
   }
 }
 
+/* ---------- Base Styles ---------- */
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans, Arial, Helvetica, sans-serif);
+}
+
+
+/* ---------- Reusable Section + Typography ---------- */
+@layer components {
+  /* Spacing wrapper for any page section */
+  .section {
+    @apply py-16 md:py-24;
+  }
+  /* Narrower variant */
+  .section-tight {
+    @apply py-12 md:py-16;
+  }
+
+  /* Max-width container with side padding */
+  .section-container {
+    @apply mx-auto w-full max-w-7xl px-6;
+  }
+  /* Extra-wide option when you need bigger visuals */
+  .section-container-wide {
+    @apply mx-auto w-full max-w-[88rem] px-6;
+  }
+
+  /* Eyebrow/overline label above title (optional) */
+  .section-eyebrow {
+    @apply inline-flex items-center gap-2 rounded-full border border-black/5 dark:border-white/10
+           px-4 py-1.5 text-xs font-medium text-foreground/70;
+  }
+
+  /* Main section title */
+  .section-title {
+    @apply text-3xl md:text-5xl font-bold tracking-tight text-primary;
+  }
+
+  /* Optional subtitle right under the title */
+  .section-subtitle {
+    @apply mt-2 text-base md:text-lg font-medium text-foreground/80;
+  }
+
+  /* Body copy for narratives */
+  .section-paragraph {
+    @apply mt-4 text-base md:text-lg leading-relaxed text-foreground/80;
+  }
+
+  /* Centered stack for hero/intro sections */
+  .section-center {
+    @apply text-center flex flex-col items-center;
+  }
+
+  /* A soft card for feature points */
+  .feature-card {
+    @apply rounded-2xl border border-black/5 dark:border-white/10
+           bg-white/60 dark:bg-white/5 backdrop-blur p-6 md:p-7
+           hover:shadow-md transition-shadow;
+  }
+
+  /* Optional divider */
+  .section-divider {
+    @apply my-12 h-px w-full bg-black/10 dark:bg-white/10;
+  }
 }
