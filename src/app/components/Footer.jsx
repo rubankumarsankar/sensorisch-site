@@ -3,10 +3,7 @@ export default function Footer() {
     <footer className="mt-16 border-t border-black/5 dark:border-white/10 bg-background text-foreground">
       <div className="mx-auto max-w-7xl px-6 py-10 grid gap-6 md:grid-cols-3">
         <div>
-          <h4 className="font-semibold text-primary">Sensorisch</h4>
-          <p className="mt-2 text-sm text-foreground/70">
-            Flavours & Fragrances engineered for impact.
-          </p>
+         <img src="/sensorisch-logo.png" alt="" />
         </div>
 
         <div>
