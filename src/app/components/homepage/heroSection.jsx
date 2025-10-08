@@ -7,13 +7,12 @@ import { FaArrowDownLong } from "react-icons/fa6";
 export default function HeroSection() {
   return (
     <main className="bg-background text-foreground">
-      {/* make the section relative so we can place the arrow at the bottom center */}
       <section className="section relative">
         <div className="section-container">
-          <div className="grid items-center gap-10 md:gap-12 md:grid-cols-2">
-            {/* LEFT — copy (mobile second, desktop first) */}
-            <div className="order-2 md:order-1">
-              <h2 className="section-subtitle m-4 text-center">
+          <div className="grid items-center gap-8 md:gap-12 md:grid-cols-2">
+            {/* LEFT — copy (mobile FIRST, desktop LEFT) */}
+            <div className="order-1 md:order-1">
+              <h2 className="section-subtitle text-primary mb-5 text-center">
                 Flavours & Fragrances. Engineered for Impact.
               </h2>
               <motion.h1
@@ -52,19 +51,23 @@ export default function HeroSection() {
                 </a>
                 <a
                   href="#contact"
-                  className="px-8 py-3 rounded-sm border border-primary text-primary font-semibold hover:bg-primary hover:text-white transition"
+                  className="px-8 py-3 rounded-sm border border-primary bg-white text-primary font-semibold hover:bg-primary hover:text-white transition"
                 >
                   Request Samples
                 </a>
               </motion.div>
             </div>
 
-            {/* RIGHT — image banner (mobile first, desktop second / right) */}
+            {/* RIGHT — image (mobile SECOND, desktop RIGHT) */}
+            {/* RIGHT — image (mobile SECOND, desktop RIGHT) */}
             <motion.div
               initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.15, duration: 0.6 }}
-              className="order-1 md:order-2 relative w-full aspect-[5/4] md:aspect-[4/3] lg:h-[560px] lg:aspect-auto overflow-hidden border border-black/5 dark:border-white/10 shadow-sm rounded-sm lg:-mr-6"
+              className="order-2 md:order-2 relative w-full
+             aspect-[5/4] md:aspect-[4/3] lg:h-[560px] lg:aspect-auto
+             overflow-hidden border border-black/5 dark:border-white/10
+             shadow-sm rounded-sm lg:-mr-6"
             >
               <Image
                 src="/hero-banner.png"
@@ -78,7 +81,7 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* ↓ Bottom-center animated scroll arrow */}
+        {/* Bottom-center animated scroll arrow */}
         <motion.a
           href="#why-sensorisch"
           aria-label="Scroll to next section"
