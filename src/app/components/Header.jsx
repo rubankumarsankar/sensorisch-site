@@ -1,6 +1,8 @@
+// components/Header.jsx
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
@@ -15,30 +17,48 @@ const NAV = [
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  const isActive = (href) =>
+    href === "/"
+      ? pathname === "/"
+      : pathname === href || pathname.startsWith(href + "/");
+
+  const pillCls = (href) =>
+    [
+      "inline-flex items-center rounded-full px-3.5 py-2 text-sm font-medium transition-all",
+      "ring-1 ring-transparent",
+      "hover:ring-primary/30 hover:shadow-[0_0_0_3px_rgba(210,36,34,0.08)]",
+      "focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50",
+      isActive(href)
+        ? "bg-primary/10 text-primary ring-primary/30 shadow-[0_8px_24px_-12px_rgba(210,36,34,0.45)]"
+        : "text-foreground/80 hover:text-primary",
+    ].join(" ");
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 bg-white/70 dark:bg-background/70 backdrop-blur border-b border-black/5 dark:border-white/10">
       <div className="mx-auto max-w-7xl px-6 h-16 flex items-center justify-between">
-        <Link href="/" className="text-xl font-semibold text-primary">
-        <img src="/sensorisch-logo.png" alt="" />
+        <Link href="/" className="flex items-center">
+          <img src="/sensorisch-logo.png" alt="Sensorisch" className="w-60" />
         </Link>
 
         {/* Desktop */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-2">
           {NAV.map((n) => (
-            <Link key={n.href} href={n.href} className="text-foreground/80 hover:text-primary">
+            <Link key={n.href} href={n.href} className={pillCls(n.href)}>
               {n.label}
             </Link>
           ))}
           <Link
             href="/samples"
-            className="px-4 py-2 rounded-sm bg-primary text-white hover:bg-primary/90"
+            className="ml-2 inline-flex items-center rounded-full bg-primary text-white px-4 py-2 text-sm font-semibold
+                       shadow hover:bg-primary/90 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
           >
             Request Samples
           </Link>
         </nav>
 
-        {/* Mobile */}
+        {/* Mobile toggle */}
         <button
           className="md:hidden p-2 rounded-lg hover:bg-black/5 dark:hover:bg-white/10"
           onClick={() => setOpen((v) => !v)}
@@ -50,13 +70,18 @@ export default function Header() {
 
       {/* Mobile drawer */}
       {open && (
-        <nav className="md:hidden border-t border-black/5 dark:border-white/10 bg-background">
+        <nav className="md:hidden border-t border-black/5 dark:border-white/10 bg-background/95 backdrop-blur">
           <div className="mx-auto max-w-7xl px-6 py-4 flex flex-col gap-3">
             {NAV.map((n) => (
               <Link
                 key={n.href}
                 href={n.href}
-                className="py-2 text-lg text-foreground/90 hover:text-primary"
+                className={[
+                  "rounded-full px-4 py-2 text-base transition-all ring-1",
+                  isActive(n.href)
+                    ? "bg-primary/10 text-primary ring-primary/30"
+                    : "text-foreground/90 ring-transparent hover:text-primary hover:ring-primary/30",
+                ].join(" ")}
                 onClick={() => setOpen(false)}
               >
                 {n.label}
@@ -64,7 +89,7 @@ export default function Header() {
             ))}
             <Link
               href="/samples"
-              className="mt-2 px-4 py-2 rounded-sm bg-primary text-white text-center"
+              className="mt-2 inline-flex items-center justify-center rounded-full bg-primary text-white px-4 py-2 text-base font-semibold shadow hover:bg-primary/90 transition-colors"
               onClick={() => setOpen(false)}
             >
               Request Samples
