@@ -4,7 +4,7 @@ export default function PromoSection() {
   return (
     <main className="w-full bg-background text-foreground">
       {/* SECTION 1 — VIDEO */}
-      <section className="relative w-full h-[60vh] min-h-[360px] overflow-hidden">
+      <section className="relative section-container w-full h-[60vh] min-h-[360px] overflow-hidden">
         <video
           className="absolute inset-0 w-full h-full object-cover"
           autoPlay

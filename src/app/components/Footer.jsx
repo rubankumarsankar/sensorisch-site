@@ -1,31 +1,61 @@
+// components/Footer.jsx
+"use client";
+
 export default function Footer() {
   return (
-    <footer className="mt-16 border-t border-black/5 dark:border-white/10 bg-background text-foreground">
-      <div className="mx-auto max-w-7xl px-6 py-10 grid gap-6 md:grid-cols-3">
-        <div>
-         <img src="/sensorisch-logo.png" alt="" />
-        </div>
+    <footer className="w-full bg-primary text-white section-container">
+      <div className="mx-auto px-6 py-14">
+        {/* 4 columns on lg, stack on mobile */}
+        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4 items-start">
+          {/* 1) Brand + tagline */}
+          <div>
+            <img
+              src="/footer-logo.png"
+              alt="Sensorisch"
+              className="h-20 w-20 object-contain mb-6"
+            />
+            <p className="text-lg/7 font-medium">
+              Flavours & Fragrances.<br />Engineered for Impact.
+            </p>
+          </div>
 
-        <div>
-          <h5 className="font-medium">Company</h5>
-          <ul className="mt-2 space-y-1 text-sm">
-            <li><a className="hover:text-primary" href="/about">About</a></li>
-            <li><a className="hover:text-primary" href="/careers">Careers</a></li>
-            <li><a className="hover:text-primary" href="/contact">Contact</a></li>
-          </ul>
-        </div>
+          {/* 2) Solutions */}
+          <div>
+            <h4 className="text-2xl font-semibold tracking-tight mb-6">Solutions</h4>
+            <ul className="space-y-1 text-lg">
+              <li><a className="hover:opacity-90 transition-opacity" href="#">Senso™ Ranges</a></li>
+              <li><a className="hover:opacity-90 transition-opacity" href="#">Bespoke Solutions</a></li>
+              <li><a className="hover:opacity-90 transition-opacity" href="#">Flavours</a></li>
+              <li><a className="hover:opacity-90 transition-opacity" href="#">Natural Colours</a></li>
+            </ul>
+          </div>
 
-        <div>
-          <h5 className="font-medium">Legal</h5>
-          <ul className="mt-2 space-y-1 text-sm">
-            <li><a className="hover:text-primary" href="/privacy">Privacy Policy</a></li>
-            <li><a className="hover:text-primary" href="/terms">Terms of Service</a></li>
-          </ul>
-        </div>
-      </div>
-      <div className="border-t border-black/5 dark:border-white/10">
-        <div className="mx-auto max-w-7xl px-6 py-4 text-xs text-foreground/60">
-          © {new Date().getFullYear()} Sensorisch. All rights reserved.
+          {/* 3) Company */}
+          <div>
+            <h4 className="text-2xl font-semibold tracking-tight mb-6">Company</h4>
+            <ul className="space-y-1 text-lg">
+              <li><a className="hover:opacity-90 transition-opacity" href="#">About Sensorisch</a></li>
+              <li><a className="hover:opacity-90 transition-opacity" href="#">News & Trends</a></li>
+              <li><a className="hover:opacity-90 transition-opacity" href="#">Contact Us</a></li>
+              <li><a className="hover:opacity-90 transition-opacity" href="#">Natural Colours</a></li>
+            </ul>
+          </div>
+
+          {/* 4) Contact + CTA */}
+          <div className="lg:justify-self-end">
+            <h4 className="text-2xl font-semibold tracking-tight mb-6">Contact</h4>
+            <p className="text-lg/7 mb-8 opacity-95">Ready to start your project?</p>
+
+            {/* light button with offset shadow like the design */}
+            <a
+              href="/contact"
+              className="inline-block rounded-md bg-white text-primary px-5 py-3 text-lg font-semibold
+                         shadow-[0_12px_30px_-12px_rgba(0,0,0,0.4)] ring-1 ring-white/60
+                         hover:bg-white/95 transition-colors"
+            >
+              Get in Touch
+            </a>
+          </div>
         </div>
       </div>
     </footer>
