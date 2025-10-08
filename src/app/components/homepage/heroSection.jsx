@@ -13,14 +13,17 @@ export default function HeroSection() {
           <div className="grid items-center gap-10 md:gap-12 md:grid-cols-2">
             {/* LEFT — copy (mobile second, desktop first) */}
             <div className="order-2 md:order-1">
+              <h2 className="section-subtitle m-4 text-center">
+                Flavours & Fragrances. Engineered for Impact.
+              </h2>
               <motion.h1
                 initial={{ opacity: 0, y: 18 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7 }}
-                className="section-title mb-4"
+                className="section-title text-black mb-4"
               >
-                Flavours & Fragrances. <br className="hidden md:block" />
-                Engineered for Impact.
+                Make Everyday Products Feel{" "}
+                <span className="text-primary">Extraordinary</span>
               </motion.h1>
 
               <motion.p
