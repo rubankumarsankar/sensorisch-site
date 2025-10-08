@@ -19,7 +19,7 @@ const ICONS = {
 export default function SetsUsApartAndMarkets() {
   return (
     <section className="bg-background text-foreground">
-      <div className="section-container py-14 md:py-20">
+      <div className="section-container mb-15">
         {/* ===== WHAT SETS US APART ===== */}
         <motion.div
           variants={fadeUp}
