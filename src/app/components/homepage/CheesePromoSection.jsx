@@ -3,7 +3,7 @@ import React from "react";
 export default function PromoSection() {
   return (
     <main className="w-full bg-background text-foreground">
-      {/* SECTION 1 — VIDEO */}
+      {/* SECTION 1  -  VIDEO */}
       <section className="relative section-container w-full h-[60vh] min-h-[360px] overflow-hidden">
         <video
           className="absolute inset-0 w-full h-full object-cover"
@@ -18,7 +18,7 @@ export default function PromoSection() {
         <div className="absolute inset-0 bg-black/40" />
       </section>
 
-      {/* SECTION 2 — CARD */}
+      {/* SECTION 2  -  CARD */}
       <section className="relative w-full bg-gray-50 dark:bg-black">
         <div className="section-container py-10 sm:pb-24">
           {/* On mobile: normal flow (mt-6). On desktop: overlap using sm:absolute */}

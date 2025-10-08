@@ -13,7 +13,7 @@ export default function HeroSection() {
             {/* LEFT  -  copy (mobile FIRST, desktop LEFT) */}
             <div className="order-1 md:order-1">
               <h2 className="section-subtitle text-primary mb-5 text-center">
-                Flavours & Fragrances. Engineered for Impact.
+                FAbout Sensorisch
               </h2>
               <motion.h1
                 initial={{ opacity: 0, y: 18 }}
@@ -21,8 +21,8 @@ export default function HeroSection() {
                 transition={{ duration: 0.7 }}
                 className="section-title text-black mb-4"
               >
-                Make Everyday Products Feel{" "}
-                <span className="text-primary">Extraordinary</span>
+                Science-Led Innovation Meets {" "}
+                <span className="text-primary">Culinary Craft</span>
               </motion.h1>
 
               <motion.p
@@ -31,34 +31,12 @@ export default function HeroSection() {
                 transition={{ delay: 0.2, duration: 0.7 }}
                 className="section-paragraph max-w-xl mb-8"
               >
-                Make everyday products feel extraordinary. Partner with us to
-                create repeat-worthy taste and aroma through science-led
-                innovation, application-ready systems, and rigorous execution
-                that scales consistently.
+                We blend rigorous R&D with culinary artistry to create
+                end-to-end taste and aroma experiences that make everyday
+                products extraordinary.
               </motion.p>
-
-              <motion.div
-                initial={{ opacity: 0, y: 8 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.35, duration: 0.6 }}
-                className="flex flex-col sm:flex-row gap-4"
-              >
-                <a
-                  href="#solutions"
-                  className="px-8 py-3 rounded-sm bg-primary text-white font-semibold hover:bg-primary/90 transition"
-                >
-                  Explore Solutions
-                </a>
-                <a
-                  href="#contact"
-                  className="px-8 py-3 rounded-sm border border-primary bg-white text-primary font-semibold hover:bg-primary hover:text-white transition"
-                >
-                  Request Samples
-                </a>
-              </motion.div>
             </div>
 
-            {/* RIGHT  -  image (mobile SECOND, desktop RIGHT) */}
             {/* RIGHT  -  image (mobile SECOND, desktop RIGHT) */}
             <motion.div
               initial={{ opacity: 0, scale: 0.98 }}
