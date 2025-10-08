@@ -1,5 +1,3 @@
-// components/AboutSensorisch.tsx (or .jsx)
-// "use client" if you place it in /app
 "use client";
 
 import { motion } from "framer-motion";
@@ -24,15 +22,14 @@ export default function AboutSensorisch() {
             viewport={{ once: true, amount: 0.3 }}
             whileHover={{ scale: 1.01, rotateZ: -0.3 }}
             transition={{ duration: 0.35 }}
-            className="relative overflow-hidden rounded-2xl ring-1 ring-black/5 dark:ring-white/10 shadow-xl"
+            className="relative overflow-hidden shadow-xl"
           >
             {/* Replace src with your asset */}
             <img
-              src="/about/rig-lab.jpg"
+              src="/our-story.png"
               alt="Sensorisch R&D and application lab"
-              className="h-full w-full object-cover"
+              className="h-94 w-full object-cover"
             />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
           </motion.figure>
 
           {/* Right: Copy */}
@@ -61,16 +58,16 @@ export default function AboutSensorisch() {
                 <span className="font-medium">Confectionery</span>, and{" "}
                 <span className="font-medium">Health &amp; Wellness</span>{" "}
                 applications. Our <span className="font-semibold">Senso™</span>{" "}
-                range represents the culmination of our
-                expertise - application-ready systems that reduce time-to-market
-                while ensuring consistent quality.
+                range represents the culmination of our expertise -
+                application-ready systems that reduce time-to-market while
+                ensuring consistent quality.
               </p>
             </motion.div>
 
             {/* Senso callout card */}
             <motion.div
               variants={fadeUp}
-              className="relative overflow-hidden rounded-xl bg-white/70 dark:bg-white/5 backdrop-blur p-5 ring-1 ring-black/5 dark:ring-white/10"
+              className="relative overflow-hidden rounded-xl"
             >
               <a
                 href="#solutions"
