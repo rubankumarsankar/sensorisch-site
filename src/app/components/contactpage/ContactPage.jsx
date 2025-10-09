@@ -80,28 +80,7 @@ export default function ContactPage() {
 
   return (
     <main className="bg-background text-foreground">
-      {/* ===== Hero ===== */}
-      <section className="relative overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(80%_60%_at_50%_0%,rgba(210,36,34,0.10),transparent_60%)]" />
-        <div className="section-container py-14 md:py-20">
-          <motion.div
-            variants={fadeUp}
-            initial="hidden"
-            animate="show"
-            className="text-center max-w-3xl mx-auto"
-          >
-            <span className="inline-flex items-center gap-2 rounded-full border border-black/5 dark:border-white/10 px-4 py-1.5 text-xs font-medium text-foreground/70">
-              Contact Us
-            </span>
-            <h1 className="mt-4 text-3xl md:text-5xl font-bold tracking-tight">
-              Let’s Create Something <span className="text-primary">Extraordinary</span>
-            </h1>
-            <p className="mt-3 text-base md:text-lg text-foreground/80">
-              Ready to transform your products with science-led flavour solutions? Our experts guide you from concept to market success.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      
 
       {/* ===== Methods cards ===== */}
       <section className="section">

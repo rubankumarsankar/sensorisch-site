@@ -13,8 +13,8 @@ const GROUPS = [
   {
     title: "Creation Labs",
     desc: "Advanced facilities for developing flavours, fragrance accords, extracts, emulsions, and taste modulators.",
-    icon: "/icons/lab.png", // swap with your asset
-    accent: "from-primary to-primary/60",
+    icon: "/icons/icon-13.png", 
+    accent: "from-amber-500 to-amber-400",
     chips: [
       "Flavour Development",
       "Fragrance Accords",
@@ -25,8 +25,8 @@ const GROUPS = [
   {
     title: "Application Labs",
     desc: "Specialized testing environments including bakery ovens, beverage benches, dairy pilots, and confectionery lines.",
-    icon: "/icons/applications.png",
-    accent: "from-amber-500 to-amber-400",
+    icon: "/icons/icon-14.png",
+    accent: "from-primary to-primary/60 ",
     chips: [
       "Bakery Testing",
       "Beverage Benches",
@@ -37,7 +37,7 @@ const GROUPS = [
   {
     title: "Sensory & Consumer Science",
     desc: "Comprehensive testing including triangle tests, hedonic panels, and Jobs-to-be-Done insights.",
-    icon: "/icons/sensory.png",
+    icon: "/icons/icon-15.png",
     accent: "from-emerald-500 to-emerald-400",
     chips: [
       "Triangle Testing",
@@ -49,7 +49,7 @@ const GROUPS = [
   {
     title: "Quality & Compliance",
     desc: "Clean-label guidance, regional regulatory support, and comprehensive documentation.",
-    icon: "/icons/quality.png",
+    icon: "/icons/icon-11.png",
     accent: "from-sky-500 to-sky-400",
     chips: [
       "Clean-label Guidance",
@@ -70,7 +70,7 @@ export default function CapabilitiesSection() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.35 }}
-          className="mx-auto max-w-3xl text-center"
+          className="mx-auto max-w-4xl text-center"
         >
           <span className="inline-flex items-center gap-2 rounded-full border border-black/5 dark:border-white/10 px-4 py-1.5 text-xs font-medium text-foreground/70">
             Our Capabilities
@@ -84,7 +84,7 @@ export default function CapabilitiesSection() {
             whileInView={{ width: 128 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-            className="mx-auto mt-6 h-1 rounded bg-gradient-to-r from-primary to-primary/60"
+            className="mx-auto mt-4 h-1 rounded bg-gradient-to-r from-primary to-primary/60"
           />
         </motion.div>
 
@@ -112,8 +112,8 @@ export default function CapabilitiesSection() {
                             bg-gradient-to-br ${g.accent} opacity-30`}
               />
               {/* icon */}
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-white/70 dark:bg-white/10 ring-1 ring-black/5 dark:ring-white/10 shadow-sm">
-                <img src={g.icon} alt="" className="h-7 w-7 object-contain" />
+              <div className="mb-4 inline-flex h-15 w-15 items-center justify-center rounded-xl bg-white/70 dark:bg-white/10 ring-1 ring-black/5 dark:ring-white/10 shadow-sm">
+                <img src={g.icon} alt="" className="h-10 w-10 object-contain" />
               </div>
 
               {/* title */}

@@ -40,7 +40,7 @@ function BenefitIcon({ icon, iconType = "lucide", className = "" }) {
       <img
         src={icon}
         alt=""
-        className={`h-5 w-5 object-contain ${className}`}
+        className={`h-7 w-7 object-contain ${className}`}
         loading="lazy"
         decoding="async"
         aria-hidden
@@ -50,7 +50,7 @@ function BenefitIcon({ icon, iconType = "lucide", className = "" }) {
   if (iconType === "lucide") {
     const LucideIcon =
       typeof icon === "string" && Lucide[icon] ? Lucide[icon] : Lucide.Check;
-    return <LucideIcon className={`h-5 w-5 ${className}`} aria-hidden />;
+    return <LucideIcon className={`h-7 w-7 ${className}`} aria-hidden />;
   }
   return (
     <span className={`text-primary ${className}`} aria-hidden>
@@ -97,16 +97,7 @@ export default function SensoRangeHero({
                 variants={fadeUp}
                 className="inline-flex items-center gap-2 rounded-md bg-red-50 text-red-700 px-3 py-1 text-sm font-semibold ring-1 ring-red-200"
               >
-                {iconSrc ? (
-                  <img
-                    src={iconSrc}
-                    alt=""
-                    className="h-12 w-12 object-contain mr-3"
-                    loading="lazy"
-                    decoding="async"
-                    aria-hidden
-                  />
-                ) : null}
+                
                 {badge}
               </motion.span>
 
@@ -143,7 +134,7 @@ export default function SensoRangeHero({
                   const iconType = isString ? "img" : item.iconType || "img"; // <-- default to img
                   const iconClass = isString ? "" : item.iconClass || "";
                   const iconBgClass = isString
-                    ? "bg-white ring-1 ring-black/10"
+                    ? " ring-1 ring-black/10"
                     : item.iconBgClass || "bg-white ring-1 ring-black/10";
 
                   return (
@@ -153,7 +144,7 @@ export default function SensoRangeHero({
                       className="group relative flex items-center gap-3"
                     >
                       <div
-                        className={`grid h-12 w-12 place-items-center rounded-full shadow-md ${iconBgClass}`}
+                        className={`grid h-15 w-15 place-items-center rounded-full shadow-md`}
                       >
                         <BenefitIcon
                           icon={icon}
@@ -216,7 +207,7 @@ export default function SensoRangeHero({
               {blurb}
             </motion.p>
 
-            <div className="aspect-[16/11] w-full rounded-[40px] ring-1 ring-black/5 shadow-[0_30px_60px_-25px_rgba(0,0,0,0.35)] overflow-hidden relative bg-muted">
+            <div className="aspect-[16/11] w-full rounded-sm ring-1 ring-black/5 shadow-[0_30px_60px_-25px_rgba(0,0,0,0.35)] overflow-hidden relative bg-muted">
               <img
                 src={imageSrc}
                 alt={imageAlt}

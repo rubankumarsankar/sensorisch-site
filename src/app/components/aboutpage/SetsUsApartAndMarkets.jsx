@@ -11,9 +11,9 @@ const list = { hidden: {}, show: { transition: { staggerChildren: 0.08 } } };
 
 // swap with your real assets if needed
 const ICONS = {
-  labs: "/icons/lab-jar.svg",
-  hand: "/icons/hand.svg",
-  shield: "/icons/shield.svg",
+  labs: "/icons/icon-17.png",
+  hand: "/icons/icon-16.png",
+  shield: "/icons/icon-1.png",
 };
 
 export default function SetsUsApartAndMarkets() {
@@ -130,8 +130,8 @@ function Feature({ iconSrc, title, blurb }) {
     <motion.li variants={fadeUp} className="relative flex flex-col items-center text-center">
       {/* icon pill */}
       <div className="relative">
-        <div className="h-16 w-16 rounded-full bg-white shadow-xl ring-1 ring-black/5 grid place-items-center dark:bg-neutral-900 dark:ring-white/10">
-          <img src={iconSrc} alt="" className="h-7 w-7" />
+        <div className="h-18 w-18 rounded-full bg-white shadow-xl ring-1 ring-black/5 grid place-items-center dark:bg-neutral-900 dark:ring-white/10">
+          <img src={iconSrc} alt="" className="h-10 w-10" />
         </div>
         {/* soft glow */}
         <div className="absolute inset-0 -z-10 rounded-full bg-black/5 blur-xl dark:bg-white/5" />
@@ -140,11 +140,7 @@ function Feature({ iconSrc, title, blurb }) {
       <h3 className="mt-4 text-base md:text-lg font-semibold text-primary">{title}</h3>
       <p className="mt-2 text-sm md:text-base text-foreground/80 max-w-[26rem]">{blurb}</p>
 
-      {/* anchor dot for the horizontal dashed line on md+ */}
-      <div
-        aria-hidden
-        className="hidden md:block absolute left-1/2 top-8 h-2 w-2 -translate-x-1/2 rounded-full bg-primary/60 shadow-[0_0_0_4px_rgba(0,0,0,0.04)]"
-      />
+      
     </motion.li>
   );
 }

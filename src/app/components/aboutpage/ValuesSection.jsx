@@ -7,21 +7,21 @@ const values = [
   {
     title: "Science-Led Creativity",
     desc: "Combining data-driven R&D with culinary craft to create distinctive taste experiences.",
-    icon: "/icons/icon-4.png", // replace with your asset or emoji
+    icon: "/icons/icon-10.png", // replace with your asset or emoji
     hue: "from-primary/20 to-primary/0",
     line: "from-primary to-primary/60",
   },
   {
     title: "Reliability",
     desc: "Batch-to-batch consistency with robust QA/QC processes that ensure predictable results.",
-    icon: "/icons/icon-9.png",
+    icon: "/icons/icon-11.png",
     hue: "from-emerald-400/20 to-emerald-400/0",
     line: "from-emerald-500 to-emerald-400",
   },
   {
     title: "Speed with Certainty",
     desc: "Rapid sampling and validation processes that accelerate time-to-market without compromising quality.",
-    icon: "/icons/icon-6.png",
+    icon: "/icons/icon-12.png",
     hue: "from-amber-400/20 to-amber-400/0",
     line: "from-amber-500 to-amber-400",
   },
@@ -95,9 +95,9 @@ export default function ValuesSection() {
                 className={`pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full blur-2xl bg-gradient-to-br ${v.hue}`}
               />
               {/* icon */}
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-white/70 dark:bg-white/10 ring-1 ring-black/5 dark:ring-white/10 shadow-sm">
+              <div className="mb-4 inline-flex h-15 w-15 items-center justify-center rounded-xl bg-white/70 dark:bg-white/10 ring-1 ring-black/5 dark:ring-white/10 shadow-sm">
                 {/* swap to next/image if preferred */}
-                <img src={v.icon} alt="" className="h-7 w-7 object-contain" />
+                <img src={v.icon} alt="" className="h-10 w-10 object-contain" />
               </div>
 
               <h3 className="text-lg md:text-xl font-semibold">{v.title}</h3>
