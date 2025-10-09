@@ -72,9 +72,7 @@ export default function CapabilitiesSection() {
           viewport={{ once: true, amount: 0.35 }}
           className="mx-auto max-w-4xl text-center"
         >
-          <span className="inline-flex items-center gap-2 rounded-full border border-black/5 dark:border-white/10 px-4 py-1.5 text-xs font-medium text-foreground/70">
-            Our Capabilities
-          </span>
+        
           <h2 className="mt-4 text-3xl md:text-5xl font-bold tracking-tight">
             Comprehensive facilities & expertise to{" "}
             <span className="text-primary">bring your vision to life</span>
@@ -112,7 +110,7 @@ export default function CapabilitiesSection() {
                             bg-gradient-to-br ${g.accent} opacity-30`}
               />
               {/* icon */}
-              <div className="mb-4 inline-flex h-15 w-15 items-center justify-center rounded-xl bg-white/70 dark:bg-white/10 ring-1 ring-black/5 dark:ring-white/10 shadow-sm">
+              <div className="mb-4 inline-flex h-15 w-15 items-center justify-center">
                 <img src={g.icon} alt="" className="h-10 w-10 object-contain" />
               </div>
 

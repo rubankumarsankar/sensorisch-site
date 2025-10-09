@@ -11,9 +11,9 @@ const list = { hidden: {}, show: { transition: { staggerChildren: 0.08 } } };
 
 // swap with your real assets if needed
 const ICONS = {
-  labs: "/icons/icon-17.png",
-  hand: "/icons/icon-16.png",
-  shield: "/icons/icon-1.png",
+  labs: "/icons/icon-16.png",
+  hand: "/icons/icon-17.png",
+  shield: "/icons/icon-18.png",
 };
 
 export default function SetsUsApartAndMarkets() {

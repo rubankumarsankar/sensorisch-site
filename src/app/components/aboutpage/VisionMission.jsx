@@ -127,7 +127,7 @@ export default function VisionMission() {
               key={i}
               variants={fadeUp}
               whileHover={{ y: -3 }}
-              className="rounded-xl border border-black/5 dark:border-white/10 bg-white/60 dark:bg-white/5 backdrop-blur p-6 text-center shadow-sm"
+              className=" p-6 text-center "
             >
               <div className="text-3xl md:text-4xl font-bold text-primary">
                 <Counter value={x.value} suffix={x.suffix} />

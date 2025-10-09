@@ -95,7 +95,7 @@ export default function ValuesSection() {
                 className={`pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full blur-2xl bg-gradient-to-br ${v.hue}`}
               />
               {/* icon */}
-              <div className="mb-4 inline-flex h-15 w-15 items-center justify-center rounded-xl bg-white/70 dark:bg-white/10 ring-1 ring-black/5 dark:ring-white/10 shadow-sm">
+              <div className="mb-4 inline-flex h-15 w-15 items-center justify-center">
                 {/* swap to next/image if preferred */}
                 <img src={v.icon} alt="" className="h-10 w-10 object-contain" />
               </div>
