@@ -8,9 +8,10 @@ import { Menu, X } from "lucide-react";
 
 const NAV = [
   { label: "Home", href: "/" },
-  { label: "About Sensorisch", href: "/about" },
-  { label: "Bespoke Solutions", href: "/bespoke-solutions" },
-  { label: "Our Portfolio", href: "/our-portfolio" },
+  { label: "About Us", href: "/about" },
+  { label: "Applications & Solutions", href: "/applications-solutions" },
+  { label: "Bespoke", href: "/bespoke-solutions" },
+  { label: "Portfolio", href: "/our-portfolio" },
   { label: "News & Trends", href: "/news-trends" },
   { label: "Contact Us", href: "/contact" },
 ];

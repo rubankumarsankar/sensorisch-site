@@ -13,7 +13,7 @@ export default function HeroSection() {
             {/* LEFT  -  copy (mobile FIRST, desktop LEFT) */}
             <div className="order-1 md:order-1">
               <h2 className="section-subtitle text-primary mb-5 text-center">
-                FAbout Sensorisch
+                About Sensorisch
               </h2>
               <motion.h1
                 initial={{ opacity: 0, y: 18 }}
@@ -61,7 +61,7 @@ export default function HeroSection() {
 
         {/* Bottom-center animated scroll arrow */}
         <motion.a
-          href="#why-sensorisch"
+          href="#our-story"
           aria-label="Scroll to next section"
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}

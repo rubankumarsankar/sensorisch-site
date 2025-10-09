@@ -10,7 +10,7 @@ const list = { hidden: {}, show: { transition: { staggerChildren: 0.08 } } };
 
 export default function AboutSensorisch() {
   return (
-    <section className="relative bg-background ">
+    <section id="our-story" className="relative bg-background ">
       <div className="section-container">
         {/* Story + Image */}
         <div className="mt-12 md:mt-16 grid gap-8 md:grid-cols-2 items-start">
