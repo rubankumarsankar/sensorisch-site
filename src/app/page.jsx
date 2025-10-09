@@ -20,8 +20,8 @@ export default function Home() {
           blurb:
             "Make everyday products feel extraordinary. Partner with us to create repeat-worthy taste and aroma through science-led innovation, application-ready systems, and rigorous execution that scales consistently.",
 
-          primary: { href: "/#solutions", label: "Explore Solutions" },
-          secondary: { href: "/#contact", label: "Request Samples" },
+          primary: { href: "/applications-solutions", label: "Explore Solutions" },
+          secondary: { href: "/contact", label: "Request Samples" },
 
           image: { src: "/hero-banner.png", alt: "Lab and product banner" },
 

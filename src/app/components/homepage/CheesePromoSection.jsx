@@ -48,7 +48,7 @@ export default function PromoSection() {
                 </p>
                 <div className="flex justify-center sm:justify-start">
                   <a
-                    href="#"
+                    href="/applications-solutions"
                     className="px-6 py-3 rounded-sm bg-primary text-white font-semibold hover:bg-primary/90 transition"
                   >
                     Start Production

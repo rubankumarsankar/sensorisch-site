@@ -21,7 +21,12 @@ import {
 /* ------------------ motion helpers ------------------ */
 const fadeUp = {
   hidden: { opacity: 0, y: 14, filter: "blur(4px)" },
-  show:   { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.45, ease: "easeOut" } },
+  show: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.45, ease: "easeOut" },
+  },
 };
 const list = { hidden: {}, show: { transition: { staggerChildren: 0.06 } } };
 
@@ -80,10 +85,15 @@ export default function ContactPage() {
 
   // subtle page progress bar
   const { scrollYProgress } = useScroll();
-  const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 25, mass: 0.2 });
+  const progress = useSpring(scrollYProgress, {
+    stiffness: 120,
+    damping: 25,
+    mass: 0.2,
+  });
 
   const totalSizeMB = useMemo(
-    () => (files.reduce((a, f) => a + (f.size || 0), 0) / (1024 * 1024)).toFixed(2),
+    () =>
+      (files.reduce((a, f) => a + (f.size || 0), 0) / (1024 * 1024)).toFixed(2),
     [files]
   );
 
@@ -123,7 +133,10 @@ export default function ContactPage() {
             viewport={{ once: true, amount: 0.25 }}
             className="text-center"
           >
-            <motion.h2 variants={fadeUp} className="text-xl md:text-2xl font-semibold">
+            <motion.h2
+              variants={fadeUp}
+              className="text-xl md:text-2xl font-semibold"
+            >
               How Can We Help You?
             </motion.h2>
             <motion.p variants={fadeUp} className="text-foreground/70 mt-2">
@@ -174,7 +187,10 @@ export default function ContactPage() {
       </section>
 
       {/* ===== Main form + locations ===== */}
-      <section id="contact-form" className="section bg-gray-50/60 dark:bg-white/[0.04]">
+      <section
+        id="contact-form"
+        className="section bg-gray-50/60 dark:bg-white/[0.04]"
+      >
         <div className="section-container grid gap-8 lg:grid-cols-[1.2fr,0.8fr]">
           {/* --- Form --- */}
           <motion.form
@@ -185,11 +201,18 @@ export default function ContactPage() {
             onSubmit={onSubmit}
             className="rounded-2xl bg-white dark:bg-background/60 backdrop-blur ring-1 ring-black/5 dark:ring-white/10 shadow-xl p-6 md:p-8"
           >
-            <motion.h3 variants={fadeUp} className="text-xl md:text-2xl font-semibold">
+            <motion.h3
+              variants={fadeUp}
+              className="text-xl md:text-2xl font-semibold"
+            >
               Get in Touch
             </motion.h3>
-            <motion.p variants={fadeUp} className="text-sm text-foreground/70 mt-1">
-              Tell us about your project and we’ll get back to you within 24 hours.
+            <motion.p
+              variants={fadeUp}
+              className="text-sm text-foreground/70 mt-1"
+            >
+              Tell us about your project and we’ll get back to you within 24
+              hours.
             </motion.p>
 
             {/* names */}
@@ -200,20 +223,46 @@ export default function ContactPage() {
 
             {/* contact */}
             <div className="mt-4 grid gap-4 md:grid-cols-2">
-              <Field type="email" label="Email" placeholder="john@company.com" icon={Mail} />
+              <Field
+                type="email"
+                label="Email"
+                placeholder="john@company.com"
+                icon={Mail}
+              />
               <Field label="Phone" placeholder="+91 98765 43210" icon={Phone} />
             </div>
 
             {/* company + role */}
             <div className="mt-4 grid gap-4 md:grid-cols-2">
-              <Field label="Company" placeholder="Your Company Ltd." icon={MapPin} />
+              <Field
+                label="Company"
+                placeholder="Your Company Ltd."
+                icon={MapPin}
+              />
               <Field label="Role / Title" placeholder="R&D Manager" />
             </div>
 
             {/* selects */}
             <div className="mt-4 grid gap-4 md:grid-cols-2">
-              <Select label="Inquiry Type" options={["General", "Samples", "Bespoke Project", "Technical Consultation"]} />
-              <Select label="Application Area" options={["Bakery", "Beverages", "Dairy", "Confectionery", "Health & Wellness"]} />
+              <Select
+                label="Inquiry Type"
+                options={[
+                  "General",
+                  "Samples",
+                  "Bespoke Project",
+                  "Technical Consultation",
+                ]}
+              />
+              <Select
+                label="Application Area"
+                options={[
+                  "Bakery",
+                  "Beverages",
+                  "Dairy",
+                  "Confectionery",
+                  "Health & Wellness",
+                ]}
+              />
             </div>
 
             {/* details */}
@@ -227,16 +276,24 @@ export default function ContactPage() {
 
             {/* upload */}
             <motion.div variants={fadeUp} className="mt-4">
-              <label className="text-sm font-medium">Attach Files (Max 10MB)</label>
-              <label
-                className="mt-2 block cursor-pointer rounded-lg border border-dashed border-black/10 dark:border-white/10 p-4 text-sm text-foreground/70 hover:border-primary/40 hover:bg-primary/[0.03] transition"
-              >
-                <input type="file" className="hidden" multiple onChange={onPickFiles} />
+              <label className="text-sm font-medium">
+                Attach Files (Max 10MB)
+              </label>
+              <label className="mt-2 block cursor-pointer rounded-lg border border-dashed border-black/10 dark:border-white/10 p-4 text-sm text-foreground/70 hover:border-primary/40 hover:bg-primary/[0.03] transition">
+                <input
+                  type="file"
+                  className="hidden"
+                  multiple
+                  onChange={onPickFiles}
+                />
                 <div className="flex items-center justify-between gap-3">
                   <span className="inline-flex items-center gap-2">
-                    <UploadCloud className="h-4 w-4" /> Drop files here or browse
+                    <UploadCloud className="h-4 w-4" /> Drop files here or
+                    browse
                   </span>
-                  <span className="rounded-md bg-primary/10 text-primary px-2 py-1 text-xs font-semibold">Upload</span>
+                  <span className="rounded-md bg-primary/10 text-primary px-2 py-1 text-xs font-semibold">
+                    Upload
+                  </span>
                 </div>
                 <p className="mt-1 text-xs text-foreground/60">
                   {files.length
@@ -247,9 +304,16 @@ export default function ContactPage() {
             </motion.div>
 
             {/* extra */}
-            <TextArea className="mt-4" label="Additional Information" rows={3} />
+            <TextArea
+              className="mt-4"
+              label="Additional Information"
+              rows={3}
+            />
 
-            <motion.div variants={fadeUp} className="mt-6 flex flex-col sm:flex-row items-start sm:items-center gap-3">
+            <motion.div
+              variants={fadeUp}
+              className="mt-6 flex flex-col sm:flex-row items-start sm:items-center gap-3"
+            >
               <button
                 type="submit"
                 disabled={submitting}
@@ -266,7 +330,9 @@ export default function ContactPage() {
                   </span>
                 )}
               </button>
-              <span className="text-xs text-foreground/60">We’ll respond within 24 hours during business days</span>
+              <span className="text-xs text-foreground/60">
+                We’ll respond within 24 hours during business days
+              </span>
             </motion.div>
 
             {/* tiny success hint (demo) */}
@@ -279,7 +345,8 @@ export default function ContactPage() {
                   exit={{ opacity: 0 }}
                   className="mt-3 text-xs text-emerald-600 inline-flex items-center gap-1"
                 >
-                  <CheckCircle2 className="h-4 w-4" /> Your message will be routed to the right team.
+                  <CheckCircle2 className="h-4 w-4" /> Your message will be
+                  routed to the right team.
                 </motion.div>
               )}
             </AnimatePresence>
@@ -295,63 +362,113 @@ export default function ContactPage() {
               viewport={{ once: true, amount: 0.25 }}
               className="rounded-2xl bg-white dark:bg-background/60 backdrop-blur ring-1 ring-black/5 dark:ring-white/10 shadow-xl p-6"
             >
-              <h4 className="text-lg font-semibold">Our Locations</h4>
-              <div className="mt-4 grid gap-5">
-                <div className="rounded-lg border border-black/5 dark:border-white/10 p-4">
-                  <h5 className="font-medium">India Headquarters</h5>
+              <h4 className="text-2xl section-title font-semibold">Our Locations</h4>
+
+              {/* 1-col on mobile, 2-col on md+; left, right, then a full-width 3rd card */}
+              <div className="mt-4 grid gap-6 md:grid-cols-3">
+                {/* LEFT card (India) */}
+                <article className="rounded-lg border border-black/5 dark:border-white/10 p-4 max-w-md w-full md:justify-self-start">
+                  <h5 className="font-medium text-primary">
+                    India Headquarters
+                  </h5>
                   <p className="text-sm text-foreground/70 mt-1">
-                    Innovation Center, Technology Park, Mumbai, Maharashtra 400001
+                    Innovation Center, Technology Park, Mumbai, Maharashtra
+                    400001
                   </p>
-                  <div className="mt-3 text-sm space-y-1">
-                    <div className="inline-flex items-center gap-2"><Phone className="h-4 w-4" /> +91 22 1234 5678</div>
-                    <div className="inline-flex items-center gap-2"><Mail className="h-4 w-4" /> india@sensorisch.com</div>
-                    <div className="inline-flex items-center gap-2 text-foreground/70"><Clock className="h-4 w-4" /> 9:00 AM – 6:00 PM IST (Mon–Fri)</div>
+                  <div className="mt-3 text-sm space-y-2">
+                    <a
+                      href="tel:+91 22 1234
+                      5678"
+                    >
+                      {" "}
+                      <div className="inline-flex items-center gap-2">
+                        <Phone className="h-4 w-4 text-primary" /> +91 22 1234
+                        5678
+                      </div>
+                    </a>
+                    <br />
+                    <a href="mailto:india@sensorisch.com">
+                      <div className="inline-flex items-center gap-2">
+                        <Mail className="h-4 w-4 text-primary" />{" "}
+                        india@sensorisch.com
+                      </div>
+                    </a>
+                    <br />
+                    <div className="inline-flex items-center gap-2 text-foreground/70">
+                      <Clock className="h-4 w-4 text-primary" /> 9:00 AM – 6:00
+                      PM IST (Mon–Fri)
+                    </div>
                   </div>
-                </div>
+                </article>
 
-                <div className="rounded-lg border border-black/5 dark:border-white/10 p-4">
-                  <h5 className="font-medium">GCC Operations</h5>
-                  <p className="text-sm text-foreground/70 mt-1">Business District, Dubai, UAE</p>
-                  <div className="mt-3 text-sm space-y-1">
-                    <div className="inline-flex items-center gap-2"><Phone className="h-4 w-4" /> +971 4 123 4567</div>
-                    <div className="inline-flex items-center gap-2"><Mail className="h-4 w-4" /> gcc@sensorisch.com</div>
-                    <div className="inline-flex items-center gap-2 text-foreground/70"><Clock className="h-4 w-4" /> 9:00 AM – 6:00 PM GST (Sun–Thu)</div>
+                {/* RIGHT card (GCC) */}
+                <article className="rounded-lg border border-black/5 dark:border-white/10 p-4 max-w-md w-full md:justify-self-end">
+                  <h5 className="font-medium text-primary">GCC Operations</h5>
+                  <p className="text-sm text-foreground/70 mt-1">
+                    Business District, Dubai, UAE
+                  </p>
+                  <div className="mt-3 text-sm space-y-2">
+                    <a href="tel:+971 4 123 4567">
+                      <div className="inline-flex items-center gap-2">
+                        <Phone className="h-4 w-4 text-primary" /> +971 4 123
+                        4567
+                      </div>
+                    </a>
+                    <br />
+                    <a href="mailto:gcc@sensorisch.com">
+                      <div className="inline-flex items-center gap-2">
+                        <Mail className="h-4 w-4 text-primary" />{" "}
+                        gcc@sensorisch.com
+                      </div>
+                    </a>
+                    <br />
+                    <div className="inline-flex items-center gap-2 text-foreground/70">
+                      <Clock className="h-4 w-4 text-primary" /> 9:00 AM – 6:00
+                      PM GST (Sun–Thu)
+                    </div>
                   </div>
-                </div>
-              </div>
-            </motion.div>
+                </article>
 
-            {/* Immediate assistance */}
-            <motion.div
-              variants={fadeUp}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, amount: 0.25 }}
-              className="rounded-2xl bg-gradient-to-br from-primary/10 to-transparent ring-1 ring-primary/20 p-6"
-            >
-              <h4 className="text-lg font-semibold">Need Immediate Assistance?</h4>
-              <p className="text-sm text-foreground/70 mt-1">
-                For urgent inquiries or immediate support, choose from these options
-              </p>
-              <div className="mt-4 grid gap-3">
-                <a
-                  className="inline-flex items-center gap-2 rounded-md bg-white dark:bg-white/10 px-3 py-2 text-sm font-medium ring-1 ring-black/5 dark:ring-white/10 hover:bg-white/90 transition"
-                  href="tel:+912212345678"
+                {/* THIRD card (full width on md+) */}
+                <motion.div
+                  variants={fadeUp}
+                  className="rounded-2xl bg-gradient-to-br from-primary/10 to-transparent ring-1 ring-primary/20 p-6
+                 md:col-span-2 max-w-3xl w-full justify-self-center"
                 >
-                  <Phone className="h-4 w-4" /> Call Us Directly • +91 22 1234 5678
-                </a>
-                <a
-                  className="inline-flex items-center gap-2 rounded-md bg-white dark:bg-white/10 px-3 py-2 text-sm font-medium ring-1 ring-black/5 dark:ring-white/10 hover:bg-white/90 transition"
-                  href="mailto:urgent@sensorisch.com"
-                >
-                  <Mail className="h-4 w-4" /> Priority Email • urgent@sensorisch.com
-                </a>
-                <a
-                  className="inline-flex items-center gap-2 rounded-md bg-primary px-3 py-2 text-sm font-semibold text-white shadow hover:bg-primary/90 transition"
-                  href="#contact-form"
-                >
-                  <Clock className="h-4 w-4" /> Emergency Support • 24/7 (Clients)
-                </a>
+                  <h4 className="text-2xl text-primary font-semibold">
+                    Need Immediate Assistance?
+                  </h4>
+                  <p className="text-sm text-foreground/70 mt-1">
+                    For urgent inquiries or immediate support, choose from these
+                    options
+                  </p>
+                  <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                    <a
+                      className="inline-flex items-center gap-2 rounded-md bg-white dark:bg-white/10 px-3 py-2 text-sm font-medium
+                     ring-1 ring-black/5 dark:ring-white/10 hover:bg-white/90 transition"
+                      href="tel:+912212345678"
+                    >
+                      <Phone className="h-8 w-8" /> Call Us Directly <br /> +91 22
+                      1234 5678
+                    </a>
+                    <a
+                      className="inline-flex items-center gap-2 rounded-md bg-white dark:bg-white/10 px-3 py-2 text-sm font-medium
+                     ring-1 ring-black/5 dark:ring-white/10 hover:bg-white/90 transition"
+                      href="mailto:urgent@sensorisch.com"
+                    >
+                      <Mail className="h-8 w-8" /> Priority Email <br />
+                      urgent@sensorisch.com
+                    </a>
+                    <a
+                      className="inline-flex items-center gap-2 rounded-md bg-primary px-3 py-2 text-sm font-semibold text-white
+                     shadow hover:bg-primary/90 transition"
+                      href="#contact-form"
+                    >
+                      <Clock className="h-8 w-8" /> Emergency Support <br /> 24/7
+                      (Clients)
+                    </a>
+                  </div>
+                </motion.div>
               </div>
             </motion.div>
           </div>
@@ -375,7 +492,10 @@ export default function ContactPage() {
             {FAQ.map((f, i) => {
               const active = openIdx === i;
               return (
-                <div key={f.q} className="border-b border-black/5 dark:border-white/10 py-4">
+                <div
+                  key={f.q}
+                  className="border-b border-black/5 dark:border-white/10 py-4"
+                >
                   <button
                     onClick={() => setOpenIdx(active ? -1 : i)}
                     className="flex w-full items-center justify-between gap-4 text-left"
@@ -421,10 +541,14 @@ function Field({ label, placeholder, type = "text", icon: Icon }) {
     <motion.div variants={fadeUp} className="space-y-1">
       <label className="text-sm font-medium">{label}</label>
       <div className="relative">
-        {Icon && <Icon className="absolute left-3 top-[10px] h-4 w-4 text-foreground/40" />}
+        {Icon && (
+          <Icon className="absolute left-3 top-[10px] h-4 w-4 text-foreground/40" />
+        )}
         <input
           type={type}
-          className={`w-full rounded-md border border-black/10 dark:border-white/10 bg-transparent px-3 py-2 outline-none focus:ring-2 ring-primary/30 ${Icon ? "pl-9" : ""}`}
+          className={`w-full rounded-md border border-black/10 dark:border-white/10 bg-transparent px-3 py-2 outline-none focus:ring-2 ring-primary/30 ${
+            Icon ? "pl-9" : ""
+          }`}
           placeholder={placeholder}
         />
       </div>
@@ -445,15 +569,25 @@ function Select({ label, options = [] }) {
   );
 }
 
-function TextArea({ label, rows = 4, placeholder = "", className = "", icon: Icon }) {
+function TextArea({
+  label,
+  rows = 4,
+  placeholder = "",
+  className = "",
+  icon: Icon,
+}) {
   return (
     <motion.div variants={fadeUp} className={`space-y-1 ${className}`}>
       <label className="text-sm font-medium">{label}</label>
       <div className="relative">
-        {Icon && <Icon className="absolute left-3 top-3 h-4 w-4 text-foreground/40" />}
+        {Icon && (
+          <Icon className="absolute left-3 top-3 h-4 w-4 text-foreground/40" />
+        )}
         <textarea
           rows={rows}
-          className={`w-full rounded-md border border-black/10 dark:border-white/10 bg-transparent px-3 py-2 outline-none focus:ring-2 ring-primary/30 ${Icon ? "pl-9" : ""}`}
+          className={`w-full rounded-md border border-black/10 dark:border-white/10 bg-transparent px-3 py-2 outline-none focus:ring-2 ring-primary/30 ${
+            Icon ? "pl-9" : ""
+          }`}
           placeholder={placeholder}
         />
       </div>

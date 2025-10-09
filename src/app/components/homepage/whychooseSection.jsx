@@ -122,25 +122,6 @@ export default function WhyChooseSection() {
             );
           })}
         </div>
-
-        {/* CTA row */}
-        <motion.div
-          {...fadeUp(0.24)}
-          className="mt-12 flex flex-col items-center gap-4 sm:flex-row sm:justify-center"
-        >
-          <a
-            href="#solutions"
-            className="px-6 py-3 rounded-sm bg-primary text-white font-semibold hover:bg-primary/90 transition"
-          >
-            Explore Solutions
-          </a>
-          <a
-            href="#contact"
-            className="px-6 py-3 rounded-sm border border-primary text-primary font-semibold hover:bg-primary hover:text-white transition"
-          >
-            Request Samples
-          </a>
-        </motion.div>
       </div>
     </section>
   );

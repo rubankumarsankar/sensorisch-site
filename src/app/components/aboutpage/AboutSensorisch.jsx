@@ -43,24 +43,26 @@ export default function AboutSensorisch() {
             <motion.div variants={fadeUp} className="space-y-3">
               <h2 className="text-xl md:text-2xl font-semibold">Our Story</h2>
               <p className="text-base leading-relaxed text-foreground/80">
-                Sensorisch was founded with a simple belief: that great flavours
-                are born from the perfect marriage of science and craft. We
-                recognized that the industry needed a partner who could deliver
-                not just exceptional taste profiles, but complete
-                application-ready systems.
+                sensorisch is a specialist b2b formulation house designed
+                exclusively for the institutional food and beverage sector. our
+                precision ingredients serve the bakery, confectionery, beverage,
+                dairy, hospitality, and emerging nutraceutical industries, with
+                a strict focus on performance, stability, and clean-label
+                integrity. at the intersection of science and sensory delight,
+                we craft flavours that don't just taste good they perform.
               </p>
               <p className="text-base leading-relaxed text-foreground/80">
-                Today, we serve as a premium flavour and fragrance partner
-                across India and the GCC, specializing in{" "}
-                <span className="font-medium">Bakery</span>,{" "}
-                <span className="font-medium">Beverages</span>,{" "}
-                <span className="font-medium">Dairy</span>,{" "}
-                <span className="font-medium">Confectionery</span>, and{" "}
-                <span className="font-medium">Health &amp; Wellness</span>{" "}
-                applications. Our <span className="font-semibold">Senso™</span>{" "}
-                range represents the culmination of our expertise -
-                application-ready systems that reduce time-to-market while
-                ensuring consistent quality.
+                 we
+                specialise in the research, development, and manufacture of
+                advanced flavour systems tailored to a wide spectrum of
+                applications, from bakery and beverages to pharmaceuticals and
+                personal care. driven by innovation, supported by robust
+                technical expertise, and aligned with global regulatory
+                frameworks, our solutions are engineered to meet the highest
+                standards of safety, stability, and sensory performance. with a
+                focus on customisation, application-specific functionality, and
+                clean-label compatibility, we partner with brands to translate
+                consumer insights into flavourful experiences."
               </p>
             </motion.div>
 

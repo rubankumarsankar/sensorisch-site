@@ -51,7 +51,7 @@ export default function BriefToScale() {
             className="order-1 md:order-none overflow-hidden shadow-xl rounded-2xl"
           >
             <img
-              src="/home-banner-2.png" // <- replace with your asset
+              src="/home-banner-3.png" // <- replace with your asset
               alt="Cheese stack"
               className="w-full h-full object-cover"
             />

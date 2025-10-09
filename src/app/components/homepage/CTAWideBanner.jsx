@@ -10,9 +10,9 @@ export default function ProfileCTA({
 
 `,
   // Primary actions
-  primaryHref = "/samples/request",
+  primaryHref = "/contact",
   primaryLabel = "Start Your Project",
-  secondaryHref = "/consultation/schedule",
+  secondaryHref = "/contact",
   secondaryLabel = "View Our Portfolio",
  
 }) {

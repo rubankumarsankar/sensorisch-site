@@ -92,7 +92,7 @@ export default function VisionMission() {
             <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-primary/10 blur-2xl" />
             <h3 className="text-xl md:text-2xl font-semibold">Our Vision</h3>
             <p className="mt-3 text-base md:text-lg text-foreground/80 leading-relaxed">
-              Make everyday products feel extraordinary, everywhere.
+              to be the most trusted global partner for sensory innovation, delivering precision driven flavours, colours, and ingredient solutions that inspire product excellence and emotional consumer connections.
             </p>
           </motion.article>
 
@@ -108,8 +108,8 @@ export default function VisionMission() {
             <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-primary/10 blur-2xl" />
             <h3 className="text-xl md:text-2xl font-semibold">Our Mission</h3>
             <p className="mt-3 text-base md:text-lg text-foreground/80 leading-relaxed">
-              Partner with brands to create repeat-worthy taste and aroma through responsible
-              innovation and rigorous execution.
+              sensorisch is committed to empowering creators in the bakery, beverage, dairy,culinary, and wellness industries by co-developing sensory solutions that are scientifically advanced, creatively inspired, and commercially scalable. we exist to ensure every
+product resonates with its audience - not just in taste, but in experience."
             </p>
           </motion.article>
         </div>

@@ -449,9 +449,9 @@ const ranges = [
       { t: "Natural Beverages", cls: "bg-teal-50 text-teal-700 ring-teal-200" },
       { t: "Premium Ranges", cls: "bg-amber-50 text-amber-700 ring-amber-200" },
     ],
-    primaryHref: "/samples/request",
+    primaryHref: "/contact",
     primaryLabel: "Request Sample",
-    secondaryHref: "/downloads/techsheet",
+    secondaryHref: "/contact",
     secondaryLabel: "Technical Sheet",
   },
 ];
