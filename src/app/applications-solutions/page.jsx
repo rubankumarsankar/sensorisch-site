@@ -485,7 +485,7 @@ export default function ApplicationSolutions() {
       />
 
       <WhyChooseSenso />
-      <main className="bg-background text-foreground">
+      {/* <main className="bg-background text-foreground"> */}
         <StickyFullpageSlides fade translate heightMultiplier={1}>
           {ranges.map((r, i) => (
             <SensoRangeHero
@@ -502,7 +502,7 @@ export default function ApplicationSolutions() {
             />
           ))}
         </StickyFullpageSlides>
-      </main>
+      {/* </main> */}
       <BespokeSolutionsSection
         onPrimaryHref="/contact"
         onPrimaryLabel="Discuss Your Bespoke Needs"

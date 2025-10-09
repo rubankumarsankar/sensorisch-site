@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 const CARDS = [
   {
     title: "Bakery",
-    icon: "/icons/icon-4.png",
+    icon: "/home-img-1.png",
     desc: "Oven-true flavours for cakes, cookies, pastries & breads",
     badge: "Specialized Solutions",
     badgeClass: "bg-red-100 text-red-700",
@@ -15,7 +15,7 @@ const CARDS = [
   },
   {
     title: "Beverages",
-    icon: "/icons/icon-5.png",
+    icon: "/home-img-2.png",
     desc: "Oven-true flavours for cakes, cookies, pastries & breads",
     badge: "Specialized Solutions",
     badgeClass: "bg-blue-100 text-blue-700",
@@ -23,7 +23,7 @@ const CARDS = [
   },
   {
     title: "Dairy",
-    icon: "/icons/icon-6.png",
+    icon: "/home-img-3.png",
     desc: "Creamy, authentic notes for ice creams & yoghurts",
     badge: "Specialized Solutions",
     badgeClass: "bg-green-100 text-green-700",
@@ -31,7 +31,7 @@ const CARDS = [
   },
   {
     title: "Confectionery",
-    icon: "/icons/icon-7.png",
+    icon: "/home-img-4.png",
     desc: "Playful profiles with controlled flavour release",
     badge: "Specialized Solutions",
     badgeClass: "bg-orange-100 text-orange-700",
@@ -39,7 +39,7 @@ const CARDS = [
   },
   {
     title: "Naturals",
-    icon: "/icons/icon-8.png",
+    icon: "/home-img-5.png",
     desc: "Clean-label extracts & nature-derived solutions",
     badge: "Specialized Solutions",
     badgeClass: "bg-emerald-100 text-emerald-700",
@@ -47,7 +47,7 @@ const CARDS = [
   },
   {
     title: "Health & Wellness",
-    icon: "/icons/icon-9.png",
+    icon: "/home-img-6.png",
     desc: "Masking solutions for nutraceuticals & pharmaceuticals",
     badge: "Specialized Solutions",
     badgeClass: "bg-rose-100 text-rose-700",
@@ -99,7 +99,7 @@ export default function ApplicationExpertise() {
               whileTap={{ scale: 0.995 }}
               className="group relative overflow-hidden 
              bg-white/60 backdrop-blur-sm
-             shadow-xl h-[370px]
+             shadow-xl h-[470px]
              ring-1 ring-black/5
              p-5 md:p-6
              transition-all duration-300
@@ -140,7 +140,7 @@ export default function ApplicationExpertise() {
                 <img
                   src={c.icon}
                   alt={`${c.title} icon`}
-                  className="h-16 w-16 object-contain select-none"
+                  className="object-contain select-none"
                   draggable="false"
                 />
               </motion.div>

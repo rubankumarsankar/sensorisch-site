@@ -1,16 +1,31 @@
 // app/components/ContactPage.jsx
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useMemo } from "react";
+import { motion, AnimatePresence, useScroll, useSpring } from "framer-motion";
+import {
+  MessageSquare,
+  CalendarDays,
+  FileUp,
+  FlaskConical,
+  ArrowRight,
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  UploadCloud,
+  HelpCircle,
+  CheckCircle2,
+} from "lucide-react";
 
-/* ------------------ helpers ------------------ */
+/* ------------------ motion helpers ------------------ */
 const fadeUp = {
-  hidden: { opacity: 0, y: 14 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: "easeOut" } },
+  hidden: { opacity: 0, y: 14, filter: "blur(4px)" },
+  show:   { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.45, ease: "easeOut" } },
 };
 const list = { hidden: {}, show: { transition: { staggerChildren: 0.06 } } };
 
+/* ------------------ data ------------------ */
 const METHODS = [
   {
     tag: "Recommended",
@@ -18,44 +33,28 @@ const METHODS = [
     blurb: "Discuss your requirements with our flavour experts",
     cta: "Send Message",
     href: "#contact-form",
-    icon: (
-      <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">
-        <path d="M4 4h16v12H5.17L4 17.17V4z" />
-      </svg>
-    ),
+    icon: MessageSquare,
   },
   {
     title: "Book a Tasting Session",
     blurb: "Experience our flavours firsthand at our facilities",
     cta: "Schedule Visit",
     href: "#contact-form",
-    icon: (
-      <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">
-        <path d="M7 10h10v7H7z" /><path d="M7 3h2v3H7zM15 3h2v3h-2z" />
-      </svg>
-    ),
+    icon: CalendarDays,
   },
   {
     title: "Share Your Brief",
     blurb: "Upload detailed specifications for custom development",
     cta: "Upload Brief",
     href: "#contact-form",
-    icon: (
-      <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">
-        <path d="M14 2H6a2 2 0 0 0-2 2v16l4-4h8a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z" />
-      </svg>
-    ),
+    icon: FileUp,
   },
   {
     title: "Technical Consultation",
     blurb: "Connect with our R&D team for complex challenges",
     cta: "Book Consultation",
     href: "#contact-form",
-    icon: (
-      <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor">
-        <path d="M12 2a7 7 0 0 0-7 7v3H3l3.5 4L10 12H7V9a5 5 0 1 1 10 0v3h-3l3.5 4L21 12h-2V9a7 7 0 0 0-7-7z" />
-      </svg>
-    ),
+    icon: FlaskConical,
   },
 ];
 
@@ -74,29 +73,63 @@ const FAQ = [
   },
 ];
 
-/* ------------------ component ------------------ */
 export default function ContactPage() {
   const [openIdx, setOpenIdx] = useState(0);
+  const [files, setFiles] = useState([]);
+  const [submitting, setSubmitting] = useState(false);
+
+  // subtle page progress bar
+  const { scrollYProgress } = useScroll();
+  const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 25, mass: 0.2 });
+
+  const totalSizeMB = useMemo(
+    () => (files.reduce((a, f) => a + (f.size || 0), 0) / (1024 * 1024)).toFixed(2),
+    [files]
+  );
+
+  const onPickFiles = (e) => {
+    const picked = Array.from(e.target.files || []);
+    setFiles(picked.slice(0, 8)); // cap at 8 files
+  };
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    setSubmitting(true);
+    // simulate network
+    setTimeout(() => setSubmitting(false), 1200);
+  };
 
   return (
-    <main className="bg-background text-foreground">
-      
+    <main className="bg-background text-foreground relative overflow-hidden">
+      {/* scroll progress bar */}
+      <motion.span
+        style={{ scaleX: progress }}
+        className="fixed left-0 top-0 z-[60] h-0.5 w-full origin-left bg-gradient-to-r from-primary via-fuchsia-500 to-emerald-500"
+      />
+
+      {/* soft animated background accents */}
+      <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="absolute -top-40 -left-40 size-[32rem] rounded-full blur-3xl opacity-20 bg-gradient-to-br from-primary/40 via-sky-400/30 to-emerald-400/30 animate-pulse" />
+        <div className="absolute -bottom-52 -right-40 size-[36rem] rounded-full blur-3xl opacity-15 bg-gradient-to-tr from-fuchsia-400/30 via-primary/30 to-amber-300/30 animate-[pulse_7s_ease-in-out_infinite]" />
+      </div>
 
       {/* ===== Methods cards ===== */}
       <section className="section">
         <div className="section-container">
-          <motion.h2
-            variants={fadeUp}
+          <motion.div
+            variants={list}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.25 }}
-            className="text-center text-xl md:text-2xl font-semibold"
+            className="text-center"
           >
-            How Can We Help You?
-          </motion.h2>
-          <p className="text-center text-foreground/70 mt-2">
-            Choose the best way to connect with our team based on your needs
-          </p>
+            <motion.h2 variants={fadeUp} className="text-xl md:text-2xl font-semibold">
+              How Can We Help You?
+            </motion.h2>
+            <motion.p variants={fadeUp} className="text-foreground/70 mt-2">
+              Choose the best way to connect with our team based on your needs
+            </motion.p>
+          </motion.div>
 
           <motion.ul
             variants={list}
@@ -105,11 +138,12 @@ export default function ContactPage() {
             viewport={{ once: true, amount: 0.2 }}
             className="mt-8 grid gap-6 sm:grid-cols-2 xl:grid-cols-4"
           >
-            {METHODS.map((m, i) => (
+            {METHODS.map((m) => (
               <motion.li
                 key={m.title}
                 variants={fadeUp}
-                whileHover={{ y: -4 }}
+                whileHover={{ y: -6, scale: 1.01 }}
+                transition={{ type: "spring", stiffness: 240, damping: 22 }}
                 className="group relative overflow-hidden rounded-2xl bg-white/70 dark:bg-white/[0.06] backdrop-blur p-6 ring-1 ring-black/5 dark:ring-white/10 shadow-lg"
               >
                 {m.tag && (
@@ -117,24 +151,21 @@ export default function ContactPage() {
                     {m.tag}
                   </span>
                 )}
-                <div className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-primary ring-1 ring-primary/20">
-                  {m.icon}
+                <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/20">
+                  <m.icon className="h-6 w-6" />
                 </div>
                 <h3 className="mt-3 text-lg font-semibold">{m.title}</h3>
                 <p className="mt-1 text-sm text-foreground/75">{m.blurb}</p>
 
                 <a
                   href={m.href}
-                  className="mt-4 inline-flex items-center gap-2 rounded-md bg-primary px-3 py-2 text-sm font-semibold text-white shadow hover:bg-primary/90 transition-colors"
+                  className="mt-4 inline-flex items-center gap-2 rounded-md bg-primary px-3.5 py-2 text-sm font-semibold text-white shadow hover:bg-primary/90 transition-colors"
                 >
                   {m.cta}
-                  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M5 12h14" />
-                    <path d="m12 5 7 7-7 7" />
-                  </svg>
+                  <ArrowRight className="h-4 w-4" />
                 </a>
 
-                {/* glow on hover */}
+                {/* radial glow on hover */}
                 <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-[radial-gradient(70%_70%_at_50%_0%,rgba(210,36,34,0.06),transparent)]" />
               </motion.li>
             ))}
@@ -151,7 +182,7 @@ export default function ContactPage() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.25 }}
-            onSubmit={(e) => e.preventDefault()}
+            onSubmit={onSubmit}
             className="rounded-2xl bg-white dark:bg-background/60 backdrop-blur ring-1 ring-black/5 dark:ring-white/10 shadow-xl p-6 md:p-8"
           >
             <motion.h3 variants={fadeUp} className="text-xl md:text-2xl font-semibold">
@@ -163,72 +194,36 @@ export default function ContactPage() {
 
             {/* names */}
             <div className="mt-6 grid gap-4 md:grid-cols-2">
-              <motion.div variants={fadeUp} className="space-y-1">
-                <label className="text-sm font-medium">First Name</label>
-                <input className="w-full rounded-md border border-black/10 dark:border-white/10 bg-transparent px-3 py-2 outline-none focus:ring-2 ring-primary/30" placeholder="John" />
-              </motion.div>
-              <motion.div variants={fadeUp} className="space-y-1">
-                <label className="text-sm font-medium">Last Name</label>
-                <input className="w-full rounded-md border border-black/10 dark:border-white/10 bg-transparent px-3 py-2 outline-none focus:ring-2 ring-primary/30" placeholder="Smith" />
-              </motion.div>
+              <Field label="First Name" placeholder="John" />
+              <Field label="Last Name" placeholder="Smith" />
             </div>
 
             {/* contact */}
             <div className="mt-4 grid gap-4 md:grid-cols-2">
-              <motion.div variants={fadeUp} className="space-y-1">
-                <label className="text-sm font-medium">Email</label>
-                <input type="email" className="w-full rounded-md border border-black/10 dark:border-white/10 bg-transparent px-3 py-2 outline-none focus:ring-2 ring-primary/30" placeholder="john@company.com" />
-              </motion.div>
-              <motion.div variants={fadeUp} className="space-y-1">
-                <label className="text-sm font-medium">Phone</label>
-                <input className="w-full rounded-md border border-black/10 dark:border-white/10 bg-transparent px-3 py-2 outline-none focus:ring-2 ring-primary/30" placeholder="+91 98765 43210" />
-              </motion.div>
+              <Field type="email" label="Email" placeholder="john@company.com" icon={Mail} />
+              <Field label="Phone" placeholder="+91 98765 43210" icon={Phone} />
             </div>
 
             {/* company + role */}
             <div className="mt-4 grid gap-4 md:grid-cols-2">
-              <motion.div variants={fadeUp} className="space-y-1">
-                <label className="text-sm font-medium">Company</label>
-                <input className="w-full rounded-md border border-black/10 dark:border_WHITE/10 bg-transparent px-3 py-2 outline-none focus:ring-2 ring-primary/30" placeholder="Your Company Ltd." />
-              </motion.div>
-              <motion.div variants={fadeUp} className="space-y-1">
-                <label className="text-sm font-medium">Role / Title</label>
-                <input className="w-full rounded-md border border-black/10 dark:border-white/10 bg-transparent px-3 py-2 outline-none focus:ring-2 ring-primary/30" placeholder="R&D Manager" />
-              </motion.div>
+              <Field label="Company" placeholder="Your Company Ltd." icon={MapPin} />
+              <Field label="Role / Title" placeholder="R&D Manager" />
             </div>
 
             {/* selects */}
             <div className="mt-4 grid gap-4 md:grid-cols-2">
-              <motion.div variants={fadeUp} className="space-y-1">
-                <label className="text-sm font-medium">Inquiry Type</label>
-                <select className="w-full rounded-md border border-black/10 dark:border-white/10 bg-transparent px-3 py-2 outline-none focus:ring-2 ring-primary/30">
-                  <option>General</option>
-                  <option>Samples</option>
-                  <option>Bespoke Project</option>
-                  <option>Technical Consultation</option>
-                </select>
-              </motion.div>
-              <motion.div variants={fadeUp} className="space-y-1">
-                <label className="text-sm font-medium">Application Area</label>
-                <select className="w-full rounded-md border border-black/10 dark:border-white/10 bg-transparent px-3 py-2 outline-none focus:ring-2 ring-primary/30">
-                  <option>Bakery</option>
-                  <option>Beverages</option>
-                  <option>Dairy</option>
-                  <option>Confectionery</option>
-                  <option>Health & Wellness</option>
-                </select>
-              </motion.div>
+              <Select label="Inquiry Type" options={["General", "Samples", "Bespoke Project", "Technical Consultation"]} />
+              <Select label="Application Area" options={["Bakery", "Beverages", "Dairy", "Confectionery", "Health & Wellness"]} />
             </div>
 
             {/* details */}
-            <motion.div variants={fadeUp} className="mt-4 space-y-1">
-              <label className="text-sm font-medium">Project Details</label>
-              <textarea
-                rows={6}
-                className="w-full rounded-md border border-black/10 dark:border-white/10 bg-transparent px-3 py-2 outline-none focus:ring-2 ring-primary/30"
-                placeholder="Describe requirements, target flavour profiles, specs, timeline, and challenges..."
-              />
-            </motion.div>
+            <TextArea
+              className="mt-4"
+              label="Project Details"
+              rows={6}
+              placeholder="Describe requirements, target flavour profiles, specs, timeline, and challenges..."
+              icon={HelpCircle}
+            />
 
             {/* upload */}
             <motion.div variants={fadeUp} className="mt-4">
@@ -236,30 +231,58 @@ export default function ContactPage() {
               <label
                 className="mt-2 block cursor-pointer rounded-lg border border-dashed border-black/10 dark:border-white/10 p-4 text-sm text-foreground/70 hover:border-primary/40 hover:bg-primary/[0.03] transition"
               >
-                <input type="file" className="hidden" multiple />
+                <input type="file" className="hidden" multiple onChange={onPickFiles} />
                 <div className="flex items-center justify-between gap-3">
-                  <span>Drop files here or browse</span>
+                  <span className="inline-flex items-center gap-2">
+                    <UploadCloud className="h-4 w-4" /> Drop files here or browse
+                  </span>
                   <span className="rounded-md bg-primary/10 text-primary px-2 py-1 text-xs font-semibold">Upload</span>
                 </div>
-                <p className="mt-1 text-xs text-foreground/60">Support for specifications, references, or product briefs</p>
+                <p className="mt-1 text-xs text-foreground/60">
+                  {files.length
+                    ? `Selected ${files.length} file(s) • ${totalSizeMB} MB total`
+                    : "Support for specifications, references, or product briefs"}
+                </p>
               </label>
             </motion.div>
 
             {/* extra */}
-            <motion.div variants={fadeUp} className="mt-4 space-y-1">
-              <label className="text-sm font-medium">Additional Information</label>
-              <textarea rows={3} className="w-full rounded-md border border-black/10 dark:border-white/10 bg-transparent px-3 py-2 outline-none focus:ring-2 ring-primary/30" />
-            </motion.div>
+            <TextArea className="mt-4" label="Additional Information" rows={3} />
 
             <motion.div variants={fadeUp} className="mt-6 flex flex-col sm:flex-row items-start sm:items-center gap-3">
               <button
                 type="submit"
-                className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow hover:bg-primary/90 transition-colors"
+                disabled={submitting}
+                className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-2.5 text-sm font-semibold text-white shadow hover:bg-primary/90 transition-colors disabled:opacity-60"
               >
-                Send Message
+                {submitting ? (
+                  <span className="inline-flex items-center gap-2">
+                    <span className="size-4 rounded-full border-2 border-white/40 border-r-transparent animate-spin" />
+                    Sending…
+                  </span>
+                ) : (
+                  <span className="inline-flex items-center gap-2">
+                    Send Message <ArrowRight className="h-4 w-4" />
+                  </span>
+                )}
               </button>
               <span className="text-xs text-foreground/60">We’ll respond within 24 hours during business days</span>
             </motion.div>
+
+            {/* tiny success hint (demo) */}
+            <AnimatePresence>
+              {submitting === false && (
+                <motion.div
+                  key="hint"
+                  initial={{ opacity: 0, y: 6 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0 }}
+                  className="mt-3 text-xs text-emerald-600 inline-flex items-center gap-1"
+                >
+                  <CheckCircle2 className="h-4 w-4" /> Your message will be routed to the right team.
+                </motion.div>
+              )}
+            </AnimatePresence>
           </motion.form>
 
           {/* --- Locations / Quick help --- */}
@@ -276,21 +299,23 @@ export default function ContactPage() {
               <div className="mt-4 grid gap-5">
                 <div className="rounded-lg border border-black/5 dark:border-white/10 p-4">
                   <h5 className="font-medium">India Headquarters</h5>
-                  <p className="text-sm text-foreground/70 mt-1">Innovation Center, Technology Park, Mumbai, Maharashtra 400001</p>
-                  <div className="mt-3 text-sm">
-                    <div>📞 +91 22 1234 5678</div>
-                    <div>✉️ india@sensorisch.com</div>
-                    <div className="text-foreground/70">🕘 9:00 AM – 6:00 PM IST (Mon–Fri)</div>
+                  <p className="text-sm text-foreground/70 mt-1">
+                    Innovation Center, Technology Park, Mumbai, Maharashtra 400001
+                  </p>
+                  <div className="mt-3 text-sm space-y-1">
+                    <div className="inline-flex items-center gap-2"><Phone className="h-4 w-4" /> +91 22 1234 5678</div>
+                    <div className="inline-flex items-center gap-2"><Mail className="h-4 w-4" /> india@sensorisch.com</div>
+                    <div className="inline-flex items-center gap-2 text-foreground/70"><Clock className="h-4 w-4" /> 9:00 AM – 6:00 PM IST (Mon–Fri)</div>
                   </div>
                 </div>
 
                 <div className="rounded-lg border border-black/5 dark:border-white/10 p-4">
                   <h5 className="font-medium">GCC Operations</h5>
                   <p className="text-sm text-foreground/70 mt-1">Business District, Dubai, UAE</p>
-                  <div className="mt-3 text-sm">
-                    <div>📞 +971 4 123 4567</div>
-                    <div>✉️ gcc@sensorisch.com</div>
-                    <div className="text-foreground/70">🕘 9:00 AM – 6:00 PM GST (Sun–Thu)</div>
+                  <div className="mt-3 text-sm space-y-1">
+                    <div className="inline-flex items-center gap-2"><Phone className="h-4 w-4" /> +971 4 123 4567</div>
+                    <div className="inline-flex items-center gap-2"><Mail className="h-4 w-4" /> gcc@sensorisch.com</div>
+                    <div className="inline-flex items-center gap-2 text-foreground/70"><Clock className="h-4 w-4" /> 9:00 AM – 6:00 PM GST (Sun–Thu)</div>
                   </div>
                 </div>
               </div>
@@ -305,16 +330,27 @@ export default function ContactPage() {
               className="rounded-2xl bg-gradient-to-br from-primary/10 to-transparent ring-1 ring-primary/20 p-6"
             >
               <h4 className="text-lg font-semibold">Need Immediate Assistance?</h4>
-              <p className="text-sm text-foreground/70 mt-1">For urgent inquiries or immediate support, choose from these options</p>
+              <p className="text-sm text-foreground/70 mt-1">
+                For urgent inquiries or immediate support, choose from these options
+              </p>
               <div className="mt-4 grid gap-3">
-                <a className="inline-flex items-center gap-2 rounded-md bg-white dark:bg-white/10 px-3 py-2 text-sm font-medium ring-1 ring-black/5 dark:ring-white/10 hover:bg-white/90 transition" href="tel:+912212345678">
-                  Call Us Directly • +91 22 1234 5678
+                <a
+                  className="inline-flex items-center gap-2 rounded-md bg-white dark:bg-white/10 px-3 py-2 text-sm font-medium ring-1 ring-black/5 dark:ring-white/10 hover:bg-white/90 transition"
+                  href="tel:+912212345678"
+                >
+                  <Phone className="h-4 w-4" /> Call Us Directly • +91 22 1234 5678
                 </a>
-                <a className="inline-flex items-center gap-2 rounded-md bg-white dark:bg-white/10 px-3 py-2 text-sm font-medium ring-1 ring-black/5 dark:ring-white/10 hover:bg-white/90 transition" href="mailto:urgent@sensorisch.com">
-                  Priority Email • urgent@sensorisch.com
+                <a
+                  className="inline-flex items-center gap-2 rounded-md bg-white dark:bg-white/10 px-3 py-2 text-sm font-medium ring-1 ring-black/5 dark:ring-white/10 hover:bg-white/90 transition"
+                  href="mailto:urgent@sensorisch.com"
+                >
+                  <Mail className="h-4 w-4" /> Priority Email • urgent@sensorisch.com
                 </a>
-                <a className="inline-flex items-center gap-2 rounded-md bg-primary px-3 py-2 text-sm font-semibold text-white shadow hover:bg-primary/90 transition" href="#contact-form">
-                  Emergency Support • 24/7 (Clients)
+                <a
+                  className="inline-flex items-center gap-2 rounded-md bg-primary px-3 py-2 text-sm font-semibold text-white shadow hover:bg-primary/90 transition"
+                  href="#contact-form"
+                >
+                  <Clock className="h-4 w-4" /> Emergency Support • 24/7 (Clients)
                 </a>
               </div>
             </motion.div>
@@ -339,15 +375,14 @@ export default function ContactPage() {
             {FAQ.map((f, i) => {
               const active = openIdx === i;
               return (
-                <div
-                  key={f.q}
-                  className="border-b border-black/5 dark:border-white/10 py-4"
-                >
+                <div key={f.q} className="border-b border-black/5 dark:border-white/10 py-4">
                   <button
                     onClick={() => setOpenIdx(active ? -1 : i)}
                     className="flex w-full items-center justify-between gap-4 text-left"
                   >
-                    <span className="text-sm md:text-base font-medium">{f.q}</span>
+                    <span className="inline-flex items-center gap-2 text-sm md:text-base font-medium">
+                      <HelpCircle className="h-5 w-5 text-primary" /> {f.q}
+                    </span>
                     <motion.span
                       animate={{ rotate: active ? 180 : 0 }}
                       className="h-6 w-6 grid place-items-center rounded-full bg-primary/10 text-primary"
@@ -377,5 +412,51 @@ export default function ContactPage() {
         </div>
       </section>
     </main>
+  );
+}
+
+/* ------------------ small UI bits ------------------ */
+function Field({ label, placeholder, type = "text", icon: Icon }) {
+  return (
+    <motion.div variants={fadeUp} className="space-y-1">
+      <label className="text-sm font-medium">{label}</label>
+      <div className="relative">
+        {Icon && <Icon className="absolute left-3 top-[10px] h-4 w-4 text-foreground/40" />}
+        <input
+          type={type}
+          className={`w-full rounded-md border border-black/10 dark:border-white/10 bg-transparent px-3 py-2 outline-none focus:ring-2 ring-primary/30 ${Icon ? "pl-9" : ""}`}
+          placeholder={placeholder}
+        />
+      </div>
+    </motion.div>
+  );
+}
+
+function Select({ label, options = [] }) {
+  return (
+    <motion.div variants={fadeUp} className="space-y-1">
+      <label className="text-sm font-medium">{label}</label>
+      <select className="w-full rounded-md border border-black/10 dark:border-white/10 bg-transparent px-3 py-2 outline-none focus:ring-2 ring-primary/30">
+        {options.map((o) => (
+          <option key={o}>{o}</option>
+        ))}
+      </select>
+    </motion.div>
+  );
+}
+
+function TextArea({ label, rows = 4, placeholder = "", className = "", icon: Icon }) {
+  return (
+    <motion.div variants={fadeUp} className={`space-y-1 ${className}`}>
+      <label className="text-sm font-medium">{label}</label>
+      <div className="relative">
+        {Icon && <Icon className="absolute left-3 top-3 h-4 w-4 text-foreground/40" />}
+        <textarea
+          rows={rows}
+          className={`w-full rounded-md border border-black/10 dark:border-white/10 bg-transparent px-3 py-2 outline-none focus:ring-2 ring-primary/30 ${Icon ? "pl-9" : ""}`}
+          placeholder={placeholder}
+        />
+      </div>
+    </motion.div>
   );
 }

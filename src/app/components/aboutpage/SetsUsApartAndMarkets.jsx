@@ -113,7 +113,7 @@ export default function SetsUsApartAndMarkets() {
             blurb="Primary market with comprehensive local supply chain, regulatory expertise, and deep understanding of regional taste preferences."
           />
           <MarketCard
-            heading="GCC Region 🇸🇦🇦🇪"
+            heading="GCC Region 🇸🇦 🇦🇪"
             highlightWidth="w-20"
             blurb="Growing presence with specialized support for Gulf markets, including halal certification and regional compliance."
           />
