@@ -48,10 +48,10 @@ export default function BriefToScale() {
             viewport={{ once: true, amount: 0.3 }}
             whileHover={{ scale: 1.02, rotateZ: -0.4 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
-            className="order-1 md:order-none overflow-hidden shadow-xl rounded-2xl"
+            className="order-1 md:order-none overflow-hidden shadow-xl rounded-lg"
           >
             <img
-              src="/home-banner-3.png" // <- replace with your asset
+              src="/assets/home-banner-3.png" // <- replace with your asset
               alt="Cheese stack"
               className="w-full h-full object-cover"
             />
@@ -84,7 +84,7 @@ export default function BriefToScale() {
               />
             </motion.div>
 
-            <ol className="w-full space-y-10 md:space-y-12">
+            <ol className="w-full space-y-12 md:space-y-12">
               {steps.map((s) => (
                 <motion.li key={s.n} variants={fadeUp} className="relative pl-16">
                   {/* number badge (spring pop) */}
@@ -101,7 +101,7 @@ export default function BriefToScale() {
                   </motion.div>
 
                   {/* text block */}
-                  <div className="space-y-1">
+                  <div className="space-y-6">
                     <h3 className="text-4xl section-title">{s.title}</h3>
                     <p className="section-subtitle">{s.desc}</p>
                   </div>

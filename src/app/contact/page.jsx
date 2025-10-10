@@ -15,8 +15,7 @@ export default function ContactUs() {
           blurb:
             "Ready to transform your products with science-led flavour solutions? Our experts are here to guide you from concept to market success.",
           image: { src: "/hero-banner.png", alt: "Lab and product banner" },
-          //  primary: { href: "/#solutions", label: "Explore Solutions" },
-          //  secondary: { href: "/#contact", label: "Request Samples" },
+         
 
           scrollToId: "why-sensorisch",
 

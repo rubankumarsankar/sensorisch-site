@@ -38,7 +38,7 @@ const FEATURES = [
 
 export default function WhyChooseSenso() {
   return (
-    <section className="relative overflow-hidden bg-background text-foreground">
+    <section className="relative overflow-hidden bg-background text-foreground py-10">
       <div className="section-container">
         {/* Header */}
         <motion.div

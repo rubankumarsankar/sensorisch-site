@@ -19,7 +19,7 @@ export default function AboutUS() {
           highlight: "Culinary Craft",
           blurb:
             "We blend rigorous R&D with culinary artistry to create end-to-end taste and aroma experiences that make everyday products extraordinary.",
-          image: { src: "/hero-banner.png", alt: "Lab and product banner" },
+          image: { src: "/banners/about.png", alt: "Lab and product banner" },
 
           scrollToId: "why-sensorisch",
 

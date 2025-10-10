@@ -23,7 +23,7 @@ export default function Home() {
           primary: { href: "/applications-solutions", label: "Explore Solutions" },
           secondary: { href: "/contact", label: "Request Samples" },
 
-          image: { src: "/hero-banner.png", alt: "Lab and product banner" },
+          image: { src: "/banners/home.png", alt: "Lab and product banner" },
 
           scrollToId: "why-sensorisch",
 

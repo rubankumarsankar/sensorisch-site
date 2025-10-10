@@ -8,12 +8,12 @@ import { Menu, X } from "lucide-react";
 
 const NAV = [
   { label: "Home", href: "/" },
-  { label: "About Us", href: "/about" },
+  { label: "About", href: "/about" },
   { label: "Applications & Solutions", href: "/applications-solutions" },
-  { label: "Bespoke", href: "/bespoke-solutions" },
-  { label: "Portfolio", href: "/our-portfolio" },
-  { label: "News & Trends", href: "/news-trends" },
-  { label: "Contact Us", href: "/contact" },
+  { label: "Bespoke", href: "/bespoke" },
+  { label: "Portfolio", href: "/portfolio" },
+  { label: "Insights", href: "/insights" },
+  { label: "Contact", href: "/contact" },
 ];
 
 export default function Header() {

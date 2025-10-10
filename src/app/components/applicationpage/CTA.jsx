@@ -12,21 +12,10 @@ export default function ProfileCTA({
   primaryLabel = "Request Samples",
   secondaryHref = "/consultation/schedule",
   secondaryLabel = "Schedule Consultation",
- 
 }) {
   return (
-    <section className="relative isolate w-full overflow-hidden section-container">
-      {/* Gradient background + soft lights */}
-      <div className="absolute inset-0 -z-10 bg-primary" />
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -top-32 -left-32 size-[36rem] rounded-full blur-3xl opacity-25 bg-white/20" />
-        <div className="absolute -bottom-40 -right-24 size-[38rem] rounded-full blur-3xl opacity-15 bg-black/20" />
-      </div>
-
-      {/* Subtle noise + vignette */}
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(90%_60%_at_50%_0%,rgba(255,255,255,0.12),transparent_60%)]" />
-
-      <div className="section-container py-14 md:py-20 text-center text-white">
+    <section className="relative  isolate w-full overflow-hidden">
+      <div className="section-container py-14 md:py-20 text-center bg-primary text-white">
         {/* Heading */}
         <motion.h2
           initial={{ opacity: 0, y: 8 }}
@@ -89,10 +78,8 @@ export default function ProfileCTA({
           </motion.a>
         </motion.div>
       </div>
+            <div className="border border-t-white/20 section-container"/>
 
-      {/* Decorative corner ribbons */}
-      <div className="pointer-events-none absolute left-0 top-0 -z-10 h-24 w-24 bg-gradient-to-br from-white/20 to-transparent" />
-      <div className="pointer-events-none absolute right-0 bottom-0 -z-10 h-24 w-24 bg-gradient-to-tl from-white/10 to-transparent" />
     </section>
   );
 }

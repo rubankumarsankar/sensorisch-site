@@ -70,9 +70,9 @@ export default function SensoRangeHero({
   iconSrc = "/icons/icon-4.png", // badge icon image (left of badge text)
   imageAlt = "SensoBake application visual",
 
-  primaryHref = "#request",
+  primaryHref = "#",
   primaryLabel = "Request Sample",
-  secondaryHref = "#tech",
+  secondaryHref = "#",
   secondaryLabel = "Technical Sheet",
 }) {
   const contentOrder = reverse ? "order-1 lg:order-2" : "order-1 lg:order-1";

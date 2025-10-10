@@ -26,7 +26,7 @@ export default function AboutSensorisch() {
           >
             {/* Replace src with your asset */}
             <img
-              src="/our-story.png"
+              src="/assets/our-story.png"
               alt="Sensorisch R&D and application lab"
               className="h-94 w-full object-cover"
             />

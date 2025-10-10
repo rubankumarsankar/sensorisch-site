@@ -13,7 +13,7 @@ const ranges = [
     title: "SensoBake",
     blurb:
       "Flavours that enrich cakes, cookies, pastries, and breads with oven-true performance.",
-    imageSrc: "/applicatio-1.png",
+    imageSrc: "/assets/applicatio-1.png",
     iconSrc: "/icons/bakery.png",
     benefits: [
       {
@@ -53,9 +53,9 @@ const ranges = [
         cls: "bg-orange-50 text-orange-600 ring-orange-200",
       },
     ],
-    primaryHref: "/samples/request",
+    primaryHref: "#",
     primaryLabel: "Request Sample",
-    secondaryHref: "/downloads/techsheet",
+    secondaryHref: "#",
     secondaryLabel: "Technical Sheet",
   },
   {
@@ -64,7 +64,7 @@ const ranges = [
     title: "SensoTreat",
     blurb:
       "Playful and nostalgic profiles with controlled release for long-lasting flavour.",
-    imageSrc: "/applicatio-2.png",
+    imageSrc: "/assets/applicatio-2.png",
     iconSrc: "/icons/confectionery.png",
     benefits: [
       {
@@ -98,9 +98,9 @@ const ranges = [
       { t: "Chocolates", cls: "bg-stone-100 text-stone-700 ring-stone-300" },
       { t: "Chewing Gum", cls: "bg-indigo-50 text-indigo-700 ring-indigo-200" },
     ],
-    primaryHref: "/samples/request",
+    primaryHref: "#",
     primaryLabel: "Request Sample",
-    secondaryHref: "/downloads/techsheet",
+    secondaryHref: "#",
     secondaryLabel: "Technical Sheet",
   },
   {
@@ -109,7 +109,7 @@ const ranges = [
     title: "SensoCreme",
     blurb:
       "Creamy, authentic notes for ice creams, yoghurts, milkshakes, and cheeses with heat-stable options.",
-    imageSrc: "/applicatio-3.png",
+    imageSrc: "/assets/applicatio-3.png",
     iconSrc: "/icons/dairy.png",
     benefits: [
       {
@@ -149,9 +149,9 @@ const ranges = [
         cls: "bg-amber-50 text-amber-700 ring-amber-200",
       },
     ],
-    primaryHref: "/samples/request",
+    primaryHref: "#",
     primaryLabel: "Request Sample",
-    secondaryHref: "/downloads/techsheet",
+    secondaryHref: "#",
     secondaryLabel: "Technical Sheet",
   },
   {
@@ -160,7 +160,7 @@ const ranges = [
     title: "SensoSip",
     blurb:
       "Architectures tuned for clarity, fizz stability, and shelf-life resilience across beverages.",
-    imageSrc: "/applicatio-4.png",
+    imageSrc: "/assets/applicatio-4.png",
     iconSrc: "/icons/beverage.png",
     benefits: [
       {
@@ -200,9 +200,9 @@ const ranges = [
         cls: "bg-emerald-50 text-emerald-700 ring-emerald-200",
       },
     ],
-    primaryHref: "/samples/request",
+    primaryHref: "#",
     primaryLabel: "Request Sample",
-    secondaryHref: "/downloads/techsheet",
+    secondaryHref: "#",
     secondaryLabel: "Technical Sheet",
   },
   {
@@ -211,7 +211,7 @@ const ranges = [
     title: "Senso+",
     blurb:
       "Palatable profiles for syrups and chewables with bitterness modulation and aftertaste control.",
-    imageSrc: "/applicatio-5.png",
+    imageSrc: "/assets/applicatio-5.png",
     iconSrc: "/icons/pharma.png",
     benefits: [
       {
@@ -254,9 +254,9 @@ const ranges = [
         cls: "bg-emerald-50 text-emerald-700 ring-emerald-200",
       },
     ],
-    primaryHref: "/samples/request",
+    primaryHref: "#",
     primaryLabel: "Request Sample",
-    secondaryHref: "/downloads/techsheet",
+    secondaryHref: "#",
     secondaryLabel: "Technical Sheet",
   },
   {
@@ -265,7 +265,7 @@ const ranges = [
     title: "SensoActive",
     blurb:
       "Flavours that enhance proteins, botanicals, minerals, and vitamins while masking off-notes.",
-    imageSrc: "/applicatio-6.png",
+    imageSrc: "/assets/applicatio-6.png",
     iconSrc: "/icons/nutra.png",
     benefits: [
       {
@@ -305,9 +305,9 @@ const ranges = [
         cls: "bg-orange-50 text-orange-700 ring-orange-200",
       },
     ],
-    primaryHref: "/samples/request",
+    primaryHref: "#",
     primaryLabel: "Request Sample",
-    secondaryHref: "/downloads/techsheet",
+    secondaryHref: "#",
     secondaryLabel: "Technical Sheet",
   },
   {
@@ -316,7 +316,7 @@ const ranges = [
     title: "SensoSpice",
     blurb:
       "Authentic spice & herb signatures that add richness to soups, sauces, snacks, and seasonings.",
-    imageSrc: "/applicatio-7.png",
+    imageSrc: "/assets/applicatio-7.png",
     iconSrc: "/icons/spice.png",
     benefits: [
       {
@@ -350,9 +350,9 @@ const ranges = [
       { t: "Soups", cls: "bg-orange-50 text-orange-700 ring-orange-200" },
       { t: "Snacks", cls: "bg-yellow-50 text-yellow-700 ring-yellow-200" },
     ],
-    primaryHref: "/samples/request",
+    primaryHref: "#",
     primaryLabel: "Request Sample",
-    secondaryHref: "/downloads/techsheet",
+    secondaryHref: "#",
     secondaryLabel: "Technical Sheet",
   },
   {
@@ -361,7 +361,7 @@ const ranges = [
     title: "SensoCare",
     blurb:
       "Cooling, refreshing notes for toothpastes, mouthwashes, and personal-care applications.",
-    imageSrc: "/applicatio-8.png",
+    imageSrc: "/assets/applicatio-8.png",
     iconSrc: "/icons/oralcare.png",
     benefits: [
       {
@@ -398,9 +398,9 @@ const ranges = [
         cls: "bg-fuchsia-50 text-fuchsia-700 ring-fuchsia-200",
       },
     ],
-    primaryHref: "/samples/request",
+    primaryHref: "#",
     primaryLabel: "Request Sample",
-    secondaryHref: "/downloads/techsheet",
+    secondaryHref: "#",
     secondaryLabel: "Technical Sheet",
   },
   {
@@ -409,7 +409,7 @@ const ranges = [
     title: "SensoNat",
     blurb:
       "Nature-derived flavours & colours for clean-label ambitions with extracts and distillates.",
-    imageSrc: "/applicatio-9.png",
+    imageSrc: "/assets/applicatio-9.png",
     iconSrc: "/icons/natural.png",
     benefits: [
       {
@@ -449,9 +449,9 @@ const ranges = [
       { t: "Natural Beverages", cls: "bg-teal-50 text-teal-700 ring-teal-200" },
       { t: "Premium Ranges", cls: "bg-amber-50 text-amber-700 ring-amber-200" },
     ],
-    primaryHref: "/contact",
+    primaryHref: "#",
     primaryLabel: "Request Sample",
-    secondaryHref: "/contact",
+    secondaryHref: "#",
     secondaryLabel: "Technical Sheet",
   },
 ];
@@ -466,9 +466,9 @@ export default function ApplicationSolutions() {
           highlight: "Application Ranges",
           blurb:
             "Ready-to-apply systems that package our expertise into risk-reducing, time-saving solutions for faster product development and market success.",
-          image: { src: "/hero-banner.png", alt: "Lab and product banner" },
-          primary: { href: "/#solutions", label: "Explore Solutions" },
-          secondary: { href: "/#contact", label: "Request Samples" },
+          image: { src: "/banners/application.png", alt: "Lab and product banner" },
+          primary: { href: "/application-solutions", label: "Explore Solutions" },
+          secondary: { href: "/contact", label: "Request Samples" },
 
           scrollToId: "why-sensorisch",
 

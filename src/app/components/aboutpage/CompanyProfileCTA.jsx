@@ -14,9 +14,6 @@ processes, and how we can support your product development goals.`,
 }) {
   return (
     <section className="relative isolate w-full bg-primary section-container text-white">
-      {/* soft vignette for depth */}
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(90%_60%_at_50%_0%,rgba(255,255,255,0.12),transparent_60%)]" />
-
       <div className="section-container py-12 md:py-16 text-center">
         {/* heading */}
         <motion.h2
@@ -57,11 +54,12 @@ processes, and how we can support your product development goals.`,
           >
             {buttonLabel}
             {/* download icon */}
-            
+
             <HiArrowDownTray className="w-8 h-8" />
           </a>
         </motion.div>
       </div>
+      <div className="border border-b-white/20" />
     </section>
   );
 }
