@@ -1,4 +1,3 @@
-// app/loading.jsx
 "use client";
 
 import SensorischWordLoader from "./components/SensorischLoader";

@@ -3,7 +3,6 @@ import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ScrollButton from "./components/ScrollButton";
-import SensorischLoader from "./components/SensorischLoader";
 import SplashLoader from "./components/SplashLoader";
 
 const geistSans = Geist({
@@ -34,10 +33,9 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-          <SplashLoader ms={1400} />
+          <SplashLoader ms={2400} />
 
         <Header />
-        {/* <SensorischLoader /> */}
         <ScrollButton />
         {children}
         <Footer />

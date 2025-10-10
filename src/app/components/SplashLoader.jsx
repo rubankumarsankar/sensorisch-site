@@ -1,11 +1,11 @@
-// app/components/SplashLoader.jsx
 "use client";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import SensorischSLoader from "./SensorischLoader";
+import SensorischWordLoader from "./SensorischLoader";
 
-export default function SplashLoader({ ms = 1200 }) {
+export default function SplashLoader({ ms = 1600 }) {
   const [show, setShow] = useState(true);
+
   useEffect(() => {
     const t = setTimeout(() => setShow(false), ms);
     return () => clearTimeout(t);
@@ -19,8 +19,9 @@ export default function SplashLoader({ ms = 1200 }) {
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.45, ease: "easeOut" }}
+          aria-hidden
         >
-          <SensorischSLoader size={120} stroke={10} speed={3} />
+          <SensorischWordLoader />
         </motion.div>
       )}
     </AnimatePresence>

@@ -1,7 +1,10 @@
 "use client";
 
-import HeroSection from "../components/aboutpage/heroSection";
 import ContactPage from "../components/contactpage/ContactPage";
+import FAQSection from "../components/contactpage/FAQSection";
+import FormSection from "../components/contactpage/FormSection";
+import LocationsPanel from "../components/contactpage/LocationsPanel";
+import MethodsSection from "../components/contactpage/MethodsSection";
 import HeroCompnonet from "../components/Hero";
 
 export default function ContactUs() {
@@ -30,7 +33,11 @@ export default function ContactUs() {
           containerClassName: "section-container py-16 md:py-24",
         }}
       />
-      <ContactPage />
+      {/* <ContactPage /> */}
+      <MethodsSection />
+      <FormSection />
+      <LocationsPanel />
+      <FAQSection />
     </>
   );
 }
