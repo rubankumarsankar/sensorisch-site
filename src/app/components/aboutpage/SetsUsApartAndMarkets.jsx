@@ -71,7 +71,7 @@ export default function SetsUsApartAndMarkets() {
             {/* 2 */}
             <Feature
               iconSrc={ICONS.hand}
-              title="Senso™ Ready Systems"
+              title="Senso Ready Systems"
               blurb="Pre-validated application ranges that reduce development time and risk."
             />
 

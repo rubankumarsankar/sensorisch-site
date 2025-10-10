@@ -59,7 +59,22 @@ processes, and how we can support your product development goals.`,
           </a>
         </motion.div>
       </div>
-      <div className="border border-b-white/20" />
+      <motion.div
+        aria-hidden
+        className=""
+        initial={{ opacity: 0, scaleX: 0 }}
+        whileInView={{ opacity: 1, scaleX: 1 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <motion.div
+          className="h-px w-full bg-white/20 origin-left"
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 1, ease: "easeInOut" }}
+        />
+      </motion.div>
     </section>
   );
 }

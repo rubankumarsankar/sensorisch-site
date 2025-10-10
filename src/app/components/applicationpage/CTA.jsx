@@ -6,7 +6,7 @@ import { HiArrowDownTray, HiCalendarDays } from "react-icons/hi2";
 
 export default function ProfileCTA({
   title = "Ready to Accelerate Your Product Development?",
-  blurb = `Choose from our proven Senso™ ranges or partner with us for bespoke solutions tailored to your unique requirements.`,
+  blurb = `Choose from our proven Senso ranges or partner with us for bespoke solutions tailored to your unique requirements.`,
   // Primary actions
   primaryHref = "/samples/request",
   primaryLabel = "Request Samples",
@@ -14,8 +14,8 @@ export default function ProfileCTA({
   secondaryLabel = "Schedule Consultation",
 }) {
   return (
-    <section className="relative  isolate w-full overflow-hidden">
-      <div className="section-container py-14 md:py-20 text-center bg-primary text-white">
+    <section className="relative section-container bg-primary w-full overflow-hidden">
+      <div className=" py-14 md:py-20 text-center text-white">
         {/* Heading */}
         <motion.h2
           initial={{ opacity: 0, y: 8 }}
@@ -78,8 +78,22 @@ export default function ProfileCTA({
           </motion.a>
         </motion.div>
       </div>
-            <div className="border border-t-white/20 section-container"/>
-
+      <motion.div
+        aria-hidden
+        className="section-container"
+        initial={{ opacity: 0, scaleX: 0 }}
+        whileInView={{ opacity: 1, scaleX: 1 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <motion.div
+          className="h-px w-full bg-white/20 origin-left"
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 1, ease: "easeInOut" }}
+        />
+      </motion.div>
     </section>
   );
 }

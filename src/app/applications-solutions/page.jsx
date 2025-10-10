@@ -462,7 +462,7 @@ export default function ApplicationSolutions() {
       <HeroCompnonet
         data={{
           eyebrow: "Applications & Solutions",
-          title: "Senso™ ",
+          title: "Senso ",
           highlight: "Application Ranges",
           blurb:
             "Ready-to-apply systems that package our expertise into risk-reducing, time-saving solutions for faster product development and market success.",

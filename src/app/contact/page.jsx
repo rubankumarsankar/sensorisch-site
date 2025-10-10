@@ -14,7 +14,7 @@ export default function ContactUs() {
           highlight: "Extraordinary",
           blurb:
             "Ready to transform your products with science-led flavour solutions? Our experts are here to guide you from concept to market success.",
-          image: { src: "/hero-banner.png", alt: "Lab and product banner" },
+          image: { src: "/banners/contact.png", alt: "Lab and product banner" },
          
 
           scrollToId: "why-sensorisch",

@@ -52,14 +52,14 @@ export default function WhyChooseSenso() {
             variants={fadeUp}
             className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-foreground/5 px-3 py-1 text-xs font-semibold"
           >
-            Why Choose Senso™ Ranges?
+            Why Choose Senso Ranges?
           </motion.span> */}
 
           <motion.h2
             variants={fadeUp}
             className="mt-3 section-title text-black"
           >
-            Why Choose <span className="text-primary">Senso™ </span> Ranges?
+            Why Choose <span className="text-primary">Senso </span> Ranges?
             <motion.span
               aria-hidden
               initial={{ scaleX: 0 }}
@@ -74,7 +74,7 @@ export default function WhyChooseSenso() {
             variants={fadeUp}
             className="mt-4 text-base md:text-lg text-muted-foreground"
           >
-           Each Senso™ family combines deep application knowledge with market-proven formulations, delivering consistent results that scale from pilot to production.
+           Each Senso family combines deep application knowledge with market-proven formulations, delivering consistent results that scale from pilot to production.
           </motion.p>
         </motion.div>
 

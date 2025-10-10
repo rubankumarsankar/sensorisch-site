@@ -45,7 +45,12 @@ export default function ScrollCircleTopBottom() {
   const downOpacity = useTransform(progress, [0.45, 0.50], [1, 0]);
 
   return (
-    <motion.button
+    <>
+    <motion.span
+        style={{ scaleX: progress }}
+        className="fixed left-0 top-0 z-[60] h-0.5 w-full origin-left bg-primary"
+      />
+      <motion.button
       type="button"
       aria-label="Scroll to top or bottom"
       onClick={handleClick}
@@ -53,6 +58,7 @@ export default function ScrollCircleTopBottom() {
                  inline-flex items-center justify-center"
       style={{ opacity: btnOpacity, scale: btnScale }}
     >
+      
       {/* Progress Ring */}
       <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} className="block">
         {/* Background track */}
@@ -105,6 +111,7 @@ export default function ScrollCircleTopBottom() {
           <FaArrowUp className="h-4 w-4" />
         </motion.span>
       </span>
-    </motion.button>
+    </motion.button></>
+    
   );
 }

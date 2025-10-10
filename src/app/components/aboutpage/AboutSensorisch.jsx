@@ -28,7 +28,7 @@ export default function AboutSensorisch() {
             <img
               src="/assets/our-story.png"
               alt="Sensorisch R&D and application lab"
-              className="h-94 w-full object-cover"
+              className="h-110 w-full object-cover"
             />
           </motion.figure>
 
@@ -73,7 +73,7 @@ export default function AboutSensorisch() {
             >
               <a
                 href="#solutions"
-                className="inline-flex items-center rounded-md bg-primary px-4 py-2 text-sm font-semibold text-white shadow hover:bg-primary/90 transition"
+                className="inline-flex items-center rounded-sm bg-primary px-4 py-2 text-sm font-semibold text-white shadow hover:bg-primary/90 transition"
               >
                 Explore Our Solutions
               </a>

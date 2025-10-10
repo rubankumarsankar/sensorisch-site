@@ -27,7 +27,7 @@ export default function Footer() {
             <div>
               <h4 className="text-2xl font-semibold tracking-tight mb-6">Solutions</h4>
               <ul className="space-y-1 text-lg">
-                <li><a className="hover:opacity-90 transition-opacity" href="#">Senso™ Ranges</a></li>
+                <li><a className="hover:opacity-90 transition-opacity" href="#">Senso Ranges</a></li>
                 <li><a className="hover:opacity-90 transition-opacity" href="#">Bespoke Solutions</a></li>
                 <li><a className="hover:opacity-90 transition-opacity" href="#">Flavours</a></li>
                 <li><a className="hover:opacity-90 transition-opacity" href="#">Natural Colours</a></li>

@@ -111,17 +111,7 @@ export default function ContactPage() {
 
   return (
     <main className="bg-background text-foreground relative overflow-hidden">
-      {/* scroll progress bar */}
-      <motion.span
-        style={{ scaleX: progress }}
-        className="fixed left-0 top-0 z-[60] h-0.5 w-full origin-left bg-gradient-to-r from-primary via-fuchsia-500 to-emerald-500"
-      />
-
-      {/* soft animated background accents */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -top-40 -left-40 size-[32rem] rounded-full blur-3xl opacity-20 bg-gradient-to-br from-primary/40 via-sky-400/30 to-emerald-400/30 animate-pulse" />
-        <div className="absolute -bottom-52 -right-40 size-[36rem] rounded-full blur-3xl opacity-15 bg-gradient-to-tr from-fuchsia-400/30 via-primary/30 to-amber-300/30 animate-[pulse_7s_ease-in-out_infinite]" />
-      </div>
+    
 
       {/* ===== Methods cards ===== */}
       <section className="section">

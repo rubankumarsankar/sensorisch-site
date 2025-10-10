@@ -51,7 +51,7 @@ export default function WhyChooseSection() {
       <div className="section-container">
         {/* Title */}
         <motion.div {...fadeUp(0)} className="mx-auto max-w-3xl text-center">
-          <h2 className="section-title mt-4">Why Choose Sensorisch</h2>
+          <h2 className="section-title text-black  mt-4">Why Choose <span className="text-primary">Sensorisch</span></h2>
         </motion.div>
 
         {/* Features */}

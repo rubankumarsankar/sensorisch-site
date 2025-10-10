@@ -41,11 +41,11 @@ export default function PromoSection() {
               {/* RIGHT: Copy */}
               <div className="sm:col-span-8 p-6 sm:p-8 flex flex-col justify-center text-center sm:text-left">
                 <h2 className="section-title text-black">
-                    Explore the <span className="text-primary"> Senso™ </span>Ranges 
+                    Explore the <span className="text-primary"> Senso </span>Ranges 
                 </h2>
                 <p className="section-paragraph mb-3">
                  Behind every great flavour is great science.
-Senso™ brings together expertise, innovation, and application-specific precision to fast-track your success.
+Senso brings together expertise, innovation, and application-specific precision to fast-track your success.
                 </p>
                 <div className="flex justify-center sm:justify-start">
                   <a
