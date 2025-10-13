@@ -89,7 +89,7 @@ export default function Header() {
               </Link>
             ))}
             <Link
-              href="/samples"
+              href="/contact"
               className="mt-2 inline-flex items-center justify-center rounded-sm bg-primary text-white px-4 py-2 text-base font-semibold shadow hover:bg-primary/90 transition-colors"
               onClick={() => setOpen(false)}
             >
