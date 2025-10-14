@@ -32,7 +32,15 @@ export default function BriefToScale() {
           viewport={{ once: true, amount: 0.4 }}
           className="text-center max-w-2xl mx-auto mb-10"
         >
-          <h2 className="section-title text-primary">From Brief to Scale</h2>
+          <h2 className="section-title text-black">From Brief to <span className="text-primary">Scale</span>
+          <motion.div
+                              initial={{ width: 0 }}
+                              whileInView={{ width: 112 }}
+                              viewport={{ once: true }}
+                              transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+                              className="mx-auto mt-6 h-1 rounded bg-gradient-to-r from-primary to-primary/60"
+                            />
+                            </h2>
           <p className="section-paragraph mt-4 text-black/80">
             We align targets, prototype fast, validate in your matrix, then transfer SOPs for reliable production
           </p>

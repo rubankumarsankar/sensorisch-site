@@ -24,6 +24,13 @@ processes, and how we can support your product development goals.`,
           className="section-title text-white"
         >
           {title}
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: 112 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+            className="mx-auto mt-6 h-1 rounded bg-white"
+          />
         </motion.h2>
 
         {/* blurb */}
@@ -32,7 +39,7 @@ processes, and how we can support your product development goals.`,
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.45, delay: 0.1 }}
-          className="mx-auto mt-3 max-w-2xl text-sm md:text-[15px] leading-relaxed text-white/90"
+          className="mx-auto mt-3 max-w-2xl section-paragraph leading-relaxed text-white/90"
         >
           {blurb}
         </motion.p>

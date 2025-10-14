@@ -28,10 +28,17 @@ export default function SetsUsApartAndMarkets() {
           viewport={{ once: true, amount: 0.35 }}
           className="text-center"
         >
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-primary">
-            What Sets Us Apart
+          <h2 className="section-title text-black">
+            What Sets Us <span className="text-primary">Apart</span>
+            <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: 112 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+                        className="mx-auto mt-6 h-1 rounded bg-gradient-to-r from-primary to-primary/60"
+                      />
           </h2>
-          <p className="mt-3 text-sm md:text-base text-foreground/70 max-w-2xl mx-auto">
+          <p className="mt-3 section-paragraph max-w-2xl mx-auto">
             Science-led development, pre-validated systems, and rigorous quality - built for scale.
           </p>
         </motion.div>
@@ -92,12 +99,19 @@ export default function SetsUsApartAndMarkets() {
           viewport={{ once: true, amount: 0.35 }}
           className="mt-20 md:mt-28 text-center"
         >
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-primary">
-            Our Markets
+          <h2 className="section-title text-black">
+            Our <span className="text-primary">Markets</span> <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: 112 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+            className="mx-auto mt-6 h-1 rounded bg-gradient-to-r from-primary to-primary/60"
+          />
           </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-sm md:text-base text-foreground/80">
-            Serving India with GCC support today-positioned to expand with regulatory readiness.
+          <p className="mt-3 section-paragraph max-w-2xl mx-auto">
+           Serving India with GCC support today-positioned to expand with regulatory readiness.
           </p>
+          
         </motion.div>
 
         <motion.div
@@ -137,8 +151,8 @@ function Feature({ iconSrc, title, blurb }) {
         <div className="absolute inset-0 -z-10 rounded-full bg-black/5 blur-xl dark:bg-white/5" />
       </div>
 
-      <h3 className="mt-4 text-base md:text-lg font-semibold text-primary">{title}</h3>
-      <p className="mt-2 text-sm md:text-base text-foreground/80 max-w-[26rem]">{blurb}</p>
+      <h3 className="mt-4 text-base md:text-lg font-bold text-primary">{title}</h3>
+      <p className="mt-2 section-paragraph max-w-[26rem]">{blurb}</p>
 
       
     </motion.li>
@@ -155,7 +169,7 @@ function MarketCard({ heading, blurb, highlightWidth = "w-14" }) {
       <div className="flex items-center gap-3">
         <h3 className="text-lg md:text-xl font-semibold">{heading}</h3>
       </div>
-      <p className="mt-3 text-sm md:text-base leading-relaxed text-foreground/80">{blurb}</p>
+      <p className="section-paragraph text-base">{blurb}</p>
     </motion.article>
   );
 }

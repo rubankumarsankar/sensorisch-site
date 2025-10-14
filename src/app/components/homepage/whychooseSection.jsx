@@ -42,16 +42,18 @@ export default function WhyChooseSection() {
 
   return (
     <section id="why-sensorisch" className="section relative overflow-hidden bg-background">
-      {/* soft ambient blobs */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -top-40 -right-24 h-80 w-80 rounded-full blur-3xl opacity-25 bg-primary/15" />
-        <div className="absolute -bottom-40 -left-24 h-80 w-80 rounded-full blur-3xl opacity-15 bg-secondary/20" />
-      </div>
 
       <div className="section-container">
         {/* Title */}
         <motion.div {...fadeUp(0)} className="mx-auto max-w-3xl text-center">
-          <h2 className="section-title text-black  mt-4">Why Choose <span className="text-primary">Sensorisch</span></h2>
+          <h2 className="section-title text-black  mt-4">Why Choose <span className="text-primary">Sensorisch</span>
+          <motion.div
+                              initial={{ width: 0 }}
+                              whileInView={{ width: 112 }}
+                              viewport={{ once: true }}
+                              transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+                              className="mx-auto mt-6 h-1 rounded bg-gradient-to-r from-primary to-primary/60"
+                            /></h2>
         </motion.div>
 
         {/* Features */}

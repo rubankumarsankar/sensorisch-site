@@ -43,7 +43,6 @@ const list = { hidden: {}, show: { transition: { staggerChildren: 0.08 } } };
 export default function ValuesSection() {
   return (
     <section className="relative bg-background text-foreground">
-      
       <div className="section-container">
         {/* Header */}
         <motion.div
@@ -53,15 +52,10 @@ export default function ValuesSection() {
           viewport={{ once: true, amount: 0.35 }}
           className="mx-auto max-w-3xl text-center"
         >
-          <span className="inline-flex items-center gap-2 rounded-full border border-black/5 dark:border-white/10 px-4 py-1.5 text-xs font-medium text-foreground/70">
-            Our Values
-          </span>
           <h2 className="mt-4 text-3xl md:text-5xl font-bold tracking-tight">
-            The principles that guide <span className="text-primary">everything we do</span>
+            Our<span className="text-primary"> Values</span>
           </h2>
-          <p className="mt-4 text-base md:text-lg text-foreground/80">
-            From initial concept to final delivery, these beliefs shape our decisions and partnerships.
-          </p>
+          
           {/* underline */}
           <motion.div
             initial={{ width: 0 }}
@@ -70,6 +64,9 @@ export default function ValuesSection() {
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
             className="mx-auto mt-6 h-1 rounded bg-gradient-to-r from-primary to-primary/60"
           />
+          <p className="mt-4 section-paragraph text-center text-black">
+            The principles that guide everything we do, from initial concept to final delivery
+          </p>
         </motion.div>
 
         {/* Values grid */}
@@ -111,7 +108,7 @@ export default function ValuesSection() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
               />
 
-              <p className="text-sm md:text-base text-foreground/80 leading-relaxed">
+              <p className="section-paragraph leading-relaxed">
                 {v.desc}
               </p>
 
@@ -120,7 +117,6 @@ export default function ValuesSection() {
             </motion.article>
           ))}
         </motion.div>
-
       </div>
     </section>
   );

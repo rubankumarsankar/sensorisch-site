@@ -76,7 +76,15 @@ export default function ApplicationExpertise() {
       <div className="section-container">
         {/* Heading */}
         <div className="text-center max-w-2xl mx-auto mb-10">
-          <h2 className="section-title">Our Application Expertise</h2>
+          <h2 className="section-title text-black">Our Application <span className="text-primary">Expertise</span>
+          <motion.div
+                              initial={{ width: 0 }}
+                              whileInView={{ width: 112 }}
+                              viewport={{ once: true }}
+                              transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+                              className="mx-auto mt-6 h-1 rounded bg-gradient-to-r from-primary to-primary/60"
+                            />
+                            </h2>
           <p className="section-paragraph mt-4 text-black/80">
             Specialized solutions across industries with deep application
             knowledge and market-ready systems
