@@ -26,7 +26,6 @@ export default function Insights() {
           containerClassName: "section-container py-16 md:py-24",
         }}
       />
-      
     </>
   );
 }

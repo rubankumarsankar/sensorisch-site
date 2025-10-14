@@ -66,7 +66,7 @@ export default function CompetitiveEdgeSection() {
 
             <motion.p
               variants={fadeUp}
-              className="mt-3 text-center text-sm md:text-base text-foreground/70"
+              className="mt-3 text-center text-sm md:text-base text-black/70"
             >
               With Sensorisch, your brand gets more than flavour - it gets a
               competitive advantage built on precision and trust
@@ -114,7 +114,7 @@ function FeatureItem({ i, Icon, label }) {
         <span className="mt-0.5 grid place-items-center size-7 rounded-md bg-primary/10 text-primary ring-1 ring-primary/20">
           <Icon className="h-4 w-4" />
         </span>
-        <p className="text-sm md:text-[15px] text-foreground/80 leading-relaxed">
+        <p className="text-sm md:text-[15px] text-black/80 leading-relaxed">
           {label}
         </p>
       </div>

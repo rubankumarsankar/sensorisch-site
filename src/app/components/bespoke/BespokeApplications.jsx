@@ -136,7 +136,7 @@ export default function BespokeApplicationsAlt() {
 
           <motion.p
             variants={fadeUp}
-            className="mt-3 text-sm md:text-base text-foreground/70"
+            className="mt-3 text-sm md:text-base text-black/70"
           >
             Custom flavour solutions across industries, tailored to your
             specific product requirements
@@ -225,7 +225,7 @@ function RibbonRow({ index, title, blurb, accent }) {
           transition={{ duration: 1.2, ease: "easeInOut" }}
           className="pointer-events-none absolute inset-y-0 -left-1/3 w-1/2 skew-x-12 bg-white/20"
         />
-        <p className="relative p-5 md:p-6 text-sm md:text-base text-foreground/75 leading-relaxed">
+        <p className="relative p-5 md:p-6 text-sm md:text-base text-black/75 leading-relaxed">
           {blurb}
         </p>
 

@@ -4,6 +4,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ScrollButton from "./components/ScrollButton";
 import SplashLoader from "./components/SplashLoader";
+import AnimatedCursor from "./components/AnimatedCursor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,15 +27,12 @@ export default function RootLayout({ children }) {
       <head>
         {/* ✅ Favicons for all platforms */}
         <link rel="icon" href="/favicon.svg" sizes="any" />
-        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/site.webmanifest" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
           <SplashLoader ms={2400} />
-
+        <AnimatedCursor />
         <Header />
         <ScrollButton />
         {children}

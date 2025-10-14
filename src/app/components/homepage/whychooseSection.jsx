@@ -92,7 +92,7 @@ export default function WhyChooseSection() {
                   </div>
 
                   {/* Heading next line */}
-                  <h3 className="mt-4 text-lg font-semibold">{f.title}</h3>
+                  <h3 className="mt-4 section-subtitle">{f.title}</h3>
                 </div>
 
                 {/* Hidden paragraph reveals on hover/focus/expand */}
@@ -104,7 +104,7 @@ export default function WhyChooseSection() {
                     isOpen ? "max-h-40 opacity-100 translate-y-0" : "max-h-0 opacity-0 translate-y-1",
                   ].join(" ")}
                 >
-                  <p className="text-foreground/70 text-center leading-relaxed">{f.desc}</p>
+                  <p className="section-paragraph text-center leading-relaxed">{f.desc}</p>
                 </div>
 
                 {/* underline + chevron indicator */}

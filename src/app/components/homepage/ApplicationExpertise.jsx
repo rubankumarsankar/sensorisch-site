@@ -77,7 +77,7 @@ export default function ApplicationExpertise() {
         {/* Heading */}
         <div className="text-center max-w-2xl mx-auto mb-10">
           <h2 className="section-title">Our Application Expertise</h2>
-          <p className="section-subtitle">
+          <p className="section-paragraph mt-4 text-black/80">
             Specialized solutions across industries with deep application
             knowledge and market-ready systems
           </p>
@@ -158,7 +158,7 @@ export default function ApplicationExpertise() {
               />
 
               {/* description */}
-              <p className="section-subtitle text-black text-2xl mt-5">
+              <p className="section-paragraph text-black/80 mt-5">
                 {c.desc}
               </p>
 
@@ -176,7 +176,7 @@ export default function ApplicationExpertise() {
                     boxShadow: "0 0 14px rgba(210,36,34,0.18)",
                   }}
                   transition={{ type: "spring", stiffness: 320, damping: 18 }}
-                  className={`inline-block rounded-md px-3 py-1 text-sm font-semibold ${c.badgeClass}
+                  className={`inline-block font-primary rounded-md px-3 py-1 text-sm font-semibold ${c.badgeClass}
                 ring-1 ring-black/5 cursor-default`}
                 >
                   {c.badge}

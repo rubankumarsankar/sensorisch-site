@@ -38,7 +38,7 @@ export default function QualityComplianceSection() {
 
           <motion.p
             variants={fadeUp}
-            className="mt-3 text-sm md:text-base text-foreground/70"
+            className="mt-3 text-sm md:text-base text-black/70"
           >
             Every bespoke solution is backed by rigorous quality control,
             comprehensive documentation, and full regulatory compliance to
@@ -50,7 +50,7 @@ export default function QualityComplianceSection() {
             variants={fadeUp}
             className="mx-auto mt-6 max-w-xl rounded-xl border border-black/5 dark:border-white/10 bg-white/50 dark:bg-white/5 backdrop-blur p-4"
           >
-            <p className="text-xs md:text-sm text-foreground/75">
+            <p className="text-xs md:text-sm text-black/75">
               <span className="font-semibold text-primary">
                 Aligned by design:
               </span>{" "}
@@ -153,7 +153,7 @@ function Feature({ Icon, title, points, accent = "emerald" }) {
         </span>
         <div className="min-w-0">
           <h3 className="text-base md:text-lg font-semibold">{title}</h3>
-          <ul className="mt-2 space-y-1.5 text-sm text-foreground/75">
+          <ul className="mt-2 space-y-1.5 text-sm text-black/75">
             {points.map((p) => (
               <li key={p} className="flex items-center gap-2">
                 <span className={`size-1.5 rounded-full ${tokens.dot}`} />

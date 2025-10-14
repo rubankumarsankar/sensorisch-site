@@ -33,7 +33,7 @@ export default function BriefToScale() {
           className="text-center max-w-2xl mx-auto mb-10"
         >
           <h2 className="section-title text-primary">From Brief to Scale</h2>
-          <p className="section-subtitle">
+          <p className="section-paragraph mt-4 text-black/80">
             We align targets, prototype fast, validate in your matrix, then transfer SOPs for reliable production
           </p>
         </motion.div>
@@ -103,7 +103,7 @@ export default function BriefToScale() {
                   {/* text block */}
                   <div className="space-y-6">
                     <h3 className="text-4xl section-title">{s.title}</h3>
-                    <p className="section-subtitle">{s.desc}</p>
+                    <p className="section-paragraph text-xl">{s.desc}</p>
                   </div>
                 </motion.li>
               ))}

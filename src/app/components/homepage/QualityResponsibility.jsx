@@ -35,7 +35,7 @@ export default function QualityResponsibility() {
         className="section-container text-center"
       >
         <h2 className="section-title text-primary">Quality & Responsibility</h2>
-        <p className="section-subtitle max-w-3xl mx-auto">
+        <p className="section-paragraph max-w-3xl mx-auto">
           Clean-label guidance, regional compliance, batch consistency, and
           responsible sourcing built into every solution we deliver.
         </p>

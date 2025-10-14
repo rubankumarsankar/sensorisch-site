@@ -33,7 +33,7 @@ export default function Header() {
       "focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50",
       isActive(href)
         ? "bg-primary/10 text-primary ring-primary/30 shadow-[0_8px_24px_-12px_rgba(210,36,34,0.45)]"
-        : "text-foreground/80 hover:text-primary",
+        : "text-black/80 hover:text-primary",
     ].join(" ");
 
   return (
@@ -52,7 +52,7 @@ export default function Header() {
           ))}
           <Link
             href="/samples"
-            className="ml-2 inline-flex items-center rounded-sm bg-primary text-white px-4 py-2 text-sm font-semibold
+            className="ml-2 inline-flex items-center rounded-sm bg-primary font-secondary text-white px-4 py-2 text-sm font-semibold
                        shadow hover:bg-primary/90 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
           >
             Request Samples
@@ -80,8 +80,8 @@ export default function Header() {
                 className={[
                   "rounded-full px-4 py-2 text-base transition-all ring-1",
                   isActive(n.href)
-                    ? "bg-primary/10 text-primary ring-primary/30"
-                    : "text-foreground/90 ring-transparent hover:text-primary hover:ring-primary/30",
+                    ? "bg-primary/10 text-primary font-secondary ring-primary/30"
+                    : "text-black/90 ring-transparent font-secondary hover:text-primary hover:ring-primary/30",
                 ].join(" ")}
                 onClick={() => setOpen(false)}
               >
@@ -90,7 +90,7 @@ export default function Header() {
             ))}
             <Link
               href="/contact"
-              className="mt-2 inline-flex items-center justify-center rounded-sm bg-primary text-white px-4 py-2 text-base font-semibold shadow hover:bg-primary/90 transition-colors"
+              className="mt-2 inline-flex items-center justify-center font-secondary rounded-sm bg-primary text-white px-4 py-2 text-base font-semibold shadow hover:bg-primary/90 transition-colors"
               onClick={() => setOpen(false)}
             >
               Request Samples

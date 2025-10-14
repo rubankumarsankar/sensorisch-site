@@ -22,7 +22,7 @@ export default function ProfileCTA({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.45 }}
-          className="mx-auto max-w-4xl text-3xl md:text-4xl font-extrabold tracking-tight"
+          className="mx-auto max-w-4xl section-title text-white"
         >
           {title}
           <motion.span
@@ -41,7 +41,7 @@ export default function ProfileCTA({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.45, delay: 0.05 }}
-          className="mx-auto mt-4 max-w-2xl text-sm md:text-[15px] leading-relaxed text-white/90"
+          className="mx-auto mt-4 section-paragraph max-w-2xl leading-relaxed text-white/90"
         >
           {blurb}
         </motion.p>

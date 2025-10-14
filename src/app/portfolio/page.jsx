@@ -317,7 +317,7 @@ export default function PortfolioPage() {
                 <div className="text-2xl">{f.emoji}</div>
                 <div>
                   <h3 className="text-lg font-semibold">{f.title}</h3>
-                  <p className="mt-1 text-sm text-foreground/70">{f.blurb}</p>
+                  <p className="mt-1 text-sm text-black/70">{f.blurb}</p>
                 </div>
               </div>
               <ul className="mt-4 flex flex-wrap gap-2">
@@ -365,7 +365,7 @@ export default function PortfolioPage() {
                       </span>
                     )}
                   </h4>
-                  <p className="text-sm text-foreground/70">{f.blurb}</p>
+                  <p className="text-sm text-black/70">{f.blurb}</p>
                 </div>
               </div>
             </motion.div>
@@ -399,7 +399,7 @@ export default function PortfolioPage() {
                     {c.hex}
                   </code>
                 </div>
-                <p className="mt-1 text-sm text-foreground/70">{c.blurb}</p>
+                <p className="mt-1 text-sm text-black/70">{c.blurb}</p>
                 <div className="mt-3 flex items-center gap-3">
                   <button className="rounded-md bg-primary/10 text-primary text-xs font-semibold px-3 py-1.5 ring-1 ring-primary/20 hover:bg-primary/20 transition">
                     Match Color
@@ -422,7 +422,7 @@ export default function PortfolioPage() {
               className="rounded-xl ring-1 ring-black/5 dark:ring-white/10 bg-white/60 dark:bg-white/5 backdrop-blur p-4"
             >
               <h4 className="font-semibold">{f.k}</h4>
-              <p className="text-sm text-foreground/70">{f.blurb}</p>
+              <p className="text-sm text-black/70">{f.blurb}</p>
             </motion.div>
           ))}
         </div>
@@ -454,7 +454,7 @@ export default function PortfolioPage() {
                 className="pointer-events-none absolute inset-y-0 -left-1/3 w-1/2 skew-x-12 bg-white/25"
               />
               <h3 className="text-lg font-semibold">{s.name}</h3>
-              <ul className="mt-3 space-y-1.5 text-sm text-foreground/75">
+              <ul className="mt-3 space-y-1.5 text-sm text-black/75">
                 {s.bullets.map((b) => (
                   <li key={b} className="flex items-center gap-2">
                     <span className="size-1.5 rounded-full bg-primary" />
@@ -508,7 +508,7 @@ export default function PortfolioPage() {
             >
               <div>
                 <h4 className="font-semibold">{d.k}</h4>
-                <p className="text-sm text-foreground/70">{d.sub}</p>
+                <p className="text-sm text-black/70">{d.sub}</p>
               </div>
               <button className="rounded-md bg-white text-primary font-semibold ring-1 ring-primary/20 px-3 py-2 hover:bg-white/90 transition">
                 Order Sample
@@ -552,7 +552,7 @@ export default function PortfolioPage() {
               className="rounded-xl ring-1 ring-black/5 dark:ring-white/10 bg-white/60 dark:bg-white/5 backdrop-blur p-5"
             >
               <h4 className="font-semibold">{s.k}</h4>
-              <p className="text-sm text-foreground/70">{s.sub}</p>
+              <p className="text-sm text-black/70">{s.sub}</p>
             </motion.div>
           ))}
         </div>
@@ -577,7 +577,7 @@ export default function PortfolioPage() {
               className="rounded-xl ring-1 ring-black/5 dark:ring-white/10 bg-white/60 dark:bg-white/5 backdrop-blur p-5"
             >
               <h4 className="font-semibold">{d.k}</h4>
-              <p className="text-sm text-foreground/70">{d.tag}</p>
+              <p className="text-sm text-black/70">{d.tag}</p>
               <div className="mt-3 inline-flex items-center gap-2 rounded-full bg-primary/10 text-primary px-3 py-1 text-xs font-semibold ring-1 ring-primary/20">
                 {d.pill}
               </div>
@@ -651,7 +651,7 @@ function SectionHeader({ eyebrow, title, sub, icon }) {
         {sub && (
           <motion.p
             variants={fadeUp}
-            className="mt-2 text-sm md:text-base text-foreground/70"
+            className="mt-2 text-sm md:text-base text-black/70"
           >
             {sub}
           </motion.p>

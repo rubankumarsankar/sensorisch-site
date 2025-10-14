@@ -1,9 +1,25 @@
 @import "tailwindcss";
 
+
+/* ================== GLOBAL FONTS ================== */
+@font-face {
+  font-family: "Monsart";
+  src: url("/fonts/Montserrat-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PlusJakarta";
+  src: url("/fonts/PlusJakartaSans-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
 /* ---------- Root Color Tokens ---------- */
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --black: #171717;
 
   /* 🎨 Brand Colors */
   --primary: #D22422; 
@@ -19,7 +35,7 @@
 @theme inline {
   /* 🎨 Map colors to Tailwind theme tokens */
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-black: var(--black);
 
   --color-primary: var(--primary);
   --color-primary-light: var(--primary-light);
@@ -29,16 +45,17 @@
   --color-secondary-light: var(--secondary-light);
   --color-secondary-dark: var(--secondary-dark);
 
-  /* 🧩 Fonts */
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+   --font-primary: "PlusJakarta", sans-serif;
+  --font-secondary: "Monsart", sans-serif;
+
+ 
 }
 
 /* ---------- Dark Mode ---------- */
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0a0a0a;
-    --foreground: #ededed;
+    --black: #ededed;
 
     /* Adjust brand shades for dark mode */
     --primary: #D22422;
@@ -46,11 +63,18 @@
   }
 }
 
+html, body {
+  cursor: none;
+}
+a, button, .cursor-hover {
+  cursor: none;
+}
+
 /* ---------- Base Styles ---------- */
 body {
   background: var(--background);
-  color: var(--foreground);
-  font-family: var(--font-geist-sans, Arial, Helvetica, sans-serif);
+  color: var(--black);
+  font-family: var(--font-primary);
 }
 
 
@@ -77,22 +101,22 @@ body {
   /* Eyebrow/overline label above title (optional) */
   .section-eyebrow {
     @apply inline-flex items-center gap-2 rounded-full border border-black/5 dark:border-white/10
-           px-4 py-1.5 text-xs font-medium text-foreground/70;
+           px-4 py-1.5 text-xs font-medium text-black/70;
   }
 
   /* Main section title */
   .section-title {
-    @apply text-3xl md:text-5xl font-bold tracking-tight text-primary;
+    @apply text-3xl md:text-5xl font-bold text-primary font-primary;
   }
 
   /* Optional subtitle right under the title */
   .section-subtitle {
-    @apply mt-2 text-base md:text-lg font-medium text-foreground/80;
+    @apply mt-2 text-lg md:text-2xl font-primary text-black/80;
   }
 
   /* Body copy for narratives */
   .section-paragraph {
-    @apply mt-4 text-base md:text-lg leading-relaxed text-foreground/80;
+    @apply mt-4 text-base md:text-lg leading-relaxed font-secondary text-black/80;
   }
 
   /* Centered stack for hero/intro sections */
