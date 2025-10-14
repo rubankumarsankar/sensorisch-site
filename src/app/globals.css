@@ -63,12 +63,8 @@
   }
 }
 
-html, body {
-  cursor: none;
-}
-a, button, .cursor-hover {
-  cursor: none;
-}
+html, body { cursor: none; }
+a, button, .cursor-hover, input, textarea, [contenteditable] { cursor: none; }
 
 /* ---------- Base Styles ---------- */
 body {

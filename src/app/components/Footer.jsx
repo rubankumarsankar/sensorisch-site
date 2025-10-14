@@ -25,7 +25,7 @@ export default function Footer() {
 
             {/* 2) Solutions */}
             <div>
-              <h4 className="text-2xl font-semibold tracking-tight mb-6">Solutions</h4>
+              <h4 className="text-2xl font-medium tracking-tight mb-6">Solutions</h4>
               <ul className="space-y-1 text-lg">
                 <li><a className="hover:opacity-90 transition-opacity" href="#">Senso Ranges</a></li>
                 <li><a className="hover:opacity-90 transition-opacity" href="#">Bespoke Solutions</a></li>
@@ -36,7 +36,7 @@ export default function Footer() {
 
             {/* 3) Company */}
             <div>
-              <h4 className="text-2xl font-semibold tracking-tight mb-6">Company</h4>
+              <h4 className="text-2xl font-medium tracking-tight mb-6">Company</h4>
               <ul className="space-y-1 text-lg">
                 <li><a className="hover:opacity-90 transition-opacity" href="#">About Sensorisch</a></li>
                 <li><a className="hover:opacity-90 transition-opacity" href="#">News & Trends</a></li>
@@ -47,12 +47,12 @@ export default function Footer() {
 
             {/* 4) Contact + CTA */}
             <div className="lg:justify-self-end">
-              <h4 className="text-2xl font-semibold tracking-tight mb-6">Contact</h4>
+              <h4 className="text-2xl font-medium tracking-tight mb-6">Contact</h4>
               <p className="text-lg/7 mb-8 opacity-95">Ready to start your project?</p>
 
               <a
                 href="/contact"
-                className="inline-block rounded-md bg-white text-primary px-5 py-3 text-lg font-semibold
+                className="inline-block rounded-md bg-white text-primary px-5 py-3 text-lg font-medium
                            shadow-[0_12px_30px_-12px_rgba(0,0,0,0.4)] ring-1 ring-white/60
                            hover:bg-white/95 transition-colors"
               >
