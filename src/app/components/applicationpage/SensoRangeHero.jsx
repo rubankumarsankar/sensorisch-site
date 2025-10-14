@@ -202,7 +202,7 @@ export default function SensoRangeHero({
               initial="hidden"
               whileInView="show"
               viewport={{ once: true, amount: 0.25 }}
-              className="mb-4 md:mb-6 text-base md:text-lg leading-relaxed text-muted-foreground max-w-xl"
+              className="mb-4 md:mb-6 section-paragraph max-w-xl"
             >
               {blurb}
             </motion.p>

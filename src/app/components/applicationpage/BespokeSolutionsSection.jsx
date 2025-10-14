@@ -49,19 +49,7 @@ export function BespokeSolutionsIntro({
   const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 25, mass: 0.2 });
 
   return (
-    <section className="relative bg-background text-foreground overflow-hidden">
-      {/* Scroll progress bar */}
-      <motion.div
-        style={{ scaleX: progress }}
-        className="origin-left fixed left-0 top-0 h-0.5 w-full bg-gradient-to-r from-primary via-fuchsia-500 to-emerald-500 z-[60]"
-      />
-
-      {/* Gradient mesh + animated blobs */}
-      <div className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute -top-40 -left-40 size-[36rem] rounded-full blur-3xl opacity-25 bg-gradient-to-br from-primary/40 via-sky-400/30 to-emerald-400/30 animate-pulse" />
-        <div className="absolute -bottom-40 -right-40 size-[36rem] rounded-full blur-3xl opacity-20 bg-gradient-to-tr from-fuchsia-400/30 via-primary/30 to-amber-300/30 animate-[pulse_6s_ease-in-out_infinite]" />
-      </div>
-
+    <section className="relative bg-background text-black overflow-hidden">
       <div className="section-container">
         <motion.div
           variants={stagger}
@@ -87,7 +75,7 @@ export function BespokeSolutionsIntro({
 
           <motion.p
             variants={fadeUp}
-            className="mt-5 text-base md:text-lg text-muted-foreground"
+            className="mt-5 section-paragraph"
           >
             At Sensorisch, we know that every brand has a unique identity, and so should its flavours.
             Our bespoke solutions deliver exactly what your product requires—from taste profile to technical format.
@@ -108,7 +96,7 @@ export function BespokeSolutionsIntro({
               custom={i}
               variants={fadeUp}
               whileHover={{ y: -3 }}
-              className="group relative flex items-start gap-3 rounded-xl border border-foreground/10
+              className="group relative flex items-start gap-3 rounded-xl border border-black/10
                          bg-white/60 dark:bg-neutral-900/60 backdrop-blur px-4 py-3 shadow-sm
                          max-w-xl w-full"
             >
@@ -143,7 +131,7 @@ export function BespokeSolutionsIntro({
             href={onProcessHref}
             whileHover={{ y: -2 }}
             whileTap={{ scale: 0.98 }}
-            className="inline-flex items-center gap-2 rounded-lg border border-foreground/15 px-5 py-3 font-semibold hover:bg-foreground/5"
+            className="inline-flex items-center text-primary gap-2 rounded-lg border border-black/15 px-5 py-3 hover:bg-primary hover:text-white font-semibold "
           >
             Our Development Process
           </motion.a>
@@ -167,7 +155,7 @@ export function DevelopmentProcessSection() {
   const lineScale = useSpring(scrollYProgress, { stiffness: 120, damping: 22, mass: 0.2 });
 
   return (
-    <section id="process" className="relative bg-background text-foreground overflow-hidden">
+    <section id="process" className="relative bg-background text-black overflow-hidden">
       {/* Background accents */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute left-1/2 -translate-x-1/2 top-10 h-24 w-[80%] rounded-full blur-3xl bg-primary/5" />
@@ -176,8 +164,17 @@ export function DevelopmentProcessSection() {
       <div className="section-container py-18 md:py-28">
         {/* Heading */}
         <div className="mb-10 md:mb-12 max-w-3xl mx-auto text-center">
-          <h2 className="section-title text-black">Our Development <span className="text-primary">Process</span> </h2>
-          <p className="mt-3 text-muted-foreground">
+          <h2 className="section-title text-black">Our Development <span className="text-primary">Process</span>
+          <motion.span
+              aria-hidden
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.6, ease: "easeOut" }}
+              className="block h-1 w-36 md:w-48 bg-primary rounded-full mt-3 mx-auto origin-left"
+            />
+             </h2>
+          <p className="mt-5 section-paragraph">
             From concept to scale, our structured approach ensures consistent results and reduces time-to-market.
           </p>
         </div>
@@ -185,7 +182,7 @@ export function DevelopmentProcessSection() {
         {/* Timeline */}
         <div ref={containerRef} className="relative mx-auto max-w-5xl">
           {/* Base line */}
-          <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-foreground/10" />
+          <div className="absolute left-1/2 -translate-x-1/2 top-0 bottom-0 w-px bg-black/10" />
           {/* Progress line */}
           <motion.div
             style={{ scaleY: lineScale }}
@@ -220,7 +217,7 @@ export function DevelopmentProcessSection() {
                         transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
                       />
                       <span className="grid size-4 place-items-center rounded-full ring-2 ring-primary/30 bg-primary" />
-                      <span className="absolute -top-7 left-1/2 -translate-x-1/2 text-xs font-bold bg-background px-2 py-0.5 rounded-md border border-foreground/10 shadow">
+                      <span className="absolute -top-7 left-1/2 -translate-x-1/2 text-sm font-bold bg-background px-2 py-0.5 rounded-md border border-black/10 shadow">
                         {s.n}
                       </span>
                     </div>
@@ -237,7 +234,7 @@ export function DevelopmentProcessSection() {
                     <motion.article
                       whileHover={{ y: -4 }}
                       transition={{ type: "spring", stiffness: 220, damping: 22 }}
-                      className="relative group rounded-2xl border border-foreground/10
+                      className="relative group rounded-2xl border border-black/10
                                  bg-white/60 dark:bg-neutral-900/60 backdrop-blur p-5 md:p-6
                                  shadow-[0_10px_30px_-15px_rgba(0,0,0,0.25)]"
                     >
@@ -249,14 +246,14 @@ export function DevelopmentProcessSection() {
                         </div>
 
                         <div>
-                          <h3 className="text-lg md:text-xl font-semibold leading-tight">{s.title}</h3>
-                          <p className="mt-1 text-sm md:text-base text-muted-foreground">{s.desc}</p>
+                          <h3 className="section-subtitle text-primary">{s.title}</h3>
+                          <p className="mt-1 section-paragraph">{s.desc}</p>
 
                           <ul className="mt-3 flex flex-wrap gap-2">
                             {s.bullets.map((b) => (
                               <li
                                 key={b}
-                                className="inline-flex items-center gap-2 rounded-full border border-foreground/10 bg-background px-3 py-1 text-xs md:text-sm"
+                                className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-background px-3 py-1 text-xs md:text-sm"
                               >
                                 <span className="size-1.5 rounded-full bg-primary" /> {b}
                               </li>

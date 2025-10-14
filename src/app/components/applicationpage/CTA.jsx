@@ -41,7 +41,7 @@ export default function ProfileCTA({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.45, delay: 0.05 }}
-          className="mx-auto mt-4 max-w-2xl text-sm md:text-[15px] leading-relaxed text-white/90"
+          className="mx-auto mt-4 max-w-2xl section-paragraph leading-relaxed text-white/90"
         >
           {blurb}
         </motion.p>
