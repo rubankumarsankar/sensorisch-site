@@ -1,0 +1,311 @@
+// app/components/InsightsExplorer.jsx
+"use client";
+
+import { useMemo, useState, useId } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Search, Clock, Tag, BookOpen } from "lucide-react";
+
+/* ------------ sample data (swap with CMS later) ------------ */
+const ALL_POSTS = [
+  {
+    id: "plant-based-future",
+    emoji: "🌱",
+    title: "The Future of Plant-Based Flavours: Beyond Taste Masking",
+    blurb:
+      "Exploring how advanced flavour technologies are transforming plant-based products from acceptable alternatives to preferred choices.",
+    category: "Innovation",
+    tags: ["Plant-Based", "Innovation", "Consumer Trends"],
+    date: "March 15, 2024",
+    read: "5 min read",
+  },
+  {
+    id: "clean-label-2024",
+    emoji: "📋",
+    title: "Clean Label Compliance: Navigating Global Regulations in 2024",
+    blurb:
+      "A comprehensive guide to clean label requirements across major markets and how to maintain compliance while optimizing taste.",
+    category: "Regulatory",
+    tags: ["Regulatory", "Clean Label", "Global Markets"],
+    date: "March 10, 2024",
+    read: "7 min read",
+  },
+  {
+    id: "functional-beverages-science",
+    emoji: "🥤",
+    title: "Functional Beverages: The Science of Taste-Neutral Nutrition",
+    blurb:
+      "How advanced masking technologies are enabling the next generation of functional beverages without compromising on taste.",
+    category: "Beverages",
+    tags: ["Beverages", "Functional Foods", "Nutrition"],
+    date: "March 5, 2024",
+    read: "6 min read",
+  },
+  {
+    id: "functional-beverages-science1",
+    emoji: "🥤",
+    title: "Functional Beverages: The Science of Taste-Neutral Nutrition",
+    blurb:
+      "How advanced masking technologies are enabling the next generation of functional beverages without compromising on taste.",
+    category: "Beverages",
+    tags: ["Beverages", "Functional Foods", "Nutrition"],
+    date: "March 5, 2024",
+    read: "6 min read",
+  },
+];
+
+const CATEGORIES = [
+  "All",
+  "Innovation",
+  "Regulatory",
+  "Beverages",
+  "Bakery",
+  "Sustainability",
+  "Market Research",
+];
+
+/* -------------------------- animations -------------------------- */
+const fadeUp = {
+  hidden: { opacity: 0, y: 14, filter: "blur(6px)" },
+  show: {
+    opacity: 1,
+    y: 0,
+    filter: "blur(0px)",
+    transition: { duration: 0.45, ease: "easeOut" },
+  },
+};
+const list = { hidden: {}, show: { transition: { staggerChildren: 0.06 } } };
+
+/* -------------------------- helpers --------------------------- */
+const norm = (v) => (v ?? "").toString().toLowerCase().trim();
+const parseDate = (s) => {
+  const t = Date.parse(s);
+  return Number.isNaN(t) ? 0 : t;
+};
+
+/* -------------------------- component --------------------------- */
+export default function InsightsExplorer({ posts = ALL_POSTS }) {
+  const [query, setQuery] = useState("");
+  const [active, setActive] = useState("All");
+  const tablistId = useId();
+
+  const filtered = useMemo(() => {
+    const q = norm(query);
+    const activeNorm = norm(active);
+
+    const matches = posts.filter((p) => {
+      const inCategory = activeNorm === "all" || norm(p.category) === activeNorm;
+
+      if (!q) return inCategory;
+
+      const haystack = [
+        p.title,
+        p.blurb,
+        p.category,
+        ...(p.tags ?? []),
+      ]
+        .map(norm)
+        .join(" ");
+
+      const inQuery = haystack.includes(q);
+      return inCategory && inQuery;
+    });
+
+    // newest first (by `date` string)
+    return matches.sort((a, b) => parseDate(b.date) - parseDate(a.date));
+  }, [posts, query, active]);
+
+  return (
+    <section className="section-container">
+      {/* Header row: search (left) + tabs (right) */}
+      <motion.div
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.35 }}
+        className="mx-auto max-w-6xl"
+      >
+        <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+          {/* Left: Title + Search */}
+          <div className="flex-1">
+            <h2 className="mt-2 text-2xl md:text-3xl font-extrabold tracking-tight">
+              Featured <span className="text-primary">Insights</span>
+              <motion.div
+                initial={{ width: 0 }}
+                whileInView={{ width: 128 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+                className="h-1 mt-4 rounded bg-gradient-to-r from-primary to-primary/60"
+                aria-hidden
+              />
+            </h2>
+
+            {/* Search input */}
+            <label className="relative mt-3 block max-w-lg">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-foreground/60" />
+              <input
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Search topics, tags, keywords…"
+                className="w-full rounded-xl border border-black/10 dark:border-white/10 bg-white/60 dark:bg-white/5 backdrop-blur pl-10 pr-3 py-2.5 text-sm outline-none focus:ring-2 ring-primary/30"
+              />
+            </label>
+          </div>
+
+          {/* Right: Tabs (category pills) */}
+          <nav
+            role="tablist"
+            aria-label="Insight categories"
+            id={tablistId}
+            className="md:w-[52%] lg:w-[56%]"
+          >
+            <div className="flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [-ms-overflow-style:none]">
+              <style jsx>{`
+                div::-webkit-scrollbar { display: none; }
+              `}</style>
+              {CATEGORIES.map((c) => {
+                const isActive = active === c;
+                return (
+                  <button
+                    key={c}
+                    role="tab"
+                    aria-selected={isActive}
+                    aria-controls={`${tablistId}-${c}`}
+                    onClick={() => setActive(c)}
+                    className={`relative rounded-full px-4 py-2 text-sm font-semibold ring-1 transition whitespace-nowrap
+                      ${
+                        isActive
+                          ? "bg-primary text-white ring-primary/50"
+                          : "bg-white/60 dark:bg-white/5 text-foreground ring-black/10 dark:ring-white/10 hover:bg-white/80 dark:hover:bg-white/10"
+                      }`}
+                  >
+                    {c}
+                    {isActive && (
+                      <span
+                        aria-hidden
+                        className="pointer-events-none absolute inset-0 rounded-full"
+                        style={{ boxShadow: "0 0 18px rgba(210,36,34,0.35)" }}
+                      />
+                    )}
+                  </button>
+                );
+              })}
+            </div>
+          </nav>
+        </div>
+      </motion.div>
+
+      {/* Results grid */}
+      <motion.div
+        variants={list}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true, amount: 0.25 }}
+        className="mx-auto mt-8 grid max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-3"
+        role="tabpanel"
+        id={`${tablistId}-${active}`}
+        aria-labelledby={tablistId}
+      >
+        <AnimatePresence mode="popLayout">
+          {filtered.map((p) => (
+            <motion.article
+              key={p.id}
+              variants={fadeUp}
+              layout
+              whileHover={{ y: -6 }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ type: "spring", stiffness: 380, damping: 28 }}
+              className="group relative overflow-hidden rounded-2xl p-5 ring-1 ring-black/5 dark:ring-white/10 bg-white/70 dark:bg-white/[0.06] backdrop-blur"
+            >
+              {/* halo + shimmer */}
+              <span
+                aria-hidden
+                className="pointer-events-none absolute -right-12 -top-12 h-36 w-36 rounded-full bg-gradient-to-br from-primary to-primary/40 blur-3xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              />
+              <motion.span
+                aria-hidden
+                initial={{ x: "-120%" }}
+                whileHover={{ x: "120%" }}
+                transition={{ duration: 1.15, ease: "easeInOut" }}
+                className="pointer-events-none absolute inset-y-0 -left-1/3 w-1/2 skew-x-12 bg-white/20"
+              />
+
+              {/* header row */}
+              <div className="flex items-start gap-5">
+                <span className="grid size-16 place-items-center rounded-xl bg-primary/10 ring-1 ring-primary/20 text-xl">
+                  {p.emoji}
+                </span>
+                <div className="min-w-0">
+                  <h3 className="section-subtitle">{p.title}</h3>
+                  <p className="mt-1 section-paragraph">{p.blurb}</p>
+                </div>
+              </div>
+
+              {/* meta */}
+              <div className="mt-4 flex flex-wrap items-center gap-3 text-xs text-foreground/70">
+                <span className="inline-flex items-center gap-1">
+                  <BookOpen className="h-3.5 w-3.5" />
+                  {p.category}
+                </span>
+                <span className="inline-flex items-center gap-1">
+                  <Clock className="h-3.5 w-3.5" />
+                  {p.date} • {p.read}
+                </span>
+              </div>
+
+              {/* tags */}
+              <div className="mt-3 flex flex-wrap gap-1.5">
+                {(p.tags ?? []).map((t) => (
+                  <span
+                    key={t}
+                    className="inline-flex items-center gap-1 rounded-full bg-primary/10 text-primary px-2.5 py-1 text-[11px] font-semibold ring-1 ring-primary/20"
+                  >
+                    <Tag className="h-3 w-3" /> {t}
+                  </span>
+                ))}
+              </div>
+
+              {/* footer CTA */}
+              <div className="mt-5 flex justify-end">
+                <a
+                  href={`/insights/${p.id}`}
+                  className="relative inline-flex items-center gap-2 rounded-lg bg-primary px-3.5 py-2 text-sm font-semibold text-white hover:bg-primary/90 transition"
+                >
+                  Read More
+                  <svg
+                    className="h-4 w-4"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M5 12h14" />
+                    <path d="m12 5 7 7-7 7" />
+                  </svg>
+                </a>
+              </div>
+            </motion.article>
+          ))}
+        </AnimatePresence>
+      </motion.div>
+
+      {/* Empty state */}
+      {filtered.length === 0 && (
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true }}
+          className="mx-auto max-w-6xl"
+        >
+          <div className="mt-10 rounded-2xl border border-dashed border-black/10 dark:border-white/10 p-8 text-center">
+            <p className="text-sm text-foreground/70">
+              No results. Try a different keyword or category.
+            </p>
+          </div>
+        </motion.div>
+      )}
+    </section>
+  );
+}

@@ -1,6 +1,11 @@
 "use client";
 
 import HeroCompnonet from "../components/Hero";
+import CTA from "../components/Insights/FinalCta";
+import IndustryResources from "../components/Insights/IndustryResources";
+import InsightsExplorer from "../components/Insights/InsightsExplorer";
+import LatestInsights from "../components/Insights/LatestInsights";
+import PressUpdates from "../components/Insights/PressUpdates";
 
 export default function Insights() {
   return (
@@ -26,6 +31,11 @@ export default function Insights() {
           containerClassName: "section-container py-16 md:py-24",
         }}
       />
+      <InsightsExplorer />
+      <LatestInsights />
+      <PressUpdates />
+      <IndustryResources />
+      <CTA />
     </>
   );
 }
