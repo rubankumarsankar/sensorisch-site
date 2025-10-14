@@ -110,7 +110,7 @@ export default function ContactPage() {
   };
 
   return (
-    <main className="bg-background text-foreground relative overflow-hidden">
+    <main className="bg-background text-black relative overflow-hidden">
     
 
       {/* ===== Methods cards ===== */}
@@ -129,7 +129,7 @@ export default function ContactPage() {
             >
               How Can We Help You?
             </motion.h2>
-            <motion.p variants={fadeUp} className="text-foreground/70 mt-2">
+            <motion.p variants={fadeUp} className="text-black/70 mt-2">
               Choose the best way to connect with our team based on your needs
             </motion.p>
           </motion.div>
@@ -158,7 +158,7 @@ export default function ContactPage() {
                   <m.icon className="h-6 w-6" />
                 </div>
                 <h3 className="mt-3 text-lg font-semibold">{m.title}</h3>
-                <p className="mt-1 text-sm text-foreground/75">{m.blurb}</p>
+                <p className="mt-1 text-sm text-black/75">{m.blurb}</p>
 
                 <a
                   href={m.href}
@@ -199,7 +199,7 @@ export default function ContactPage() {
             </motion.h3>
             <motion.p
               variants={fadeUp}
-              className="text-sm text-foreground/70 mt-1"
+              className="text-sm text-black/70 mt-1"
             >
               Tell us about your project and we’ll get back to you within 24
               hours.
@@ -269,7 +269,7 @@ export default function ContactPage() {
               <label className="text-sm font-medium">
                 Attach Files (Max 10MB)
               </label>
-              <label className="mt-2 block cursor-pointer rounded-lg border border-dashed border-black/10 dark:border-white/10 p-4 text-sm text-foreground/70 hover:border-primary/40 hover:bg-primary/[0.03] transition">
+              <label className="mt-2 block cursor-pointer rounded-lg border border-dashed border-black/10 dark:border-white/10 p-4 text-sm text-black/70 hover:border-primary/40 hover:bg-primary/[0.03] transition">
                 <input
                   type="file"
                   className="hidden"
@@ -285,7 +285,7 @@ export default function ContactPage() {
                     Upload
                   </span>
                 </div>
-                <p className="mt-1 text-xs text-foreground/60">
+                <p className="mt-1 text-xs text-black/60">
                   {files.length
                     ? `Selected ${files.length} file(s) • ${totalSizeMB} MB total`
                     : "Support for specifications, references, or product briefs"}
@@ -320,7 +320,7 @@ export default function ContactPage() {
                   </span>
                 )}
               </button>
-              <span className="text-xs text-foreground/60">
+              <span className="text-xs text-black/60">
                 We’ll respond within 24 hours during business days
               </span>
             </motion.div>
@@ -361,7 +361,7 @@ export default function ContactPage() {
                   <h5 className="font-medium text-primary">
                     India Headquarters
                   </h5>
-                  <p className="text-sm text-foreground/70 mt-1">
+                  <p className="text-sm text-black/70 mt-1">
                     Innovation Center, Technology Park, Mumbai, Maharashtra
                     400001
                   </p>
@@ -384,7 +384,7 @@ export default function ContactPage() {
                       </div>
                     </a>
                     <br />
-                    <div className="inline-flex items-center gap-2 text-foreground/70">
+                    <div className="inline-flex items-center gap-2 text-black/70">
                       <Clock className="h-4 w-4 text-primary" /> 9:00 AM – 6:00
                       PM IST (Mon–Fri)
                     </div>
@@ -394,7 +394,7 @@ export default function ContactPage() {
                 {/* RIGHT card (GCC) */}
                 <article className="rounded-lg border border-black/5 dark:border-white/10 p-4 max-w-md w-full md:justify-self-end">
                   <h5 className="font-medium text-primary">GCC Operations</h5>
-                  <p className="text-sm text-foreground/70 mt-1">
+                  <p className="text-sm text-black/70 mt-1">
                     Business District, Dubai, UAE
                   </p>
                   <div className="mt-3 text-sm space-y-2">
@@ -412,7 +412,7 @@ export default function ContactPage() {
                       </div>
                     </a>
                     <br />
-                    <div className="inline-flex items-center gap-2 text-foreground/70">
+                    <div className="inline-flex items-center gap-2 text-black/70">
                       <Clock className="h-4 w-4 text-primary" /> 9:00 AM – 6:00
                       PM GST (Sun–Thu)
                     </div>
@@ -428,7 +428,7 @@ export default function ContactPage() {
                   <h4 className="text-2xl text-primary font-semibold">
                     Need Immediate Assistance?
                   </h4>
-                  <p className="text-sm text-foreground/70 mt-1">
+                  <p className="text-sm text-black/70 mt-1">
                     For urgent inquiries or immediate support, choose from these
                     options
                   </p>
@@ -509,7 +509,7 @@ export default function ContactPage() {
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.25 }}
-                        className="text-sm text-foreground/75 pt-2"
+                        className="text-sm text-black/75 pt-2"
                       >
                         {f.a}
                       </motion.p>
@@ -532,7 +532,7 @@ function Field({ label, placeholder, type = "text", icon: Icon }) {
       <label className="text-sm font-medium">{label}</label>
       <div className="relative">
         {Icon && (
-          <Icon className="absolute left-3 top-[10px] h-4 w-4 text-foreground/40" />
+          <Icon className="absolute left-3 top-[10px] h-4 w-4 text-black/40" />
         )}
         <input
           type={type}
@@ -571,7 +571,7 @@ function TextArea({
       <label className="text-sm font-medium">{label}</label>
       <div className="relative">
         {Icon && (
-          <Icon className="absolute left-3 top-3 h-4 w-4 text-foreground/40" />
+          <Icon className="absolute left-3 top-3 h-4 w-4 text-black/40" />
         )}
         <textarea
           rows={rows}

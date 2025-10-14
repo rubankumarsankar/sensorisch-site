@@ -78,7 +78,7 @@ const GROUPS = [
 
 export default function CapabilitiesSection() {
   return (
-    <section className="relative bg-background text-foreground">
+    <section className="relative bg-background text-black">
       <div className="section-container py-16 md:py-24">
         {/* Heading */}
         <motion.div

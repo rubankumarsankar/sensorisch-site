@@ -38,7 +38,7 @@ const FEATURES = [
 
 export default function WhyChooseSenso() {
   return (
-    <section className="relative overflow-hidden bg-background text-foreground py-10">
+    <section className="relative overflow-hidden bg-background text-black py-10">
       <div className="section-container">
         {/* Header */}
         <motion.div
@@ -50,7 +50,7 @@ export default function WhyChooseSenso() {
         >
           {/* <motion.span
             variants={fadeUp}
-            className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-foreground/5 px-3 py-1 text-xs font-semibold"
+            className="inline-flex items-center gap-2 rounded-full border border-black/15 bg-black/5 px-3 py-1 text-xs font-semibold"
           >
             Why Choose Senso Ranges?
           </motion.span> */}

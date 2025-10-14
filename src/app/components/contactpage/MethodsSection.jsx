@@ -17,7 +17,7 @@ export default function MethodsSection() {
       <div className="section-container">
         <motion.div variants={list} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.25 }} className="text-center">
           <motion.h2 variants={fadeUp} className="text-xl md:text-2xl font-semibold">How Can We Help You?</motion.h2>
-          <motion.p variants={fadeUp} className="text-foreground/70 mt-2">Choose the best way to connect with our team based on your needs</motion.p>
+          <motion.p variants={fadeUp} className="text-black/70 mt-2">Choose the best way to connect with our team based on your needs</motion.p>
         </motion.div>
 
         <motion.ul variants={list} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }} className="mt-8 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
@@ -34,7 +34,7 @@ export default function MethodsSection() {
                 <m.icon className="h-6 w-6" />
               </div>
               <h3 className="mt-3 text-lg font-semibold">{m.title}</h3>
-              <p className="mt-1 text-sm text-foreground/75">{m.blurb}</p>
+              <p className="mt-1 text-sm text-black/75">{m.blurb}</p>
 
               <a href={m.href} className="mt-4 inline-flex items-center gap-2 rounded-md bg-primary px-3.5 py-2 text-sm font-semibold text-white shadow hover:bg-primary/90 transition-colors">
                 {m.cta}

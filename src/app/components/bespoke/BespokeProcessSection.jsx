@@ -59,11 +59,18 @@ export default function BespokeProcessSection() {
             {" "}
             Our <span className="text-primary">Bespoke Development</span>{" "}
             Process
+            <motion.div
+              initial={{ width: 0 }}
+              whileInView={{ width: 112 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+              className="mx-auto mt-6 h-1 rounded bg-gradient-to-r from-primary to-primary/60"
+            />
           </motion.h2>
 
           <motion.p
             variants={fadeUp}
-            className="mt-3 text-sm md:text-base text-foreground/70"
+            className="mt-3 section-paragraph"
           >
             A systematic approach that transforms your vision into market-ready
             flavour solutions
@@ -124,7 +131,7 @@ function StepRow({ index, k, title, blurb }) {
       </div>
 
       {/* blurb (copy only—no cards) */}
-      <p className="text-sm md:text-base text-foreground/70 leading-relaxed">
+      <p className="section-paragraph text-black/70 leading-relaxed">
         {blurb}
       </p>
     </motion.li>

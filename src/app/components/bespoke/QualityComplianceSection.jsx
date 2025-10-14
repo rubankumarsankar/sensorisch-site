@@ -18,7 +18,7 @@ const list = { hidden: {}, show: { transition: { staggerChildren: 0.06 } } };
 export default function QualityComplianceSection() {
   return (
     <section className="relative overflow-hidden section-container">
-      <div className="section-container py-5">
+      <div className="section-container py-10">
         {/* Header */}
         <motion.div
           variants={list}
@@ -33,31 +33,25 @@ export default function QualityComplianceSection() {
           >
             {" "}
             Quality &<span className="text-primary"> Compliance </span>{" "}
-            Assurance
+            Assurance 
+            <motion.div
+                          initial={{ width: 0 }}
+                          whileInView={{ width: 112 }}
+                          viewport={{ once: true }}
+                          transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+                          className="mx-auto mt-6 h-1 rounded bg-gradient-to-r from-primary to-primary/60"
+                        />
           </motion.h2>
 
           <motion.p
             variants={fadeUp}
-            className="mt-3 text-sm md:text-base text-black/70"
+            className="mt-3 section-paragraph text-black/70"
           >
             Every bespoke solution is backed by rigorous quality control,
             comprehensive documentation, and full regulatory compliance to
             ensure seamless market entry.
           </motion.p>
 
-          {/* subtle status strip */}
-          <motion.div
-            variants={fadeUp}
-            className="mx-auto mt-6 max-w-xl rounded-xl border border-black/5 dark:border-white/10 bg-white/50 dark:bg-white/5 backdrop-blur p-4"
-          >
-            <p className="text-xs md:text-sm text-black/75">
-              <span className="font-semibold text-primary">
-                Aligned by design:
-              </span>{" "}
-              SOP-driven workflows, traceability, and audit-ready records across
-              each stage.
-            </p>
-          </motion.div>
         </motion.div>
 
         {/* Feature rows */}
@@ -145,14 +139,14 @@ function Feature({ Icon, title, points, accent = "emerald" }) {
         className="pointer-events-none absolute inset-y-0 -left-1/3 w-1/2 skew-x-12 bg-white/20"
       />
 
-      <div className="flex items-start gap-3">
+      <div className="flex items-start gap-4">
         <span
-          className={`grid place-items-center size-9 rounded-xl ${tokens.badgeBg} ${tokens.badgeText} ring-1 ring-black/5`}
+          className={`grid place-items-center size-10 rounded-xl ${tokens.badgeBg} ${tokens.badgeText} ring-1 ring-black/5`}
         >
-          <Icon className="h-5 w-5" />
+          <Icon className="h-8 w-8" />
         </span>
         <div className="min-w-0">
-          <h3 className="text-base md:text-lg font-semibold">{title}</h3>
+          <h3 className="section-subtitle">{title}</h3>
           <ul className="mt-2 space-y-1.5 text-sm text-black/75">
             {points.map((p) => (
               <li key={p} className="flex items-center gap-2">

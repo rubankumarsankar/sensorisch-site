@@ -42,7 +42,7 @@ const list = { hidden: {}, show: { transition: { staggerChildren: 0.08 } } };
 
 export default function ValuesSection() {
   return (
-    <section className="relative bg-background text-foreground">
+    <section className="relative bg-background text-black">
       <div className="section-container">
         {/* Header */}
         <motion.div

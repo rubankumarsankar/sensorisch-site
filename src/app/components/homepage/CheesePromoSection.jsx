@@ -2,7 +2,7 @@ import React from "react";
 
 export default function PromoSection() {
   return (
-    <main className="w-full bg-background text-foreground">
+    <main className="w-full bg-background text-black">
       {/* SECTION 1  -  VIDEO */}
       <section className="relative section-container w-full h-[60vh] min-h-[360px] overflow-hidden">
         <video

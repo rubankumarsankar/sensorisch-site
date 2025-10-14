@@ -79,7 +79,7 @@ export default function SensoRangeHero({
   const imageOrder = reverse ? "order-2 lg:order-1" : "order-2 lg:order-2";
 
   return (
-    <section className="bg-background text-foreground">
+    <section className="bg-background text-black">
       <div className="section-container py-16 md:py-24">
         <div className="grid items-center gap-14 md:gap-16 lg:grid-cols-2">
           {/* ==== CONTENT ==== */}

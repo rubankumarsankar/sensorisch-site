@@ -26,7 +26,7 @@ export default function LocationsPanel() {
               <h5 className="font-medium text-primary text-center">
                 India Headquarters
               </h5>
-              <p className="text-sm text-foreground/70 mt-1 text-center">
+              <p className="text-sm text-black/70 mt-1 text-center">
                 Innovation Center, Technology Park, Mumbai, Maharashtra 400001
               </p>
               <div className="mt-3 text-sm space-y-2 text-center">
@@ -44,7 +44,7 @@ export default function LocationsPanel() {
                   <Mail className="h-4 w-4 text-primary" /> india@sensorisch.com
                 </a>
                 <br />
-                <div className="inline-flex items-center gap-2 justify-center text-foreground/70">
+                <div className="inline-flex items-center gap-2 justify-center text-black/70">
                   <Clock className="h-4 w-4 text-primary" /> 9:00 AM – 6:00 PM
                   IST (Mon–Fri)
                 </div>
@@ -56,7 +56,7 @@ export default function LocationsPanel() {
               <h5 className="font-medium text-primary text-center">
                 GCC Operations
               </h5>
-              <p className="text-sm text-foreground/70 mt-1 text-center">
+              <p className="text-sm text-black/70 mt-1 text-center">
                 Business District, Dubai, UAE
               </p>
               <div className="mt-3 text-sm space-y-2 text-center">
@@ -74,7 +74,7 @@ export default function LocationsPanel() {
                   <Mail className="h-4 w-4 text-primary" /> gcc@sensorisch.com
                 </a>
                 <br />
-                <div className="inline-flex items-center gap-2 justify-center text-foreground/70">
+                <div className="inline-flex items-center gap-2 justify-center text-black/70">
                   <Clock className="h-4 w-4 text-primary" /> 9:00 AM – 6:00 PM
                   GST (Sun–Thu)
                 </div>
@@ -89,7 +89,7 @@ export default function LocationsPanel() {
               <h4 className="text-2xl text-primary font-semibold text-center">
                 Need Immediate Assistance?
               </h4>
-              <p className="text-sm text-foreground/70 mt-1 text-center">
+              <p className="text-sm text-black/70 mt-1 text-center">
                 For urgent inquiries or immediate support, choose from these
                 options
               </p>

@@ -65,7 +65,7 @@ export default function VisionMission() {
   ];
 
   return (
-    <section className="relative bg-background text-foreground">
+    <section className="relative bg-background text-black">
       <div className="section-container py-16 md:py-24">
         {/* Header */}
         <motion.div
@@ -149,7 +149,7 @@ export default function VisionMission() {
               <div className="text-3xl md:text-4xl font-bold text-primary">
                 <Counter value={x.value} suffix={x.suffix} />
               </div>
-              <div className="mt-1 text-sm md:text-base font-medium text-foreground/80">
+              <div className="mt-1 text-sm md:text-base font-medium text-black/80">
                 {x.label}
               </div>
             </motion.li>

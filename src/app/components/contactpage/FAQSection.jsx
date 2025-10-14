@@ -43,7 +43,7 @@ export default function FAQSection() {
                       animate={{ opacity: 1, height: "auto" }}
                       exit={{ opacity: 0, height: 0 }}
                       transition={{ duration: 0.25 }}
-                      className="text-sm text-foreground/75 pt-2"
+                      className="text-sm text-black/75 pt-2"
                     >
                       {f.a}
                     </motion.p>

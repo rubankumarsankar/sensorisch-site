@@ -131,12 +131,19 @@ export default function BespokeApplicationsAlt() {
             variants={fadeUp}
             className="mt-4 section-title text-black"
           >
-            <span className="text-primary">Bespoke </span>Applications
+            <span className="text-primary">Bespoke </span>Applications 
+            <motion.div
+              initial={{ width: 0 }}
+              whileInView={{ width: 112 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+              className="mx-auto mt-6 h-1 rounded bg-gradient-to-r from-primary to-primary/60"
+            />
           </motion.h2>
 
           <motion.p
             variants={fadeUp}
-            className="mt-3 text-sm md:text-base text-black/70"
+            className="mt-3 section-paragraph text-black/70"
           >
             Custom flavour solutions across industries, tailored to your
             specific product requirements
@@ -225,7 +232,7 @@ function RibbonRow({ index, title, blurb, accent }) {
           transition={{ duration: 1.2, ease: "easeInOut" }}
           className="pointer-events-none absolute inset-y-0 -left-1/3 w-1/2 skew-x-12 bg-white/20"
         />
-        <p className="relative p-5 md:p-6 text-sm md:text-base text-black/75 leading-relaxed">
+        <p className="relative p-5 md:p-6 section-paragraph text-black/75 leading-relaxed">
           {blurb}
         </p>
 

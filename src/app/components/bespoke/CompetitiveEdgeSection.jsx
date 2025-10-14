@@ -44,7 +44,7 @@ const FEATURES = [
 export default function CompetitiveEdgeSection() {
   return (
     <section className="relative overflow-hidden">
-      <div className="section-container  py-5">
+      <div className="section-container py-10 ">
         {/* Header */}
         <motion.div
           variants={list}
@@ -62,11 +62,18 @@ export default function CompetitiveEdgeSection() {
               {" "}
               Your Competitive
               <span className="text-primary"> Edge </span>
+              <motion.div
+              initial={{ width: 0 }}
+              whileInView={{ width: 112 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+              className="mx-auto mt-6 h-1 rounded bg-gradient-to-r from-primary to-primary/60"
+            />
             </motion.h2>
 
             <motion.p
               variants={fadeUp}
-              className="mt-3 text-center text-sm md:text-base text-black/70"
+              className="mt-3 text-center section-paragraph text-black/70"
             >
               With Sensorisch, your brand gets more than flavour - it gets a
               competitive advantage built on precision and trust
@@ -92,7 +99,7 @@ function FeatureItem({ i, Icon, label }) {
   return (
     <motion.li
       variants={fadeUp}
-      className="group relative overflow-hidden rounded-xl ring-1 ring-black/5 dark:ring-white/10 bg-white/60 dark:bg-white/5 backdrop-blur px-4 py-3"
+      className="group relative section-container overflow-hidden rounded-xl ring-1 ring-black/5 dark:ring-white/10 bg-white/60 dark:bg-white/5 backdrop-blur px-4 py-3"
       whileHover={{ y: -3 }}
       transition={{ type: "spring", stiffness: 280, damping: 20 }}
     >
@@ -114,7 +121,7 @@ function FeatureItem({ i, Icon, label }) {
         <span className="mt-0.5 grid place-items-center size-7 rounded-md bg-primary/10 text-primary ring-1 ring-primary/20">
           <Icon className="h-4 w-4" />
         </span>
-        <p className="text-sm md:text-[15px] text-black/80 leading-relaxed">
+        <p className="text-sm md:text-base text-black/80 leading-relaxed">
           {label}
         </p>
       </div>

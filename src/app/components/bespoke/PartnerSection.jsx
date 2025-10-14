@@ -39,12 +39,16 @@ export default function PartnerSection() {
             className="mt-4 section-title text-black"
           >
             <span className="text-primary"> We Partner</span> With You To
+            <motion.div
+              initial={{ width: 0 }}
+              whileInView={{ width: 112 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+              className="mx-auto mt-6 h-1 rounded bg-gradient-to-r from-primary to-primary/60"
+            />
           </motion.h2>
 
-          <motion.p
-            variants={fadeUp}
-            className="mt-3 text-sm md:text-base text-foreground/70"
-          >
+          <motion.p variants={fadeUp} className="mt-3 section-paragraph ">
             Deliver precision-crafted solutions that give your brand a
             competitive edge — built on trust and innovation.
           </motion.p>
@@ -99,15 +103,22 @@ function FeatureCard({ icon, title, blurb, accent }) {
       transition={{ type: "spring", stiffness: 260, damping: 22 }}
       className="group relative overflow-hidden rounded-2xl bg-white/70 dark:bg-white/[0.06] backdrop-blur p-6 ring-1 ring-black/5 dark:ring-white/10 shadow-lg"
     >
-      {/* accent glow */}
+      {/* accent glow (decorative) */}
       <div
-        className={`pointer-events-none absolute -top-12 right-[-20%] h-36 w-36 rounded-full bg-gradient-to-br ${accent} blur-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100`}
+        aria-hidden="true"
+        className={`pointer-events-none absolute -top-12 -right-[20%] h-36 w-36 rounded-full bg-gradient-to-br ${accent} blur-2xl opacity-0 transition-opacity duration-300 group-hover:opacity-100`}
       />
+
+      {/* icon */}
       <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/20">
         {icon}
       </div>
-      <h3 className="mt-3 text-lg font-semibold">{title}</h3>
-      <p className="mt-1 text-sm text-foreground/75">{blurb}</p>
+
+      {/* title */}
+      <h3 className="mt-3 section-subtitle text-primary">{title}</h3>
+
+      {/* blurb */}
+      <p className="mt-2 section-paragraph">{blurb}</p>
     </motion.li>
   );
 }
