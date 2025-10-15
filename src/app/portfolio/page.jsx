@@ -6,6 +6,7 @@ import FlavourFamiliesGrid from "../components/portfolio/FlavourFamiliesGrid";
 import FinalCta from "../components/portfolio/FinalCta";
 import FormatsGrid from "../components/portfolio/FormatsGrid";
 import { DecorSection, DriedIngredientsSection, PremiumSpreadsSection, SystemsSection } from "../components/portfolio/PortfolioSections";
+import NaturalColoursShowcase from "../components/portfolio/NaturalColoursShowcase";
 
 
 export default function PortfolioPage() {
@@ -34,6 +35,7 @@ export default function PortfolioPage() {
       />
       <FlavourFamiliesGrid />
       <FormatsGrid />
+      <NaturalColoursShowcase />
       <PremiumSpreadsSection />
       <DecorSection />
       <SystemsSection />

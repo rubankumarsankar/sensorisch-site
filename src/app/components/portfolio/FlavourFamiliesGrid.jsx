@@ -15,12 +15,66 @@ const fadeUp = {
 };
 
 const FALLBACK = [
-  { emoji: "🍋", title: "Citrus", blurb: "Bright, zesty profiles from lemon and lime to exotic yuzu and bergamot", items: ["Lemon","Orange","Lime","Grapefruit","Yuzu","Bergamot"] },
-  { emoji: "🍓", title: "Fruity", blurb: "From tropical mangoes to berry medleys, capturing nature's sweetness", items: ["Strawberry","Mango","Apple","Peach","Mixed Berry","Tropical Blend"] },
-  { emoji: "☕", title: "Tea & Coffee", blurb: "Rich, aromatic profiles from delicate green tea to robust espresso", items: ["Earl Grey","Green Tea","Espresso","Vanilla Latte","Chai Spice","Matcha"] },
-  { emoji: "🌿", title: "Botanicals", blurb: "Herbal and floral essences that add complexity and sophistication", items: ["Lavender","Rose","Mint","Basil","Rosemary","Chamomile"] },
-  { emoji: "🍫", title: "Brown & White", blurb: "Comfort flavours from vanilla and caramel to rich chocolate notes", items: ["Vanilla","Caramel","Chocolate","Butterscotch","Toffee","Coconut"] },
-  { emoji: "🧄", title: "Savoury", blurb: "Complex umami profiles and spice blends for sophisticated applications", items: ["Garlic","Onion","Pepper","Herb Blend","Mushroom","Smoked"] },
+  {
+    emoji: "🍋",
+    title: "Citrus",
+    blurb:
+      "Bright, zesty profiles from lemon and lime to exotic yuzu and bergamot",
+    items: ["Lemon", "Orange", "Lime", "Grapefruit", "Yuzu", "Bergamot"],
+  },
+  {
+    emoji: "🍓",
+    title: "Fruity",
+    blurb:
+      "From tropical mangoes to berry medleys, capturing nature's sweetness",
+    items: [
+      "Strawberry",
+      "Mango",
+      "Apple",
+      "Peach",
+      "Mixed Berry",
+      "Tropical Blend",
+    ],
+  },
+  {
+    emoji: "☕",
+    title: "Tea & Coffee",
+    blurb: "Rich, aromatic profiles from delicate green tea to robust espresso",
+    items: [
+      "Earl Grey",
+      "Green Tea",
+      "Espresso",
+      "Vanilla Latte",
+      "Chai Spice",
+      "Matcha",
+    ],
+  },
+  {
+    emoji: "🌿",
+    title: "Botanicals",
+    blurb: "Herbal and floral essences that add complexity and sophistication",
+    items: ["Lavender", "Rose", "Mint", "Basil", "Rosemary", "Chamomile"],
+  },
+  {
+    emoji: "🍫",
+    title: "Brown & White",
+    blurb: "Comfort flavours from vanilla and caramel to rich chocolate notes",
+    items: [
+      "Vanilla",
+      "Caramel",
+      "Chocolate",
+      "Butterscotch",
+      "Toffee",
+      "Coconut",
+    ],
+  },
+  {
+    emoji: "🧄",
+    title: "Savoury",
+    blurb:
+      "Complex umami profiles and spice blends for sophisticated applications",
+    items: ["Garlic", "Onion", "Pepper", "Herb Blend", "Mushroom", "Smoked"],
+  },
 ];
 
 export default function FlavourFamiliesGrid({ families }) {
@@ -48,19 +102,20 @@ export default function FlavourFamiliesGrid({ families }) {
         className="mx-auto max-w-5xl text-center"
       >
         <h2 className="mt-3 section-title text-black tracking-tight">
-          Natural Taste & <span className="text-primary"> Flavour Solutions</span>
-<motion.div
-          initial={{ width: 0 }}
-          whileInView={{ width: 128 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-          className="mx-auto mt-4 h-1 rounded bg-gradient-to-r from-primary to-primary/60"
-        />
+          Natural Taste &{" "}
+          <span className="text-primary"> Flavour Solutions</span>
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: 128 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+            className="mx-auto mt-4 h-1 rounded bg-gradient-to-r from-primary to-primary/60"
+          />
         </h2>
         <p className="mt-2 section-paragraph text-black/70">
-          Comprehensive flavour families available in multiple formats—from core notes to complex modulators
+          Comprehensive flavour families available in multiple formats—from core
+          notes to complex modulators
         </p>
-        
       </motion.div>
 
       {/* Split cards */}
@@ -83,8 +138,6 @@ export default function FlavourFamiliesGrid({ families }) {
               className="group relative overflow-hidden rounded-2xl bg-white/70 dark:bg-white/[0.06] backdrop-blur
                          ring-1 ring-black/5 dark:ring-white/10 shadow-lg"
             >
-             
-
               {/* ambient glow */}
               <div
                 aria-hidden
@@ -97,7 +150,11 @@ export default function FlavourFamiliesGrid({ families }) {
               <div className="flex items-start gap-3 px-5 pt-5">
                 {/* emoji badge */}
                 <span className="relative grid size-11 place-items-center rounded-xl bg-primary/10 ring-1 ring-primary/20 text-xl">
-                  <span role="img" aria-label={f.title} className="leading-none">
+                  <span
+                    role="img"
+                    aria-label={f.title}
+                    className="leading-none"
+                  >
                     {f.emoji}
                   </span>
                   <span
@@ -110,12 +167,14 @@ export default function FlavourFamiliesGrid({ families }) {
                 {/* title + blurb */}
                 <div className="min-w-0 flex-1">
                   <div className="flex items-baseline gap-3">
-                    <h3 className="section-subtitle">{f.title} <motion.i
-                      initial={{ width: 40 }}
-                      whileHover={{ width: 90 }}
-                      className="block h-[3px] rounded bg-gradient-to-r from-primary to-primary/60"
-                    /></h3>
-                    
+                    <h3 className="section-subtitle">
+                      {f.title}{" "}
+                      <motion.i
+                        initial={{ width: 40 }}
+                        whileHover={{ width: 90 }}
+                        className="block h-[3px] rounded bg-gradient-to-r from-primary to-primary/60"
+                      />
+                    </h3>
                   </div>
                   <p className="mt-1 section-paragraph text-base line-clamp-3">
                     {f.blurb}
@@ -180,7 +239,6 @@ export default function FlavourFamiliesGrid({ families }) {
                         Show less
                       </button>
                     </div>
-
                   </motion.div>
                 )}
               </div>
