@@ -206,7 +206,7 @@ function RibbonRow({ index, title, blurb, accent }) {
         />
       </div>
 
-      {/* Blurb ribbon — outline/line look with accent left bar + tinted ring */}
+      {/* Blurb ribbon  -  outline/line look with accent left bar + tinted ring */}
       <div
         className={`relative group overflow-hidden rounded-xl ring-1 ${
           accent.ring

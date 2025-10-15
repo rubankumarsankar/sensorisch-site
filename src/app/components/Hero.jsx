@@ -56,7 +56,7 @@ export default function HeroComponent({ data = {} }) {
     <section className="relative overflow-hidden">
       <div className="section-container py-14 md:py-20">
         <div className="grid items-center gap-10 md:gap-12 md:grid-cols-2">
-          {/* LEFT — text */}
+          {/* LEFT  -  text */}
           <div className="order-1">
             {eyebrow && (
               <motion.h3
@@ -130,7 +130,7 @@ export default function HeroComponent({ data = {} }) {
             )}
           </div>
 
-          {/* RIGHT — image column (contained card, not full bleed) */}
+          {/* RIGHT  -  image column (contained card, not full bleed) */}
           {image?.src && (
             <motion.div
               className="order-2 relative w-full overflow-hidden border border-black/5 shadow-md"

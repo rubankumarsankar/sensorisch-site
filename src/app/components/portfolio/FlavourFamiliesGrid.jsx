@@ -113,7 +113,7 @@ export default function FlavourFamiliesGrid({ families }) {
           />
         </h2>
         <p className="mt-2 section-paragraph text-black/70">
-          Comprehensive flavour families available in multiple formats—from core
+          Comprehensive flavour families available in multiple formats - from core
           notes to complex modulators
         </p>
       </motion.div>

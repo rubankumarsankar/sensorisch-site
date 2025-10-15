@@ -44,7 +44,7 @@ const CARDS = [
 
 export default function IndustryResources({ items = CARDS }) {
   return (
-    <section className="section-container">
+    <section className="section-container py-15">
       {/* header */}
       <motion.div
         variants={fadeUp}
@@ -53,7 +53,7 @@ export default function IndustryResources({ items = CARDS }) {
         viewport={{ once: true, amount: 0.35 }}
         className="mx-auto max-w-5xl text-center"
       >
-        <h2 className=" mt-3 text-2xl md:text-3xl font-extrabold tracking-tight">
+        <h2 className=" mt-3 section-title text-black">
           Industry <span className="text-primary">Resources</span>
           {/* accent underline */}
         <motion.div
@@ -107,8 +107,8 @@ export default function IndustryResources({ items = CARDS }) {
 
               <div className="flex items-start gap-3">
                 {/* icon disk */}
-                <span className="relative grid size-11 place-items-center rounded-xl bg-primary/10 ring-1 ring-primary/20 text-primary">
-                  <Icon className="h-5 w-5" />
+                <span className="relative grid size-15 place-items-center rounded-xl bg-primary/10 ring-1 ring-primary/20 text-primary">
+                  <Icon className="h-7 w-7" />
                   <span
                     aria-hidden
                     className="pointer-events-none absolute inset-0 rounded-xl"
@@ -117,8 +117,8 @@ export default function IndustryResources({ items = CARDS }) {
                 </span>
 
                 <div className="min-w-0">
-                  <h3 className="text-lg font-semibold leading-tight">{c.k}</h3>
-                  <p className="mt-1 text-sm text-foreground/70">{c.blurb}</p>
+                  <h3 className="section-subtitle">{c.k}</h3>
+                  <p className="mt-1 section-paragraph">{c.blurb}</p>
                 </div>
               </div>
 

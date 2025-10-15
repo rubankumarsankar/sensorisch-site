@@ -93,105 +93,96 @@ export default function InsightsExplorer({ posts = ALL_POSTS }) {
     const activeNorm = norm(active);
 
     const matches = posts.filter((p) => {
-      const inCategory = activeNorm === "all" || norm(p.category) === activeNorm;
-
+      const inCategory =
+        activeNorm === "all" || norm(p.category) === activeNorm;
       if (!q) return inCategory;
 
-      const haystack = [
-        p.title,
-        p.blurb,
-        p.category,
-        ...(p.tags ?? []),
-      ]
+      const haystack = [p.title, p.blurb, p.category, ...(p.tags ?? [])]
         .map(norm)
         .join(" ");
-
       const inQuery = haystack.includes(q);
       return inCategory && inQuery;
     });
 
-    // newest first (by `date` string)
-    return matches.sort((a, b) => parseDate(b.date) - parseDate(a.date));
+    return matches.sort((a, b) => parseDate(b.date) - parseDate(a.date)); // newest first
   }, [posts, query, active]);
 
   return (
     <section className="section-container">
-      {/* Header row: search (left) + tabs (right) */}
+      {/* Centered header: title + underline + search + tabs */}
       <motion.div
         variants={fadeUp}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, amount: 0.35 }}
-        className="mx-auto max-w-6xl"
+        className="mx-auto max-w-6xl text-center"
       >
-        <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-          {/* Left: Title + Search */}
-          <div className="flex-1">
-            <h2 className="mt-2 text-2xl md:text-3xl font-extrabold tracking-tight">
-              Featured <span className="text-primary">Insights</span>
-              <motion.div
-                initial={{ width: 0 }}
-                whileInView={{ width: 128 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                className="h-1 mt-4 rounded bg-gradient-to-r from-primary to-primary/60"
-                aria-hidden
-              />
-            </h2>
+        <h2 className="text-black section-title">
+          Featured <span className="text-primary">Insights</span>
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: 128 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+            className="mx-auto mt-3 h-1 rounded bg-gradient-to-r from-primary to-primary/60"
+            aria-hidden
+          />
+        </h2>
 
-            {/* Search input */}
-            <label className="relative mt-3 block max-w-lg">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-foreground/60" />
-              <input
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search topics, tags, keywords…"
-                className="w-full rounded-xl border border-black/10 dark:border-white/10 bg-white/60 dark:bg-white/5 backdrop-blur pl-10 pr-3 py-2.5 text-sm outline-none focus:ring-2 ring-primary/30"
-              />
-            </label>
+        {/* Search */}
+        <label className="relative mt-6 mx-auto block w-full max-w-lg">
+          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-foreground/60" />
+          <input
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Search topics, tags, keywords…"
+            className="w-full rounded-xl border border-black/10 dark:border-white/10 bg-white/60 dark:bg-white/5 backdrop-blur pl-10 pr-3 py-2.5 text-sm outline-none focus:ring-2 ring-primary/30"
+          />
+        </label>
+
+        {/* Tabs */}
+        <nav
+          role="tablist"
+          aria-label="Insight categories"
+          id={tablistId}
+          className="mt-4"
+        >
+          <div className="mx-auto flex max-w-4xl justify-center gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [-ms-overflow-style:none]">
+            <style jsx>{`
+              div::-webkit-scrollbar {
+                display: none;
+              }
+            `}</style>
+            {CATEGORIES.map((c) => {
+              const isActive = active === c;
+              return (
+                <button
+                  key={c}
+                  type="button" // ← add this line
+                  role="tab"
+                  aria-selected={isActive}
+                  aria-controls={`${tablistId}-${c}`}
+                  onClick={() => setActive(c)}
+                  className={`relative rounded-full px-4 py-2 text-sm font-semibold ring-1 transition whitespace-nowrap
+        ${
+          isActive
+            ? "bg-primary text-white ring-primary/50"
+            : "bg-white/60 dark:bg-white/5 text-foreground ring-black/10 dark:ring-white/10 hover:bg-white/80 dark:hover:bg-white/10"
+        }`}
+                >
+                  {c}
+                  {isActive && (
+                    <span
+                      aria-hidden
+                      className="pointer-events-none absolute inset-0 rounded-full"
+                      style={{ boxShadow: "0 0 18px rgba(210,36,34,0.35)" }}
+                    />
+                  )}
+                </button>
+              );
+            })}
           </div>
-
-          {/* Right: Tabs (category pills) */}
-          <nav
-            role="tablist"
-            aria-label="Insight categories"
-            id={tablistId}
-            className="md:w-[52%] lg:w-[56%]"
-          >
-            <div className="flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [-ms-overflow-style:none]">
-              <style jsx>{`
-                div::-webkit-scrollbar { display: none; }
-              `}</style>
-              {CATEGORIES.map((c) => {
-                const isActive = active === c;
-                return (
-                  <button
-                    key={c}
-                    role="tab"
-                    aria-selected={isActive}
-                    aria-controls={`${tablistId}-${c}`}
-                    onClick={() => setActive(c)}
-                    className={`relative rounded-full px-4 py-2 text-sm font-semibold ring-1 transition whitespace-nowrap
-                      ${
-                        isActive
-                          ? "bg-primary text-white ring-primary/50"
-                          : "bg-white/60 dark:bg-white/5 text-foreground ring-black/10 dark:ring-white/10 hover:bg-white/80 dark:hover:bg-white/10"
-                      }`}
-                  >
-                    {c}
-                    {isActive && (
-                      <span
-                        aria-hidden
-                        className="pointer-events-none absolute inset-0 rounded-full"
-                        style={{ boxShadow: "0 0 18px rgba(210,36,34,0.35)" }}
-                      />
-                    )}
-                  </button>
-                );
-              })}
-            </div>
-          </nav>
-        </div>
+        </nav>
       </motion.div>
 
       {/* Results grid */}
@@ -231,7 +222,7 @@ export default function InsightsExplorer({ posts = ALL_POSTS }) {
 
               {/* header row */}
               <div className="flex items-start gap-5">
-                <span className="grid size-16 place-items-center rounded-xl bg-primary/10 ring-1 ring-primary/20 text-xl">
+                <span className="grid size-18 place-items-center rounded-xl bg-primary/10 ring-1 ring-primary/20 text-2xl">
                   {p.emoji}
                 </span>
                 <div className="min-w-0">

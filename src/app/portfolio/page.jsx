@@ -20,7 +20,7 @@ export default function PortfolioPage() {
           title: "Complete",
           highlight: "Flavour Solutions",
           blurb:
-            "From high-impact flavours to natural colours and ready-to-use systems—discover our modular portfolio built for consistent performance across every application.",
+            "From high-impact flavours to natural colours and ready-to-use systems -discover our modular portfolio built for consistent performance across every application.",
           image: { src: "/banners/contact.png", alt: "Lab and product banner" },
           primary: { href: "/applications-solutions", label: "Request Full Catalogue" },
           secondary: { href: "/contact", label: "Get Samples" },

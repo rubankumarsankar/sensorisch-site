@@ -50,7 +50,7 @@ export default function PartnerSection() {
 
           <motion.p variants={fadeUp} className="mt-3 section-paragraph ">
             Deliver precision-crafted solutions that give your brand a
-            competitive edge — built on trust and innovation.
+            competitive edge  -  built on trust and innovation.
           </motion.p>
         </motion.div>
 

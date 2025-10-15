@@ -130,7 +130,7 @@ function StepRow({ index, k, title, blurb }) {
         />
       </div>
 
-      {/* blurb (copy only—no cards) */}
+      {/* blurb (copy only - no cards) */}
       <p className="section-paragraph text-black/70 leading-relaxed">
         {blurb}
       </p>

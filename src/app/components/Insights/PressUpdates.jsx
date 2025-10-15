@@ -62,23 +62,24 @@ export default function PressUpdates({
         viewport={{ once: true, amount: 0.3 }}
         className="mx-auto max-w-6xl"
       >
-        <div className="flex items-center justify-between gap-6">
-          <div>
-            <h2 className=" mt-3 text-2xl md:text-3xl font-extrabold tracking-tight">
-              Press <span className="text-primary">Updates</span>
-              <motion.div
-                initial={{ width: 0 }}
-                whileInView={{ width: 128 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                className="h-1 mt-4 rounded bg-gradient-to-r from-primary to-primary/60"
-                aria-hidden
-              />
-            </h2>
-            <p className="mt-2 section-paragraph text-black/70">
-              Latest news and announcements from Sensorisch
-            </p>
-          </div>
+        <div className="text-center mx-auto max-w-3xl">
+          <h2 className="mt-3 section-title text-black">
+            Press <span className="text-primary">Updates</span>
+          </h2>
+
+          {/* underline stays centered via mx-auto */}
+          <motion.div
+            initial={{ width: 0 }}
+            whileInView={{ width: 128 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+            className="h-1 mt-4 rounded bg-gradient-to-r from-primary to-primary/60 mx-auto"
+            aria-hidden
+          />
+
+          <p className="mt-2 section-paragraph text-black/70">
+            Latest news and announcements from Sensorisch
+          </p>
         </div>
       </motion.div>
 
@@ -125,9 +126,7 @@ export default function PressUpdates({
                       {it.date}
                     </span>
                   </div>
-                  <h3 className="mt-1 text-base md:text-lg font-semibold leading-snug">
-                    {it.title}
-                  </h3>
+                  <h3 className="mt-1 section-subtitle">{it.title}</h3>
                 </div>
 
                 <span
@@ -164,8 +163,8 @@ export default function PressUpdates({
                          bg-gradient-to-br from-primary to-primary/50 blur-3xl opacity-50"
             />
             <div className="relative">
-              <h3 className="text-lg md:text-xl font-bold">Stay Informed</h3>
-              <p className="mt-1 text-sm md:text-base text-foreground/75 max-w-2xl">
+              <h3 className="section-subtitle">Stay Informed</h3>
+              <p className="mt-1 section-paragraph max-w-2xl">
                 Subscribe to our newsletter for the latest insights, trends, and
                 updates from the world of flavours and fragrances.
               </p>
@@ -174,7 +173,6 @@ export default function PressUpdates({
                 className="mt-4 flex flex-col gap-3 sm:flex-row"
                 onSubmit={(e) => {
                   e.preventDefault();
-                  // TODO: hook up to your newsletter endpoint
                   alert("Thanks for subscribing!");
                 }}
               >

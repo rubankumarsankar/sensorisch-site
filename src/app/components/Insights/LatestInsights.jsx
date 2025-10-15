@@ -31,7 +31,8 @@ const DEFAULT_POSTS = [
     id: "heat-stable-bakery",
     emoji: "🍰",
     category: "Bakery",
-    title: "Heat-Stable Flavours: Breakthrough Technologies for Bakery Applications",
+    title:
+      "Heat-Stable Flavours: Breakthrough Technologies for Bakery Applications",
     blurb:
       "New developments in thermal-resistant flavour systems that maintain integrity through high-temperature processes.",
     tags: ["Bakery", "Technology"],
@@ -82,11 +83,10 @@ export default function LatestInsights({ posts = DEFAULT_POSTS }) {
         viewport={{ once: true, amount: 0.35 }}
         className="mx-auto max-w-6xl"
       >
-        <div className="flex items-end justify-between gap-6">
+        <div className="flex items-center text-center justify-center gap-6">
           <div>
-            
-            <h2 className="mt-3 text-2xl md:text-3xl font-extrabold tracking-tight">
-              Latest  <span className="text-primary">Insights</span>
+            <h2 className="mt-3 section-title text-black">
+              Latest <span className="text-primary">Insights</span>
             </h2>
             <motion.div
               initial={{ width: 0 }}
@@ -97,16 +97,6 @@ export default function LatestInsights({ posts = DEFAULT_POSTS }) {
               aria-hidden
             />
           </div>
-
-          <a
-            href="/insights"
-            className="hidden md:inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold
-                       bg-white/60 dark:bg-white/5 ring-1 ring-black/5 dark:ring-white/10 backdrop-blur
-                       hover:bg-white/80 dark:hover:bg-white/10 transition"
-          >
-            Browse all
-            <ArrowRight className="h-4 w-4" />
-          </a>
         </div>
       </motion.div>
 
@@ -161,9 +151,7 @@ export default function LatestInsights({ posts = DEFAULT_POSTS }) {
                 <h3 className="mt-2 section-subtitle leading-tight">
                   {featured.title}
                 </h3>
-                <p className="mt-2 section-paragraph">
-                  {featured.blurb}
-                </p>
+                <p className="mt-2 section-paragraph">{featured.blurb}</p>
 
                 <div className="mt-3 flex flex-wrap gap-1.5">
                   {(featured.tags ?? []).map((t) => (
@@ -235,9 +223,7 @@ export default function LatestInsights({ posts = DEFAULT_POSTS }) {
                 <h3 className="mt-1 section-subtitle leading-snug">
                   {p.title}
                 </h3>
-                <p className="mt-1 section-paragraph">
-                  {p.blurb}
-                </p>
+                <p className="mt-1 section-paragraph">{p.blurb}</p>
 
                 <div className="mt-3 flex flex-wrap gap-1.5">
                   {(p.tags ?? []).map((t) => (

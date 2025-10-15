@@ -78,7 +78,7 @@ export function BespokeSolutionsIntro({
             className="mt-5 section-paragraph"
           >
             At Sensorisch, we know that every brand has a unique identity, and so should its flavours.
-            Our bespoke solutions deliver exactly what your product requires—from taste profile to technical format.
+            Our bespoke solutions deliver exactly what your product requires - from taste profile to technical format.
           </motion.p>
         </motion.div>
 
