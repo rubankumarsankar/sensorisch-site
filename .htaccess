@@ -1,0 +1,84 @@
+# ===========================================================
+# ✅ Next.js Static Export .htaccess
+# Supports nested URLs, SEO-friendly clean URLs, SPA fallback, and caching
+# Example:
+#   /digital-marketing-services/email-marketing → email-marketing.html
+# ===========================================================
+
+# Prevent Apache from guessing extensions (important for .html handling)
+Options -MultiViews
+
+RewriteEngine On
+RewriteBase /
+
+# -----------------------------------------------------------
+# 1️⃣ Redirect .html URLs → clean extensionless (canonical SEO)
+#     e.g. /about.html → /about
+#          /services/email-marketing.html → /services/email-marketing
+# -----------------------------------------------------------
+RewriteCond %{THE_REQUEST} \s/([^.]+)\.html[\s?] [NC]
+RewriteRule ^ %1 [R=301,L]
+
+# -----------------------------------------------------------
+# 2️⃣ Serve existing files directly (CSS/JS/IMG/HTML/etc.)
+# -----------------------------------------------------------
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# -----------------------------------------------------------
+# 3️⃣ Serve directories with index.html
+#     e.g., /about → /about/index.html
+# -----------------------------------------------------------
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_FILENAME}/index.html -f
+RewriteRule ^(.+?)/?$ $1/index.html [L,QSA]
+
+# -----------------------------------------------------------
+# 4️⃣ Extensionless paths → matching .html files (supports nested paths)
+#     e.g., /digital-marketing-services/email-marketing
+#           → /digital-marketing-services/email-marketing.html
+# -----------------------------------------------------------
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule ^(.+?)/?$ $1.html [L,QSA]
+
+# -----------------------------------------------------------
+# 5️⃣ SPA fallback → serve root index.html
+#     (for client-side routing / dynamic pages)
+# -----------------------------------------------------------
+RewriteRule ^ index.html [L,QSA]
+
+# -----------------------------------------------------------
+# 6️⃣ Static asset caching (improves performance)
+# -----------------------------------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/webp "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType font/woff2 "access plus 1 month"
+  ExpiresByType text/xml "access plus 1 month"
+  ExpiresByType text/html "access plus 1 hour"
+</IfModule>
+
+# -----------------------------------------------------------
+# 7️⃣ GZIP / Brotli compression (for faster load & SEO)
+# -----------------------------------------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/plain text/html text/xml text/css text/javascript application/javascript application/json image/svg+xml
+</IfModule>
+
+<IfModule mod_brotli.c>
+  AddOutputFilterByType BROTLI_COMPRESS text/html text/plain text/css text/javascript application/javascript application/json image/svg+xml
+</IfModule>
+
+# -----------------------------------------------------------
+# ✅ Summary:
+# - /services/email-marketing → /services/email-marketing.html
+# - /services/email-marketing.html → (301) /services/email-marketing
+# - /about → /about.html or /about/index.html
+# - Fallback to /index.html for client-side routes
+# - Static assets cached + compressed
+# -----------------------------------------------------------

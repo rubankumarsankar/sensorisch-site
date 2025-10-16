@@ -1,3 +1,4 @@
+
 "use client";
 
 import { motion, AnimatePresence } from "framer-motion";
@@ -30,7 +31,10 @@ const FormSchema = z.object({
   application: z.string().optional(),
   projectDetails: z.string().optional(),
   additionalInfo: z.string().optional(),
+  website: z.string().optional(), // honeypot
 });
+
+const API_URL = "https://sensorisch.com/api/contact.php";
 
 export default function FormSection() {
   const [files, setFiles] = useState([]);
@@ -56,20 +60,19 @@ export default function FormSection() {
       application: "Bakery",
       projectDetails: "",
       additionalInfo: "",
+      website: "", // honeypot
     },
   });
 
   const totalSizeMB = useMemo(
-    () =>
-      (files.reduce((a, f) => a + (f.size || 0), 0) / (1024 * 1024)).toFixed(2),
+    () => (files.reduce((a, f) => a + (f.size || 0), 0) / (1024 * 1024)).toFixed(2),
     [files]
   );
 
   const onPickFiles = (e) => {
     const picked = Array.from(e.target.files || []);
     const limited = picked.slice(0, MAX_FILES);
-    const totalMB =
-      limited.reduce((a, f) => a + (f.size || 0), 0) / (1024 * 1024);
+    const totalMB = limited.reduce((a, f) => a + (f.size || 0), 0) / (1024 * 1024);
     if (totalMB > MAX_TOTAL_MB) {
       alert("Total file size exceeds 10MB");
       return;
@@ -81,25 +84,42 @@ export default function FormSection() {
     setSubmitting(true);
     setServerError("");
     setSent(false);
+
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 20000); // 20s timeout
+
     try {
       const fd = new FormData();
       Object.entries(data).forEach(([k, v]) => fd.append(k, v ?? ""));
-      files.forEach((f) => fd.append("files", f));
+      files.forEach((f) => fd.append("files", f)); // must be "files" to match PHP
 
-      const res = await fetch("/api/contact", {
+      const res = await fetch(API_URL, {
         method: "POST",
         body: fd,
+        signal: controller.signal,
       });
-      const json = await res.json();
-      if (!res.ok || !json.ok) {
-        throw new Error(json.error || "Failed to submit");
+
+      let json;
+      try {
+        json = await res.json();
+      } catch {
+        throw new Error(`Unexpected response (${res.status})`);
       }
+      if (!res.ok || !json?.ok) {
+        throw new Error(json?.error || `Failed with ${res.status}`);
+      }
+
       setSent(true);
       setFiles([]);
       reset();
     } catch (e) {
-      setServerError(e.message || "Something went wrong");
+      if (e.name === "AbortError") {
+        setServerError("Request timed out. Please try again.");
+      } else {
+        setServerError(e.message || "Something went wrong");
+      }
     } finally {
+      clearTimeout(timer);
       setSubmitting(false);
     }
   };
@@ -135,63 +155,30 @@ export default function FormSection() {
 
           {/* names */}
           <div className="mt-6 grid gap-4 md:grid-cols-2">
-            <Field
-              name="firstName"
-              label="First Name"
-              placeholder="John"
-              error={errors.firstName?.message}
-            >
+            <Field name="firstName" label="First Name" placeholder="John" error={errors.firstName?.message}>
               <Input {...register("firstName")} />
             </Field>
-            <Field
-              name="lastName"
-              label="Last Name"
-              placeholder="Smith"
-              error={errors.lastName?.message}
-            >
+            <Field name="lastName" label="Last Name" placeholder="Smith" error={errors.lastName?.message}>
               <Input {...register("lastName")} />
             </Field>
           </div>
 
           {/* contact */}
           <div className="mt-4 grid gap-4 md:grid-cols-2">
-            <Field
-              name="email"
-              label="Email"
-              placeholder="john@company.com"
-              icon={Mail}
-              error={errors.email?.message}
-            >
+            <Field name="email" label="Email" placeholder="john@company.com" icon={Mail} error={errors.email?.message}>
               <Input {...register("email")} />
             </Field>
-            <Field
-              name="phone"
-              label="Phone"
-              placeholder="+91 98765 43210"
-              icon={Phone}
-              error={errors.phone?.message}
-            >
+            <Field name="phone" label="Phone" placeholder="+91 98765 43210" icon={Phone} error={errors.phone?.message}>
               <Input {...register("phone")} />
             </Field>
           </div>
 
           {/* company + role */}
           <div className="mt-4 grid gap-4 md:grid-cols-2">
-            <Field
-              name="company"
-              label="Company"
-              placeholder="Your Company Ltd."
-              icon={MapPin}
-              error={errors.company?.message}
-            >
+            <Field name="company" label="Company" placeholder="Your Company Ltd." icon={MapPin} error={errors.company?.message}>
               <Input {...register("company")} />
             </Field>
-            <Field
-              name="roleTitle"
-              label="Role / Title"
-              placeholder="R&D Manager"
-              error={errors.roleTitle?.message}
-            >
+            <Field name="roleTitle" label="Role / Title" placeholder="R&D Manager" error={errors.roleTitle?.message}>
               <Input {...register("roleTitle")} />
             </Field>
           </div>
@@ -199,27 +186,10 @@ export default function FormSection() {
           {/* selects */}
           <div className="mt-4 grid gap-4 md:grid-cols-2">
             <Field name="inquiryType" label="Inquiry Type">
-              <Select
-                {...register("inquiryType")}
-                options={[
-                  "General",
-                  "Samples",
-                  "Bespoke Project",
-                  "Technical Consultation",
-                ]}
-              />
+              <Select {...register("inquiryType")} options={["General", "Samples", "Bespoke Project", "Technical Consultation"]} />
             </Field>
             <Field name="application" label="Application Area">
-              <Select
-                {...register("application")}
-                options={[
-                  "Bakery",
-                  "Beverages",
-                  "Dairy",
-                  "Confectionery",
-                  "Health & Wellness",
-                ]}
-              />
+              <Select {...register("application")} options={["Bakery", "Beverages", "Dairy", "Confectionery", "Health & Wellness"]} />
             </Field>
           </div>
 
@@ -252,27 +222,27 @@ export default function FormSection() {
                 </span>
               </div>
               <p className="mt-1 text-xs text-black/60">
-                {files.length
-                  ? `Selected ${files.length} file(s) • ${totalSizeMB} MB total`
-                  : "Support for specifications, references, or product briefs"}
+                {files.length ? `Selected ${files.length} file(s) • ${totalSizeMB} MB total` : "Support for specifications, references, or product briefs"}
               </p>
             </label>
           </motion.div>
 
           {/* extra */}
-          <Field
-            name="additionalInfo"
-            className="mt-4"
-            label="Additional Information"
-            error={errors.additionalInfo?.message}
-          >
+          <Field name="additionalInfo" className="mt-4" label="Additional Information" error={errors.additionalInfo?.message}>
             <TextArea rows={3} {...register("additionalInfo")} />
           </Field>
 
-          <motion.div
-            variants={fadeUp}
-            className="mt-6 flex flex-col sm:flex-row items-start sm:items-center gap-3"
-          >
+          {/* honeypot (spam trap) */}
+          <input
+            type="text"
+            tabIndex="-1"
+            autoComplete="off"
+            className="hidden"
+            aria-hidden="true"
+            {...register("website")}
+          />
+
+          <motion.div variants={fadeUp} className="mt-6 flex flex-col sm:flex-row items-start sm:items-center gap-3">
             <button
               type="submit"
               disabled={submitting}
@@ -289,9 +259,7 @@ export default function FormSection() {
                 </span>
               )}
             </button>
-            <span className="text-xs text-black/60">
-              We’ll respond within 24 hours during business days
-            </span>
+            <span className="text-xs text-black/60">We’ll respond within 24 hours during business days</span>
           </motion.div>
 
           <AnimatePresence>
@@ -308,9 +276,7 @@ export default function FormSection() {
             )}
           </AnimatePresence>
 
-          {serverError && (
-            <p className="mt-3 text-xs text-red-600">{serverError}</p>
-          )}
+          {serverError && <p className="mt-3 text-xs text-red-600">{serverError}</p>}
         </motion.form>
       </div>
     </section>
@@ -318,15 +284,7 @@ export default function FormSection() {
 }
 
 /* ------- Small UI bits (updated for RHF) ------- */
-function Field({
-  name,
-  label,
-  icon: Icon,
-  error,
-  className = "",
-  children,
-}) {
-  // ensure the control gets left padding when an icon exists, and link label->input
+function Field({ name, label, icon: Icon, error, className = "", children }) {
   const onlyChild = Children.only(children);
   const enhanced = cloneElement(onlyChild, {
     id: onlyChild.props.id || name,
@@ -347,9 +305,7 @@ function Field({
         </label>
       )}
       <div className="relative">
-        {Icon && (
-          <Icon className="absolute left-3 top-[10px] h-4 w-4 text-black/40 pointer-events-none" />
-        )}
+        {Icon && <Icon className="absolute left-3 top-[10px] h-4 w-4 text-black/40 pointer-events-none" />}
         {enhanced}
       </div>
       {error ? <p className="text-xs text-red-600">{error}</p> : null}
@@ -358,7 +314,6 @@ function Field({
 }
 
 const Input = (props) => <input {...props} />;
-
 const Select = ({ options = [], ...rest }) => (
   <select {...rest}>
     {options.map((o) => (
@@ -368,5 +323,4 @@ const Select = ({ options = [], ...rest }) => (
     ))}
   </select>
 );
-
 const TextArea = ({ rows = 4, ...rest }) => <textarea rows={rows} {...rest} />;
