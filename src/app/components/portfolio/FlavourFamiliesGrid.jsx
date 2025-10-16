@@ -92,7 +92,7 @@ export default function FlavourFamiliesGrid({ families }) {
   }, []);
 
   return (
-    <section className="section-container py-10">
+    <section id="portfolio" className="section-container py-10">
       {/* Header */}
       <motion.div
         variants={fadeUp}

@@ -18,7 +18,7 @@ export default function Insights() {
           blurb:
             "Stay ahead of flavour and fragrance trends with our expert insights, industry analysis, and company updates from the Sensorisch team.",
           image: { src: "/banners/contact.png", alt: "Lab and product banner" },
-          scrollToId: "why-sensorisch",
+          scrollToId: "insights",
 
           // toggles
           enableTilt: true,

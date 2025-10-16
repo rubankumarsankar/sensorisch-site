@@ -108,7 +108,7 @@ export default function InsightsExplorer({ posts = ALL_POSTS }) {
   }, [posts, query, active]);
 
   return (
-    <section className="section-container">
+    <section id="insights" className="section-container">
       {/* Centered header: title + underline + search + tabs */}
       <motion.div
         variants={fadeUp}

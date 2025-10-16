@@ -470,7 +470,7 @@ export default function ApplicationSolutions() {
           primary: { href: "/application-solutions", label: "Explore Solutions" },
           secondary: { href: "/contact", label: "Request Samples" },
 
-          scrollToId: "why-sensorisch",
+          scrollToId: "application",
 
           // toggles
           enableTilt: true,

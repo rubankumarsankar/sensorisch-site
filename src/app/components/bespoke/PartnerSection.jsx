@@ -24,7 +24,7 @@ const list = { hidden: {}, show: { transition: { staggerChildren: 0.08 } } };
 
 export default function PartnerSection() {
   return (
-    <section className="relative section-container overflow-hidden">
+    <section id="bespoke" className="relative section-container overflow-hidden">
       <div className="section-container py-14 md:py-20">
         {/* Header */}
         <motion.div

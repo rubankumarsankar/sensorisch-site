@@ -24,7 +24,7 @@ export default function PortfolioPage() {
           image: { src: "/banners/contact.png", alt: "Lab and product banner" },
           primary: { href: "/applications-solutions", label: "Request Full Catalogue" },
           secondary: { href: "/contact", label: "Get Samples" },
-          scrollToId: "why-sensorisch",
+          scrollToId: "portfolio",
           enableTilt: true,
           showUnderline: true,
           showShimmer: true,

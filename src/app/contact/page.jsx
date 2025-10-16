@@ -20,7 +20,7 @@ export default function ContactUs() {
           image: { src: "/banners/contact.png", alt: "Lab and product banner" },
          
 
-          scrollToId: "why-sensorisch",
+          scrollToId: "contact",
 
           // toggles
           enableTilt: true,

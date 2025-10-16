@@ -20,7 +20,7 @@ export default function AboutUS() {
             "We blend rigorous R&D with culinary artistry to create end-to-end taste and aroma experiences that make everyday products extraordinary.",
           image: { src: "/banners/about.png", alt: "Lab and product banner" },
 
-          scrollToId: "why-sensorisch",
+          scrollToId: "our-story",
 
           // toggles
           enableTilt: true,

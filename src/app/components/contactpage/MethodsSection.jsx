@@ -44,7 +44,7 @@ const METHODS = [
 
 export default function MethodsSection() {
   return (
-    <section className="section">
+    <section className="section" id="contact">
       <div className="section-container">
         <motion.div
           variants={list}

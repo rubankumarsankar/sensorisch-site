@@ -25,7 +25,7 @@ export default function bespoke() {
           },
           secondary: { href: "/portfolio", label: "View Our Portfolio" },
 
-          scrollToId: "why-sensorisch",
+          scrollToId: "bespoke",
 
           // toggles
           enableTilt: true,
