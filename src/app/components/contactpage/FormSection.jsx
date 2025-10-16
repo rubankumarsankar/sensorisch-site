@@ -15,6 +15,7 @@ import {
   ArrowRight,
   CheckCircle2,
 } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 const MAX_FILES = 8;
 const MAX_TOTAL_MB = 10;
@@ -77,32 +78,50 @@ export default function FormSection() {
     setFiles(limited);
   };
 
-  const onSubmit = async (data) => {
-    setSubmitting(true);
-    setServerError("");
-    setSent(false);
-    try {
-      const fd = new FormData();
-      Object.entries(data).forEach(([k, v]) => fd.append(k, v ?? ""));
-      files.forEach((f) => fd.append("files", f));
+ const onSubmit = async (data) => {
+  setSubmitting(true);
+  setServerError("");
+  setSent(false);
 
-      const res = await fetch("/api/contact", {
-        method: "POST",
-        body: fd,
-      });
-      const json = await res.json();
-      if (!res.ok || !json.ok) {
-        throw new Error(json.error || "Failed to submit");
-      }
-      setSent(true);
-      setFiles([]);
-      reset();
-    } catch (e) {
-      setServerError(e.message || "Something went wrong");
-    } finally {
-      setSubmitting(false);
-    }
-  };
+  try {
+    // Prepare template params
+    const templateParams = {
+      firstName: data.firstName,
+      lastName: data.lastName,
+      email: data.email,
+      phone: data.phone,
+      company: data.company,
+      roleTitle: data.roleTitle,
+      inquiryType: data.inquiryType,
+      application: data.application,
+      projectDetails: data.projectDetails,
+      additionalInfo: data.additionalInfo,
+    };
+
+    // --- Replace these with your own EmailJS keys ---
+    const SERVICE_ID = "service_658qu6f";
+    const TEMPLATE_ID = "template_9l9fhel";
+    const PUBLIC_KEY = "3HrWnx7n23xp9zGfl";
+
+    const result = await emailjs.send(
+      SERVICE_ID,
+      TEMPLATE_ID,
+      templateParams,
+      PUBLIC_KEY
+    );
+
+    console.log("EmailJS result:", result.text);
+    setSent(true);
+    reset();
+    setFiles([]);
+  } catch (error) {
+    console.error("EmailJS error:", error);
+    setServerError("Failed to send message. Please try again later.");
+  } finally {
+    setSubmitting(false);
+  }
+};
+
 
   return (
     <section id="contact-form" className="section-container">
