@@ -15,17 +15,25 @@ export default function LocationsPanel() {
           viewport={{ once: true, amount: 0.25 }}
           className="rounded-2xl bg-white dark:bg-background/60 backdrop-blur ring-1 ring-black/5 dark:ring-white/10 shadow-xl p-6"
         >
-          <h4 className="section-title font-semibold text-center">
-            Our Locations
-          </h4>
+          <motion.h2 className="section-title font-semibold text-black text-center">
+            Our <span className="text-primary">Locations</span>
+            <motion.div
+              initial={{ width: 0 }}
+              whileInView={{ width: 160 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+              className="mx-auto mt-4 h-1 rounded bg-gradient-to-r from-primary to-primary/60"
+              aria-hidden
+            />
+          </motion.h2>
 
           {/* Center the cards on all breakpoints */}
           <div className="mt-4 grid gap-6 md:grid-cols-2 justify-items-center">
             {/* India */}
             <article className="w-full max-w-md rounded-lg border border-black/5 dark:border-white/10 p-4">
-              <h5 className="font-medium text-primary text-center">
+              <h3 className="font-medium section-subtitle text-primary text-center">
                 India Headquarters
-              </h5>
+              </h3>
               <p className="text-sm text-black/70 mt-1 text-center">
                 Innovation Center, Technology Park, Mumbai, Maharashtra 400001
               </p>
@@ -53,9 +61,9 @@ export default function LocationsPanel() {
 
             {/* GCC */}
             <article className="w-full max-w-md rounded-lg border border-black/5 dark:border-white/10 p-4">
-              <h5 className="font-medium text-primary text-center">
+              <h3 className="font-medium section-subtitle text-primary text-center">
                 GCC Operations
-              </h5>
+              </h3>
               <p className="text-sm text-black/70 mt-1 text-center">
                 Business District, Dubai, UAE
               </p>
@@ -84,12 +92,13 @@ export default function LocationsPanel() {
             {/* Quick help / emergency (centered, spans 2 cols on md+) */}
             <motion.div
               variants={fadeUp}
-              className="w-full max-w-3xl rounded-2xl bg-gradient-to-br from-primary/10 to-transparent ring-1 ring-primary/20 p-6 md:col-span-2"
+              className="w-full max-w-4xl rounded-2xl bg-gradient-to-br from-primary/10 to-transparent ring-1 ring-primary/20 p-6 md:col-span-2"
             >
-              <h4 className="text-2xl text-primary font-semibold text-center">
-                Need Immediate Assistance?
-              </h4>
-              <p className="text-sm text-black/70 mt-1 text-center">
+              <motion.h2 className="section-title font-semibold text-black text-center">
+                Need Immediate{" "}
+                <span className="text-primary"> Assistance?</span>
+              </motion.h2>
+              <p className="section-paragraph text-black/70 mt-1 text-center">
                 For urgent inquiries or immediate support, choose from these
                 options
               </p>
