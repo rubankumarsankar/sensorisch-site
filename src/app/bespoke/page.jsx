@@ -18,7 +18,7 @@ export default function bespoke() {
           highlight: "Unique Needs",
           blurb:
             "At Sensorisch, we know that every brand has a unique identity, and so should its flavours. Our bespoke solutions are designed to deliver exactly what your product requires from taste profile to technical format.",
-          image: { src: "/banners/contact.png", alt: "Lab and product banner" },
+          image: { src: "/banners/Bespoke.png", alt: "Lab and product banner" },
           primary: {
             href: "/applications-solutions",
             label: "Start Your Project",

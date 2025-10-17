@@ -10,7 +10,6 @@ import { Search, Clock, Tag, BookOpen } from "lucide-react";
 const ALL_POSTS = [
   {
     id: "plant-based-future",
-    emoji: "🌱",
     title: "The Future of Plant-Based Flavours: Beyond Taste Masking",
     blurb:
       "Exploring how advanced flavour technologies are transforming plant-based products from acceptable alternatives to preferred choices.",
@@ -18,11 +17,10 @@ const ALL_POSTS = [
     tags: ["Plant-Based", "Innovation", "Consumer Trends"],
     date: "March 15, 2024",
     read: "5 min read",
-    image: "/assets/img-16.png",
+    image: "/assets/img-13.png",
   },
   {
     id: "clean-label-2024",
-    emoji: "📋",
     title: "Clean Label Compliance: Navigating Global Regulations in 2024",
     blurb:
       "A comprehensive guide to clean label requirements across major markets and how to maintain compliance while optimizing taste.",
@@ -30,11 +28,11 @@ const ALL_POSTS = [
     tags: ["Regulatory", "Clean Label", "Global Markets"],
     date: "March 10, 2024",
     read: "7 min read",
-    image: "/assets/img-17.png",
+    image: "/assets/img-14.png",
   },
   {
     id: "functional-beverages-science",
-    emoji: "🥤",
+
     title: "Functional Beverages: The Science of Taste-Neutral Nutrition",
     blurb:
       "How advanced masking technologies are enabling the next generation of functional beverages without compromising on taste.",
@@ -42,20 +40,9 @@ const ALL_POSTS = [
     tags: ["Beverages", "Functional Foods", "Nutrition"],
     date: "March 5, 2024",
     read: "6 min read",
-    image: "/assets/img-18.png",
+    image: "/assets/img-15.png",
   },
-  {
-    id: "functional-beverages-science1",
-    emoji: "🥤",
-    title: "Functional Beverages: The Science of Taste-Neutral Nutrition",
-    blurb:
-      "How advanced masking technologies are enabling the next generation of functional beverages without compromising on taste.",
-    category: "Beverages",
-    tags: ["Beverages", "Functional Foods", "Nutrition"],
-    date: "March 5, 2024",
-    read: "6 min read",
-    image: "/assets/img-19.png",
-  },
+  
 ];
 
 const CATEGORIES = [
@@ -229,9 +216,7 @@ export default function InsightsExplorer({ posts = ALL_POSTS }) {
                   />
 
                   <div className="flex items-start gap-4">
-                    <span className="grid size-14 place-items-center rounded-xl bg-primary/10 ring-1 ring-primary/20 text-xl">
-                      {p.emoji}
-                    </span>
+                    
                     <div className="min-w-0">
                       <h3 className="section-subtitle text-primary">
                         {p.title}
