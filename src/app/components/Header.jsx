@@ -51,7 +51,7 @@ export default function Header() {
             </Link>
           ))}
           <Link
-            href="/samples"
+            href="/contact"
             className="ml-2 inline-flex items-center rounded-sm bg-primary font-secondary text-white px-4 py-2 text-sm font-semibold
                        shadow hover:bg-primary/90 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
           >
