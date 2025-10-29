@@ -39,7 +39,7 @@ export default function PortfolioPage() {
       <PremiumSpreadsSection />
       <DecorSection />
       <SystemsSection />
-      <DriedIngredientsSection />
+      {/* <DriedIngredientsSection /> */}
       <FinalCta />
     </main>
   );
