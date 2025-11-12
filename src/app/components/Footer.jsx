@@ -64,15 +64,37 @@ export default function Footer() {
       </div>
 
       {/* Bottom strip */}
-      <div className="border-t border-white/20 ">
-        <div className="section-container bg-primary">
-          <div className="mx-auto px-6 py-4">
-            <p className="text-center text-sm tracking-wide opacity-95">
-              © {year} Sensorisch. All rights reserved.
+      <div className="border-t border-white/20 bg-primary  section-container">
+        <div className="px-20">
+          <div className="mx-auto flex flex-col items-center justify-between gap-3 px-6 py-4 text-center sm:flex-row sm:text-left">
+            {/* Left: Copyright */}
+            <p className="text-sm tracking-wide text-white/90">
+              © {new Date().getFullYear()} Sensorisch. All rights reserved.
             </p>
+
+            {/* Right: Developer credit */}
+            <div className="flex items-center gap-2">
+              <a
+                href="https://ayatiworks.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 transition hover:opacity-90"
+              >
+                <span className="text-sm text-white">
+                  Designed & Developed by
+                </span>
+
+                <img
+                  src="/web_logo.png" // 👉 replace with your actual image
+                  alt="Ayatiworks"
+                  className="h-15 w-auto brightness-110"
+                />
+              </a>
+            </div>
           </div>
         </div>
       </div>
+
     </footer>
   );
 }

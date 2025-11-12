@@ -56,12 +56,12 @@ export default function BriefToScale() {
             viewport={{ once: true, amount: 0.3 }}
             whileHover={{ scale: 1.02, rotateZ: -0.4 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
-            className="order-1 md:order-none overflow-hidden shadow-xl rounded-lg"
+            className="order-1 md:order-none overflow-hidden "
           >
             <img
-              src="/assets/home-banner-3.png" // <- replace with your asset
+              src="/assets/home-banner-4.png" // <- replace with your asset
               alt="Cheese stack"
-              className="w-full h-full object-cover"
+              className="w-full h-full"
             />
           </motion.figure>
 
@@ -71,7 +71,7 @@ export default function BriefToScale() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.3 }}
-            className="relative flex items-start md:ml-4 lg:ml-20 lg:mt-15"
+            className="relative flex items-start md:ml-4 lg:ml-20 lg:mt-35"
           >
             {/* vertical dashed rail */}
             <div className="absolute left-4 top-2 bottom-2 border-l-2 border-dashed border-gray-300" />
