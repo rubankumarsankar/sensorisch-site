@@ -32,7 +32,7 @@ export default function RootLayout({ children }) {
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
           <SplashLoader ms={2400} />
-        <AnimatedCursor />
+        {/* <AnimatedCursor /> */}
         <Header />
         <ScrollButton />
         {children}
