@@ -13,7 +13,7 @@ const ranges = [
     title: "SensoBake",
     blurb:
       "Flavours that enrich cakes, cookies, pastries, and breads with oven-true performance.",
-    imageSrc: "/assets/applicatio-1.png",
+    imageSrc: "/assets/application-1.png",
     iconSrc: "/icons/bakery.png",
     benefits: [
       {
@@ -64,7 +64,7 @@ const ranges = [
     title: "SensoTreat",
     blurb:
       "Playful and nostalgic profiles with controlled release for long-lasting flavour.",
-    imageSrc: "/assets/applicatio-2.png",
+    imageSrc: "/assets/application-2.png",
     iconSrc: "/icons/confectionery.png",
     benefits: [
       {
@@ -109,7 +109,7 @@ const ranges = [
     title: "SensoCreme",
     blurb:
       "Creamy, authentic notes for ice creams, yoghurts, milkshakes, and cheeses with heat-stable options.",
-    imageSrc: "/assets/applicatio-3.png",
+    imageSrc: "/assets/application-3.png",
     iconSrc: "/icons/dairy.png",
     benefits: [
       {
@@ -160,7 +160,7 @@ const ranges = [
     title: "SensoSip",
     blurb:
       "Architectures tuned for clarity, fizz stability, and shelf-life resilience across beverages.",
-    imageSrc: "/assets/applicatio-4.png",
+    imageSrc: "/assets/application-4.png",
     iconSrc: "/icons/beverage.png",
     benefits: [
       {
@@ -211,7 +211,7 @@ const ranges = [
     title: "Senso+",
     blurb:
       "Palatable profiles for syrups and chewables with bitterness modulation and aftertaste control.",
-    imageSrc: "/assets/applicatio-5.png",
+    imageSrc: "/assets/application-5.png",
     iconSrc: "/icons/pharma.png",
     benefits: [
       {
@@ -265,7 +265,7 @@ const ranges = [
     title: "SensoActive",
     blurb:
       "Flavours that enhance proteins, botanicals, minerals, and vitamins while masking off-notes.",
-    imageSrc: "/assets/applicatio-6.png",
+    imageSrc: "/assets/application-6.png",
     iconSrc: "/icons/nutra.png",
     benefits: [
       {
@@ -316,7 +316,7 @@ const ranges = [
     title: "SensoSpice",
     blurb:
       "Authentic spice & herb signatures that add richness to soups, sauces, snacks, and seasonings.",
-    imageSrc: "/assets/applicatio-7.png",
+    imageSrc: "/assets/application-7.png",
     iconSrc: "/icons/spice.png",
     benefits: [
       {
@@ -361,7 +361,7 @@ const ranges = [
     title: "SensoCare",
     blurb:
       "Cooling, refreshing notes for toothpastes, mouthwashes, and personal-care applications.",
-    imageSrc: "/assets/applicatio-8.png",
+    imageSrc: "/assets/application-8.png",
     iconSrc: "/icons/oralcare.png",
     benefits: [
       {
@@ -409,7 +409,7 @@ const ranges = [
     title: "SensoNat",
     blurb:
       "Nature-derived flavours & colours for clean-label ambitions with extracts and distillates.",
-    imageSrc: "/assets/applicatio-9.png",
+    imageSrc: "/assets/application-9.png",
     iconSrc: "/icons/natural.png",
     benefits: [
       {
