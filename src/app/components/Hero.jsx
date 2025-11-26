@@ -67,11 +67,11 @@ export default function HeroComponent({ data = {} }) {
               >
                 {/* glow */}
                 <span
-                  className="absolute inset-0 bg-primary/20 blur-md rounded-md opacity-70"
+                  className="absolute inset-0 bg-primary-light  rounded-md "
                   aria-hidden="true"
                 />
                 {/* highlight capsule */}
-                <span className="relative bg-primary/10 px-3 py-1 rounded-md">
+                <span className="relative bg-primary-light px-3 py-1 rounded-md">
                   {eyebrow}
                 </span>
               </motion.h3>

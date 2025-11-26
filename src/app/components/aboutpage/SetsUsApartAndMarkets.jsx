@@ -35,7 +35,7 @@ export default function SetsUsApartAndMarkets() {
               whileInView={{ width: 112 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-              className="mx-auto mt-6 h-1 rounded bg-gradient-to-r from-primary to-primary/60"
+              className="mx-auto mt-6 h-1 rounded bg-black"
             />
           </h2>
           <p className="mt-3 section-paragraph max-w-2xl mx-auto">
@@ -47,10 +47,10 @@ export default function SetsUsApartAndMarkets() {
         {/* Features + dotted connectors */}
         <div className="relative mt-10 md:mt-14">
           {/* background bloom */}
-          <div
+          {/* <div
             aria-hidden
             className="pointer-events-none absolute inset-x-10 -top-6 h-40 rounded-full bg-primary/10 blur-3xl md:inset-x-24 dark:bg-primary/15"
-          />
+          /> */}
 
           {/* dotted line: horizontal on md+, vertical on mobile */}
           <div
@@ -107,7 +107,7 @@ export default function SetsUsApartAndMarkets() {
               whileInView={{ width: 112 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-              className="mx-auto mt-6 h-1 rounded bg-gradient-to-r from-primary to-primary/60"
+              className="mx-auto mt-6 h-1 rounded bg-black"
             />
           </h2>
           <p className="mt-3 section-paragraph max-w-2xl mx-auto">

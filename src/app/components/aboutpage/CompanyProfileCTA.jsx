@@ -8,12 +8,12 @@ export default function CompanyProfileCTA({
   title = "Company Profile",
   blurb = `Download our comprehensive company profile to learn more about our capabilities,
 processes, and how we can support your product development goals.`,
-  fileUrl = "/files/company-profile.pdf",
+  fileUrl = "#",
   fileName = "Sensorisch-Company-Profile.pdf",
   buttonLabel = "Download Company Profile",
 }) {
   return (
-    <section className="relative isolate w-full bg-primary section-container text-white">
+    <section className="relative isolate w-full bg-[#f5f5f5] section-container text-black">
       <div className="section-container py-12 md:py-16 text-center">
         {/* heading */}
         <motion.h2
@@ -21,7 +21,7 @@ processes, and how we can support your product development goals.`,
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.45 }}
-          className="section-title text-white"
+          className="section-title "
         >
           {title}
           <motion.div
@@ -29,7 +29,7 @@ processes, and how we can support your product development goals.`,
             whileInView={{ width: 112 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-            className="mx-auto mt-6 h-1 rounded bg-white"
+            className="mx-auto mt-6 h-1 rounded bg-primary"
           />
         </motion.h2>
 
@@ -39,7 +39,7 @@ processes, and how we can support your product development goals.`,
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.45, delay: 0.1 }}
-          className="mx-auto mt-3 max-w-2xl section-paragraph leading-relaxed text-white/90"
+          className="mx-auto mt-3 max-w-2xl section-paragraph leading-relaxed text-black/90"
         >
           {blurb}
         </motion.p>
@@ -56,8 +56,8 @@ processes, and how we can support your product development goals.`,
             href={fileUrl}
             download={fileName}
             className="inline-flex items-center gap-2 rounded-md bg-white/95 px-4 py-2 text-lg font-semibold
-                       text-primary ring-1 ring-white/70 shadow-[0_12px_30px_-16px_rgba(0,0,0,0.45)]
-                       hover:bg-white transition-colors"
+                       text-primary ring-1 shadow-[0_12px_30px_-16px_rgba(0,0,0,0.45)]
+                       hover:bg-primary hover:text-white transition-colors"
           >
             {buttonLabel}
             {/* download icon */}

@@ -52,7 +52,7 @@ export default function WhyChooseSection() {
                               whileInView={{ width: 112 }}
                               viewport={{ once: true }}
                               transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                              className="mx-auto mt-6 h-1 rounded bg-gradient-to-r from-primary to-primary/60"
+                              className="mx-auto mt-6 h-1 rounded bg-black"
                             /></h2>
         </motion.div>
 
@@ -80,7 +80,7 @@ export default function WhyChooseSection() {
                 {/* Icon on top (PNG) */}
                 <div className="flex flex-col items-center text-center">
                   <div
-                    className="grid h-12 w-12 place-items-center rounded-2xl bg-primary/10 text-primary
+                    className="grid h-14 w-14 place-items-center rounded-2xl  text-primary
                                transition-transform duration-300 group-hover:-translate-y-1 group-hover:rotate-3"
                   >
                     <Image
@@ -88,7 +88,7 @@ export default function WhyChooseSection() {
                       alt={f.iconAlt}
                       width={20}
                       height={20}
-                      className="h-7 w-7 object-contain"
+                      className="h-8 w-8 object-contain"
                       priority={i === 0}
                     />
                   </div>

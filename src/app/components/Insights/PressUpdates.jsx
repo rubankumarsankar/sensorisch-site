@@ -73,7 +73,7 @@ export default function PressUpdates({
             whileInView={{ width: 128 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-            className="h-1 mt-4 rounded bg-gradient-to-r from-primary to-primary/60 mx-auto"
+            className="h-1 mt-4 rounded bg-black mx-auto"
             aria-hidden
           />
 

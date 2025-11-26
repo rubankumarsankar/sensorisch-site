@@ -82,7 +82,7 @@ export default function ApplicationExpertise() {
                               whileInView={{ width: 112 }}
                               viewport={{ once: true }}
                               transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                              className="mx-auto mt-6 h-1 rounded bg-gradient-to-r from-primary to-primary/60"
+                              className="mx-auto mt-6 h-1 rounded bg-black"
                             />
                             </h2>
           <p className="section-paragraph mt-4 text-black/80">
@@ -157,13 +157,13 @@ export default function ApplicationExpertise() {
               <h3 className="section-title text-3xl">{c.title}</h3>
 
               {/* underline: scroll-in + hover extend */}
-              <motion.div
+              {/* <motion.div
                 className={`h-[2px] w-0 my-2 rounded bg-gradient-to-r ${c.lineClass}`}
                 initial={{ width: 0 }}
                 whileInView={{ width: 64 }} // 64px = w-16
                 viewport={{ once: true, amount: 0.6 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-              />
+              /> */}
 
               {/* description */}
               <p className="section-paragraph text-black/80 mt-5">

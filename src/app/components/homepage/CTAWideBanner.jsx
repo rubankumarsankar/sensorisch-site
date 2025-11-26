@@ -13,16 +13,16 @@ export default function ProfileCTA({
   secondaryLabel = "View Our Portfolio",
 }) {
   return (
-    <section className="relative section-container bg-primary w-full overflow-hidden">
+    <section className="relative section-container bg-[#f5f5f5] w-full overflow-hidden">
       {/* Main block */}
-      <div className="section-container bg-primary py-14 md:py-20 text-center text-white">
+      <div className="section-container  py-14 md:py-20 text-center text-black">
         {/* Heading */}
         <motion.h2
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.45 }}
-          className="mx-auto max-w-4xl section-title text-white"
+          className="mx-auto max-w-4xl section-title"
         >
           {title}
           <motion.span
@@ -31,7 +31,7 @@ export default function ProfileCTA({
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.15, duration: 0.6, ease: "easeOut" }}
-            className="mx-auto mt-3 block h-1 w-40 md:w-56 origin-left rounded-full bg-white/70"
+            className="mx-auto mt-3 block h-1 w-40 md:w-56 origin-left rounded-full bg-black"
           />
         </motion.h2>
 
@@ -41,7 +41,7 @@ export default function ProfileCTA({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.45, delay: 0.05 }}
-          className="mx-auto mt-4 section-paragraph max-w-2xl leading-relaxed text-white/90"
+          className="mx-auto mt-4 section-paragraph max-w-2xl leading-relaxed "
         >
           {blurb}
         </motion.p>
@@ -59,7 +59,7 @@ export default function ProfileCTA({
             <Link
               href={primaryHref}
               aria-label={primaryLabel}
-              className="inline-flex items-center gap-2 rounded-lg bg-white px-5 py-3 text-primary font-semibold shadow-[0_16px_40px_-20px_rgba(0,0,0,0.45)] hover:bg-white/95 transition-colors focus:outline-none focus-visible:ring-4 focus-visible:ring-white/30"
+              className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-white font-semibold shadow-[0_16px_40px_-20px_rgba(0,0,0,0.45)] hover:bg-white/95 hover:text-primary transition-colors focus:outline-none focus-visible:ring-4 focus-visible:ring-white/30"
             >
               {primaryLabel}
             </Link>
@@ -70,7 +70,7 @@ export default function ProfileCTA({
             <Link
               href={secondaryHref}
               aria-label={secondaryLabel}
-              className="inline-flex items-center gap-2 rounded-lg bg-white/10 px-5 py-3 font-semibold ring-1 ring-white/40 hover:bg-white/15 transition-colors focus:outline-none focus-visible:ring-4 focus-visible:ring-white/30"
+              className="inline-flex items-center gap-2 rounded-lg bg-white text-primary px-5 py-3 font-semibold  hover:bg-primary transition-colors hover:text-white focus:outline-none focus-visible:ring-4 focus-visible:ring-white/30"
             >
               {secondaryLabel}
             </Link>

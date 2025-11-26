@@ -62,7 +62,7 @@ export default function FlavourFamiliesGrid({ families }) {
             whileInView={{ width: 128 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-            className="mx-auto mt-4 h-1 rounded bg-gradient-to-r from-primary to-primary/60"
+            className="mx-auto mt-4 h-1 rounded bg-black"
           />
         </h2>
         <p className="mt-2 section-paragraph text-black/70">
@@ -103,7 +103,7 @@ export default function FlavourFamiliesGrid({ families }) {
                     <motion.i
                       initial={{ width: 40 }}
                       whileHover={{ width: 90 }}
-                      className="block h-[3px] rounded bg-gradient-to-r from-primary to-primary/60"
+                      className="block h-[3px] rounded bg-black"
                     />
                   </h3>
                   <p className="mt-2 text-sm leading-6 text-black/70 line-clamp-3">{f.blurb}</p>

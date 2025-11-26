@@ -62,7 +62,7 @@ export default function ValuesSection() {
             whileInView={{ width: 112 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-            className="mx-auto mt-6 h-1 rounded bg-gradient-to-r from-primary to-primary/60"
+            className="mx-auto mt-6 h-1 rounded bg-black"
           />
           <p className="mt-4 section-paragraph text-center text-black">
             The principles that guide everything we do, from initial concept to final delivery
@@ -87,10 +87,10 @@ export default function ValuesSection() {
                          ring-1 ring-black/5 dark:ring-white/10 shadow-sm"
             >
               {/* ambient hue */}
-              <div
+              {/* <div
                 aria-hidden
                 className={`pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full blur-2xl bg-gradient-to-br ${v.hue}`}
-              />
+              /> */}
               {/* icon */}
               <div className="mb-4 inline-flex h-15 w-15 items-center justify-center">
                 {/* swap to next/image if preferred */}

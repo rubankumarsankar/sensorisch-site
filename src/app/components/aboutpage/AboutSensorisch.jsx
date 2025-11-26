@@ -73,12 +73,12 @@ export default function AboutSensorisch() {
                 className="h-full w-full object-cover"
               />
               {/* soft inner glow following mouse */}
-              <motion.span
+              {/* <motion.span
                 style={{
                   background: glow,
                 }}
                 className="pointer-events-none absolute inset-0"
-              />
+              /> */}
             </motion.div>
 
             {/* glossy top highlight */}
@@ -112,7 +112,7 @@ export default function AboutSensorisch() {
               whileInView={{ width: 112 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-              className="h-1 rounded bg-gradient-to-r from-primary to-primary/60"
+              className="h-1 rounded bg-black"
             />
 
             {/* Paragraphs (staggered) */}

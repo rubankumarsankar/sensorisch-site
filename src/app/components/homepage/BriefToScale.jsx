@@ -38,7 +38,7 @@ export default function BriefToScale() {
                               whileInView={{ width: 112 }}
                               viewport={{ once: true }}
                               transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                              className="mx-auto mt-6 h-1 rounded bg-gradient-to-r from-primary to-primary/60"
+                              className="mx-auto mt-6 h-1 rounded bg-black"
                             />
                             </h2>
           <p className="section-paragraph mt-4 text-black/80">

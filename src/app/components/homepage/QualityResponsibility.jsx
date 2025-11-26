@@ -55,7 +55,7 @@ export default function QualityResponsibility() {
           whileInView={{ width: 112 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-          className="mx-auto mt-6 h-1 rounded bg-gradient-to-r from-primary to-primary/60"
+          className="mx-auto mt-6 h-1 rounded bg-black"
         />
 
         <p className="section-paragraph max-w-3xl mx-auto">

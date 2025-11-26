@@ -90,7 +90,7 @@ export default function LatestInsights({ posts = DEFAULT_POSTS }) {
           whileInView={{ width: 128 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-          className="h-1 mt-4 mx-auto rounded bg-gradient-to-r from-primary to-primary/60"
+          className="h-1 mt-4 mx-auto rounded bg-black"
         />
       </motion.div>
 

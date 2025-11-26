@@ -84,7 +84,7 @@ export default function VisionMission() {
             whileInView={{ width: 96 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-            className="mx-auto mt-6 h-1 rounded bg-gradient-to-r from-primary to-primary/60"
+            className="mx-auto mt-6 h-1 rounded bg-black"
           />
         </motion.div>
 
@@ -99,8 +99,8 @@ export default function VisionMission() {
             whileHover={{ y: -4 }}
             className="relative overflow-hidden rounded-2xl bg-white/70 dark:bg-white/5 backdrop-blur p-6 md:p-8 ring-1 ring-black/5 dark:ring-white/10 shadow-sm"
           >
-            <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-primary/10 blur-2xl" />
-            <h3 className="section-subtitle text-black ">Our Vision</h3>
+            {/* <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-primary/10 blur-2xl" /> */}
+            <h3 className="section-subtitle text-primary ">Our Vision</h3>
             <p className="mt-3 section-paragraph leading-relaxed">
               to be the most trusted global partner for sensory innovation,
               delivering precision driven flavours, colours, and ingredient
@@ -118,8 +118,8 @@ export default function VisionMission() {
             whileHover={{ y: -4 }}
             className="relative overflow-hidden rounded-2xl bg-white/70 dark:bg-white/5 backdrop-blur p-6 md:p-8 ring-1 ring-black/5 dark:ring-white/10 shadow-sm"
           >
-            <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-primary/10 blur-2xl" />
-            <h3 className="section-subtitle text-black ">Our Mission</h3>
+            {/* <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-primary/10 blur-2xl" /> */}
+            <h3 className="section-subtitle text-primary ">Our Mission</h3>
             <p className="mt-3 section-paragraph leading-relaxed">
               sensorisch is committed to empowering creators in the bakery,
               beverage, dairy,culinary, and wellness industries by co-developing

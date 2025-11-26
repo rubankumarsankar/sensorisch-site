@@ -97,7 +97,7 @@ export default function CapabilitiesSection() {
             whileInView={{ width: 128 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-            className="mx-auto mt-4 h-1 rounded bg-gradient-to-r from-primary to-primary/60"
+            className="mx-auto mt-4 h-1 rounded bg-black"
           />
         </motion.div>
 
@@ -119,11 +119,11 @@ export default function CapabilitiesSection() {
                          ring-1 ring-black/5 dark:ring-white/10 shadow-sm"
             >
               {/* ambient hue */}
-              <div
+              {/* <div
                 aria-hidden
                 className={`pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full blur-2xl
                             bg-gradient-to-br ${g.accent} opacity-30`}
-              />
+              /> */}
               {/* icon */}
               <div className="mb-4 inline-flex h-15 w-15 items-center justify-center">
                 <img src={g.icon} alt="" className="h-10 w-10 object-contain" />

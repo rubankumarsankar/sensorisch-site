@@ -25,15 +25,13 @@ export default function Header() {
       ? pathname === "/"
       : pathname === href || pathname.startsWith(href + "/");
 
+  // 🔥 Clean underline-only nav style
   const pillCls = (href) =>
     [
-      "inline-flex items-center rounded-full px-3.5 py-2 text-sm font-medium transition-all",
-      "ring-1 ring-transparent",
-      "hover:ring-primary/30 hover:shadow-[0_0_0_3px_rgba(210,36,34,0.08)]",
-      "focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50",
+      "inline-flex items-center px-2 py-1 text-sm font-medium transition-all",
       isActive(href)
-        ? "bg-primary/10 text-primary ring-primary/30 shadow-[0_8px_24px_-12px_rgba(210,36,34,0.45)]"
-        : "text-black/80 hover:text-primary",
+        ? "text-primary underline underline-offset-4"
+        : "text-black/80 hover:text-primary hover:underline underline-offset-4",
     ].join(" ");
 
   return (
@@ -44,16 +42,16 @@ export default function Header() {
         </Link>
 
         {/* Desktop */}
-        <nav className="hidden md:flex items-center gap-2">
+        <nav className="hidden md:flex items-center gap-4">
           {NAV.map((n) => (
             <Link key={n.href} href={n.href} className={pillCls(n.href)}>
               {n.label}
             </Link>
           ))}
+
           <Link
             href="/contact"
-            className="ml-2 inline-flex items-center rounded-sm bg-primary font-secondary text-white px-4 py-2 text-sm font-semibold
-                       shadow hover:bg-primary/90 transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
+            className="ml-4 inline-flex items-center rounded-sm bg-primary font-secondary text-white px-4 py-2 text-sm font-semibold shadow hover:bg-primary/90 transition-colors"
           >
             Request Samples
           </Link>
@@ -72,22 +70,23 @@ export default function Header() {
       {/* Mobile drawer */}
       {open && (
         <nav className="md:hidden border-t border-black/5 dark:border-white/10 bg-background/95 backdrop-blur">
-          <div className="mx-auto max-w-7xl px-6 py-4 flex flex-col gap-3">
+          <div className="mx-auto max-w-7xl px-6 py-4 flex flex-col gap-4">
             {NAV.map((n) => (
               <Link
                 key={n.href}
                 href={n.href}
                 className={[
-                  "rounded-full px-4 py-2 text-base transition-all ring-1",
+                  "px-1 py-1 text-base transition-all font-secondary",
                   isActive(n.href)
-                    ? "bg-primary/10 text-primary font-secondary ring-primary/30"
-                    : "text-black/90 ring-transparent font-secondary hover:text-primary hover:ring-primary/30",
+                    ? "text-primary underline underline-offset-4"
+                    : "text-black/90 hover:text-primary hover:underline underline-offset-4",
                 ].join(" ")}
                 onClick={() => setOpen(false)}
               >
                 {n.label}
               </Link>
             ))}
+
             <Link
               href="/contact"
               className="mt-2 inline-flex items-center justify-center font-secondary rounded-sm bg-primary text-white px-4 py-2 text-base font-semibold shadow hover:bg-primary/90 transition-colors"

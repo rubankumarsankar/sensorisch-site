@@ -32,7 +32,7 @@ export default function LocationsPanel() {
               whileInView={{ width: 180 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-              className="mx-auto mt-4 h-1 rounded bg-gradient-to-r from-primary to-primary/60"
+              className="mx-auto mt-4 h-1 rounded bg-black"
               aria-hidden
             />
           </motion.h2>

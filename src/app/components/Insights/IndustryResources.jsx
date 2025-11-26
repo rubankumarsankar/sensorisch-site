@@ -63,7 +63,7 @@ export default function IndustryResources({ items = CARDS }) {
           whileInView={{ width: 160 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-          className="mx-auto mt-4 h-1  bg-gradient-to-r from-primary to-primary/60"
+          className="mx-auto mt-4 h-1  bg-black"
         />
         <p className="mt-2 section-paragraph text-black/70">
           Access comprehensive guides, whitepapers, and technical documentation

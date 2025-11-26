@@ -120,7 +120,7 @@ export function PremiumSpreadsSection() {
             whileInView={{ width: 128 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-            className="mx-auto mt-4 h-1 rounded bg-gradient-to-r from-primary to-primary/60"
+            className="mx-auto mt-4 h-1 rounded bg-black"
           />
         </h2>
         <p className="mt-2 section-paragraph text-black/70">
@@ -211,7 +211,7 @@ export function PremiumSpreadsSection() {
               whileInView={{ width: 128 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-              className="mx-auto mt-4 h-1 rounded bg-gradient-to-r from-primary to-primary/60"
+              className="mx-auto mt-4 h-1 rounded bg-black"
             />
           </h2>
         </motion.div>
@@ -257,7 +257,7 @@ export function DecorSection() {
             whileInView={{ width: 128 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-            className="mx-auto mt-4 h-1 rounded bg-gradient-to-r from-primary to-primary/60"
+            className="mx-auto mt-4 h-1 rounded bg-black"
           />
         </h2>
         <p className="mt-2 section-paragraph text-black/70">
@@ -316,7 +316,7 @@ export function DecorSection() {
               whileInView={{ width: 128 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-              className="mx-auto mt-4 h-1 rounded bg-gradient-to-r from-primary to-primary/60"
+              className="mx-auto mt-4 h-1 rounded bg-black"
             />
           </h2>
         </motion.div>
@@ -361,7 +361,7 @@ export function SystemsSection() {
             whileInView={{ width: 128 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-            className="mx-auto mt-4 h-1 rounded bg-gradient-to-r from-primary to-primary/60"
+            className="mx-auto mt-4 h-1 rounded bg-black"
           />
         </h2>
         <p className="mt-2 section-paragraph text-black/70">
@@ -422,7 +422,7 @@ export function DriedIngredientsSection() {
             whileInView={{ width: 128 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-            className="mx-auto mt-4 h-1 rounded bg-gradient-to-r from-primary to-primary/60"
+            className="mx-auto mt-4 h-1 rounded bg-black"
           />
         </h2>
         <p className="mt-2 section-paragraph text-black/70">
