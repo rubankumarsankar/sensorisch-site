@@ -77,20 +77,20 @@ export default function FormatsGrid({ formats = DEFAULT_FORMATS }) {
                          bg-white/70 dark:bg-white/[0.06] backdrop-blur"
             >
               {/* animated gradient rail on hover */}
-              <span
+              {/* <span
                 aria-hidden
                 className="pointer-events-none absolute left-0 top-0 h-full w-1.5 bg-gradient-to-b
                            from-primary via-primary/70 to-primary/30 opacity-0 transition-opacity duration-300
                            group-hover:opacity-100"
-              />
+              /> */}
 
               {/* ambient glow */}
-              <span
+              {/* <span
                 aria-hidden
                 className="pointer-events-none absolute -right-12 -top-12 h-36 w-36 rounded-full
                            bg-gradient-to-br from-primary to-primary/50 blur-3xl opacity-0
                            transition-opacity duration-300 group-hover:opacity-100"
-              />
+              /> */}
 
               <div className="relative p-4">
                 <div className="flex items-start gap-3">
@@ -98,16 +98,16 @@ export default function FormatsGrid({ formats = DEFAULT_FORMATS }) {
                   <motion.span
                     aria-hidden
                     className="relative grid h-10 w-10 place-items-center rounded-xl
-                               bg-primary/10 text-primary ring-1 ring-primary/20"
+                                text-primary"
                     animate={{ y: [0, -2, 0] }}
                     transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut", delay: i * 0.06 }}
                   >
-                    <Icon className="h-5 w-5" />
-                    <span
+                    <Icon className="h-7 w-7" />
+                    {/* <span
                       aria-hidden
                       className="pointer-events-none absolute inset-0 rounded-xl"
                       style={{ boxShadow: "inset 0 0 14px rgba(210,36,34,0.10)" }}
-                    />
+                    /> */}
                   </motion.span>
 
                   {/* text block */}

@@ -126,22 +126,22 @@ function Feature({ Icon, title, points, accent = "emerald" }) {
       className={`group relative overflow-hidden section-container rounded-2xl bg-white/60 dark:bg-white/[0.06] backdrop-blur p-5 md:p-6 ring-1 ${tokens.ring}`}
     >
       {/* left accent bar */}
-      <span
+      {/* <span
         aria-hidden
         className={`absolute left-0 top-0 h-full w-[3px] rounded-sm bg-gradient-to-b ${tokens.bar}`}
-      />
+      /> */}
       {/* hover sheen */}
-      <motion.span
+      {/* <motion.span
         aria-hidden
         initial={{ x: "-120%" }}
         whileHover={{ x: "120%" }}
         transition={{ duration: 1.2, ease: "easeInOut" }}
         className="pointer-events-none absolute inset-y-0 -left-1/3 w-1/2 skew-x-12 bg-white/20"
-      />
+      /> */}
 
       <div className="flex items-start gap-4">
         <span
-          className={`grid place-items-center size-10 rounded-xl ${tokens.badgeBg} ${tokens.badgeText} ring-1 ring-black/5`}
+          className={`grid place-items-center size-10 rounded-xl  ${tokens.badgeText} `}
         >
           <Icon className="h-8 w-8" />
         </span>

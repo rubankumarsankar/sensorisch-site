@@ -63,31 +63,31 @@ export default function PartnerSection() {
           className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
         >
           <FeatureCard
-            icon={<Sparkles className="h-6 w-6" />}
+            icon={<Sparkles className="h-8 w-8" />}
             title="Exclusive Flavour Development"
             blurb="Create distinctive taste profiles that set your products apart and build brand loyalty."
-            accent="from-amber-500/20 to-rose-500/20"
+            // accent="from-amber-500/20 to-rose-500/20"
           />
 
           <FeatureCard
-            icon={<Factory className="h-6 w-6" />}
+            icon={<Factory className="h-8 w-8" />}
             title="Manufacturing Flexibility"
             blurb="Liquid, powder, water-soluble, or oil-soluble formats tailored to your production needs."
-            accent="from-blue-500/20 to-cyan-500/20"
+            // accent="from-blue-500/20 to-cyan-500/20"
           />
 
           <FeatureCard
-            icon={<Globe2 className="h-6 w-6" />}
+            icon={<Globe2 className="h-8 w-8" />}
             title="Global Compliance"
             blurb="Navigate FSSAI and international regulations with confidence across all markets."
-            accent="from-emerald-500/20 to-teal-500/20"
+            // accent="from-emerald-500/20 to-teal-500/20"
           />
 
           <FeatureCard
-            icon={<Leaf className="h-6 w-6" />}
+            icon={<Leaf className="h-8 w-8" />}
             title="Clean-Label Integration"
             blurb="Meet conscious consumer demand with natural, clean-label ingredient solutions."
-            accent="from-violet-500/20 to-fuchsia-500/20"
+            // accent="from-violet-500/20 to-fuchsia-500/20"
           />
         </motion.ul>
       </div>
@@ -110,7 +110,7 @@ function FeatureCard({ icon, title, blurb, accent }) {
       />
 
       {/* icon */}
-      <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/20">
+      <div className="inline-flex h-14 w-14 items-center justify-center rounded-xl text-primary">
         {icon}
       </div>
 

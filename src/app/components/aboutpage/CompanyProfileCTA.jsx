@@ -21,7 +21,7 @@ processes, and how we can support your product development goals.`,
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.45 }}
-          className="section-title "
+          className="section-title text-primary"
         >
           {title}
           <motion.div
@@ -29,7 +29,7 @@ processes, and how we can support your product development goals.`,
             whileInView={{ width: 112 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-            className="mx-auto mt-6 h-1 rounded bg-primary"
+            className="mx-auto mt-6 h-1 rounded bg-black"
           />
         </motion.h2>
 

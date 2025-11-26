@@ -66,7 +66,7 @@ export default function WhyChooseSenso() {
               whileInView={{ scaleX: 1 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2, duration: 0.6, ease: "easeOut" }}
-              className="block h-1 w-40 md:w-52 bg-primary rounded-full mt-3 mx-auto origin-left"
+              className="block h-1 w-40 md:w-52 bg-black rounded-full mt-3 mx-auto origin-left"
             />
           </motion.h2>
 
@@ -99,7 +99,7 @@ export default function WhyChooseSenso() {
               <span className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-transparent group-hover:ring-primary/20 transition" />
 
               <div className="flex flex-col items-center gap-3">
-                <div className="grid place-items-center rounded-xl bg-primary/10 text-primary p-3">
+                <div className="grid place-items-center rounded-xl  text-primary p-3">
                   <f.icon className="h-10 w-10" />
                 </div>
 

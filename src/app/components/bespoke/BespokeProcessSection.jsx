@@ -123,11 +123,11 @@ function StepRow({ index, k, title, blurb }) {
           </span>
           <h3 className="text-lg md:text-xl font-semibold">{title}</h3>
         </div>
-        <div
+        {/* <div
           className={`mt-2 h-[2px] w-24 bg-gradient-to-r from-primary/70 to-transparent ${
             leftSide ? "ml-auto" : ""
           }`}
-        />
+        /> */}
       </div>
 
       {/* blurb (copy only - no cards) */}

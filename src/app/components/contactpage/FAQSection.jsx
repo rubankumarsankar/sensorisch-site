@@ -62,7 +62,7 @@ export default function FAQSection() {
                   </span>
                   <motion.span
                     animate={{ rotate: active ? 180 : 0 }}
-                    className="h-6 w-6 grid place-items-center rounded-full bg-primary/10 text-primary"
+                    className="h-6 w-6 grid place-items-center rounded-full text-primary"
                   >
                     <ChevronDown />
 

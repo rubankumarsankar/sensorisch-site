@@ -112,14 +112,14 @@ function FeatureItem({ i, Icon, label }) {
         className="pointer-events-none absolute inset-y-0 -left-1/3 w-1/2 skew-x-12 bg-white/25"
       />
       {/* left accent bar */}
-      <span
+      {/* <span
         aria-hidden
         className="absolute left-0 top-0 h-full w-[3px] bg-gradient-to-b from-primary via-amber-400 to-rose-500"
-      />
+      /> */}
 
       <div className="flex items-start gap-3">
-        <span className="mt-0.5 grid place-items-center size-7 rounded-md bg-primary/10 text-primary ring-1 ring-primary/20">
-          <Icon className="h-4 w-4" />
+        <span className="mt-0.5 grid place-items-center size-7 rounded-md  text-primary ">
+          <Icon className="h-6 w-6" />
         </span>
         <p className="text-sm md:text-base text-black/80 leading-relaxed">
           {label}

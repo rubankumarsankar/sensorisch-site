@@ -3,26 +3,27 @@
 
 import { motion } from "framer-motion";
 import { HiArrowDownTray, HiCalendarDays } from "react-icons/hi2";
+import Link from "next/link";
 
 export default function ProfileCTA({
   title = "Ready to Accelerate Your Product Development?",
   blurb = `Choose from our proven Senso ranges or partner with us for bespoke solutions tailored to your unique requirements.`,
   // Primary actions
-  primaryHref = "/samples/request",
+  primaryHref = "/contact",
   primaryLabel = "Request Samples",
-  secondaryHref = "/consultation/schedule",
+  secondaryHref = "/contact",
   secondaryLabel = "Schedule Consultation",
 }) {
   return (
-    <section className="relative section-container bg-primary w-full overflow-hidden">
-      <div className=" py-14 md:py-20 text-center text-white">
+    <section className="relative section-container bg-[#f5f5f5] w-full overflow-hidden">
+      <div className=" py-14 md:py-20 text-center text-priamry">
         {/* Heading */}
         <motion.h2
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.45 }}
-          className="mx-auto max-w-4xl text-3xl md:text-4xl font-extrabold tracking-tight"
+          className="mx-auto section-title max-w-4xl text-primary"
         >
           {title}
           <motion.span
@@ -31,7 +32,7 @@ export default function ProfileCTA({
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.15, duration: 0.6, ease: "easeOut" }}
-            className="mx-auto mt-3 block h-1 w-40 md:w-56 origin-left rounded-full bg-white/70"
+            className="mx-auto mt-3 block h-1 w-40 md:w-56 origin-left rounded-full bg-black"
           />
         </motion.h2>
 
@@ -41,7 +42,7 @@ export default function ProfileCTA({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.45, delay: 0.05 }}
-          className="mx-auto mt-4 max-w-2xl section-paragraph leading-relaxed text-white/90"
+          className="mx-auto mt-4 max-w-2xl section-paragraph leading-relaxed text-black/90"
         >
           {blurb}
         </motion.p>
@@ -55,27 +56,26 @@ export default function ProfileCTA({
           className="mt-7 flex flex-wrap items-center justify-center gap-3"
         >
           {/* Primary */}
-          <motion.a
-            href={primaryHref}
-            whileHover={{ y: -2 }}
-            whileTap={{ scale: 0.98 }}
-            className="inline-flex items-center gap-2 rounded-lg bg-white px-5 py-3 text-primary font-semibold shadow-[0_16px_40px_-20px_rgba(0,0,0,0.45)] hover:bg-white/95 transition-colors"
-            aria-label={primaryLabel}
-          >
-            {primaryLabel}
-          </motion.a>
+          <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.98 }}>
+            <Link
+              href={primaryHref}
+              aria-label={primaryLabel}
+              className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-white font-semibold shadow-[0_16px_40px_-20px_rgba(0,0,0,0.45)] hover:bg-white/95 hover:text-primary transition-colors focus:outline-none focus-visible:ring-4 focus-visible:ring-white/30"
+            >
+              {primaryLabel}
+            </Link>
+          </motion.div>
 
           {/* Secondary */}
-          <motion.a
-            href={secondaryHref}
-            whileHover={{ y: -2 }}
-            whileTap={{ scale: 0.98 }}
-            className="inline-flex items-center gap-2 rounded-lg bg-white/10 px-5 py-3 font-semibold ring-1 ring-white/40 hover:bg-white/15 transition-colors"
-            aria-label={secondaryLabel}
-          >
-            <HiCalendarDays className="h-5 w-5" />
-            {secondaryLabel}
-          </motion.a>
+          <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.98 }}>
+            <Link
+              href={secondaryHref}
+              aria-label={secondaryLabel}
+              className="inline-flex items-center gap-2 rounded-lg bg-white text-primary px-5 py-3 font-semibold  hover:bg-primary transition-colors hover:text-white focus:outline-none focus-visible:ring-4 focus-visible:ring-white/30"
+            >
+              {secondaryLabel}
+            </Link>
+          </motion.div>
         </motion.div>
       </div>
       <motion.div

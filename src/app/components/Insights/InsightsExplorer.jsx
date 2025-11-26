@@ -137,9 +137,9 @@ export default function InsightsExplorer({ posts = ALL_POSTS }) {
           role="tablist"
           aria-label="Insight categories"
           id={tablistId}
-          className="mt-4"
+          className="mt-4 py-3"
         >
-          <div className="mx-auto flex max-w-4xl justify-center gap-2 overflow-x-auto pb-1 [scrollbar-width:none] [-ms-overflow-style:none]">
+          <div className="mx-auto flex max-w-4xl justify-center gap-2 overflow-x-auto p-2 pb-1 [scrollbar-width:none] [-ms-overflow-style:none]">
             <style jsx>{`
               div::-webkit-scrollbar {
                 display: none;
@@ -203,10 +203,10 @@ export default function InsightsExplorer({ posts = ALL_POSTS }) {
                 {/* Text */}
                 <div className="p-6 md:col-span-7">
                   {/* halo + shimmer */}
-                  <span
+                  {/* <span
                     aria-hidden
                     className="pointer-events-none absolute -right-12 -top-12 h-36 w-36 rounded-full bg-gradient-to-br from-primary to-primary/40 blur-3xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-                  />
+                  /> */}
                   <motion.span
                     aria-hidden
                     initial={{ x: "-120%" }}
@@ -242,7 +242,7 @@ export default function InsightsExplorer({ posts = ALL_POSTS }) {
                     {(p.tags ?? []).map((t) => (
                       <span
                         key={t}
-                        className="inline-flex items-center gap-1 rounded-full bg-primary/10 text-primary px-2.5 py-1 text-[11px] font-semibold ring-1 ring-primary/20"
+                        className="inline-flex items-center gap-1 rounded-full bg-primary-light text-primary px-2.5 py-1 text-[11px] font-semibold ring-1 ring-primary/20"
                       >
                         <Tag className="h-3 w-3" /> {t}
                       </span>
@@ -252,7 +252,8 @@ export default function InsightsExplorer({ posts = ALL_POSTS }) {
                   {/* CTA */}
                   <div className="mt-5">
                     <a
-                      href={`/insights/${p.id}`}
+                      // href={`/insights/${p.id}`}
+                      href={`#`}
                       className="inline-flex items-center gap-2 rounded-lg bg-primary px-3.5 py-2 text-sm font-semibold text-white hover:bg-primary/90 transition"
                     >
                       Read More

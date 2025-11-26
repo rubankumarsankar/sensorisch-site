@@ -1,7 +1,9 @@
+
 // components/CompanyProfileCTA.jsx
 "use client";
 
 import { motion } from "framer-motion";
+import { HiArrowDownTray, HiCalendarDays } from "react-icons/hi2";
 import Link from "next/link";
 
 export default function CTA({
@@ -11,30 +13,17 @@ export default function CTA({
   primaryLabel = "Ask Our Experts",
   secondaryHref = "/contact",
   secondaryLabel = "Request Custom Research",
-}) {
+}){
   return (
-    <section className="relative overflow-hidden section-container bg-primary text-white">
-      {/* floating shimmer lines */}
-      <div
-        aria-hidden
-        className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.08),transparent_60%)]"
-      />
-      <motion.div
-        aria-hidden
-        initial={{ opacity: 0 }}
-        animate={{ opacity: [0.3, 0.6, 0.3] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute inset-0 bg-[linear-gradient(110deg,transparent_20%,rgba(255,255,255,0.1)_50%,transparent_80%)]"
-      />
-
-      <div className="section-container relative py-16 md:py-24 text-center">
-        {/* heading */}
+    <section className="relative section-container bg-[#f5f5f5] w-full overflow-hidden">
+      <div className=" py-14 md:py-20 text-center text-priamry">
+        {/* Heading */}
         <motion.h2
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="mx-auto max-w-3xl text-3xl md:text-4xl font-extrabold tracking-tight leading-snug"
+          transition={{ duration: 0.45 }}
+          className="mx-auto section-title max-w-4xl text-primary"
         >
           {title}
           <motion.span
@@ -42,61 +31,69 @@ export default function CTA({
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.2, duration: 0.6, ease: "easeOut" }}
-            className="mx-auto mt-3 block h-[3px] w-40 md:w-56 origin-left rounded-full bg-white/70"
+            transition={{ delay: 0.15, duration: 0.6, ease: "easeOut" }}
+            className="mx-auto mt-3 block h-1 w-40 md:w-56 origin-left rounded-full bg-black"
           />
         </motion.h2>
 
-        {/* blurb */}
+        {/* Blurb */}
         <motion.p
           initial={{ opacity: 0, y: 6 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="mx-auto mt-4 max-w-2xl section-paragraph leading-relaxed text-white/90"
+          transition={{ duration: 0.45, delay: 0.05 }}
+          className="mx-auto mt-4 max-w-2xl section-paragraph leading-relaxed text-black/90"
         >
           {blurb}
         </motion.p>
 
-        {/* buttons */}
+        {/* CTA buttons */}
         <motion.div
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.55, delay: 0.15 }}
-          className="mt-8 flex flex-wrap items-center justify-center gap-4"
+          transition={{ duration: 0.45, delay: 0.1 }}
+          className="mt-7 flex flex-wrap items-center justify-center gap-3"
         >
-          {/* Primary CTA */}
-          <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.97 }}>
+          {/* Primary */}
+          <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.98 }}>
             <Link
               href={primaryHref}
-              className="inline-flex items-center gap-2 rounded-lg bg-white text-primary px-6 py-3 text-sm font-semibold shadow-[0_12px_40px_-20px_rgba(0,0,0,0.5)] hover:bg-white/95 transition-colors focus:outline-none focus-visible:ring-4 focus-visible:ring-white/30"
+              aria-label={primaryLabel}
+              className="inline-flex items-center gap-2 rounded-lg bg-primary px-5 py-3 text-white font-semibold shadow-[0_16px_40px_-20px_rgba(0,0,0,0.45)] hover:bg-white/95 hover:text-primary transition-colors focus:outline-none focus-visible:ring-4 focus-visible:ring-white/30"
             >
               {primaryLabel}
             </Link>
           </motion.div>
 
-          {/* Secondary CTA */}
-          <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.97 }}>
+          {/* Secondary */}
+          <motion.div whileHover={{ y: -2 }} whileTap={{ scale: 0.98 }}>
             <Link
               href={secondaryHref}
-              className="inline-flex items-center gap-2 rounded-lg bg-white/15 px-6 py-3 text-sm font-semibold ring-1 ring-white/30 hover:bg-white/25 transition-colors focus:outline-none focus-visible:ring-4 focus-visible:ring-white/30"
+              aria-label={secondaryLabel}
+              className="inline-flex items-center gap-2 rounded-lg bg-white text-primary px-5 py-3 font-semibold  hover:bg-primary transition-colors hover:text-white focus:outline-none focus-visible:ring-4 focus-visible:ring-white/30"
             >
               {secondaryLabel}
             </Link>
           </motion.div>
         </motion.div>
       </div>
-
-      {/* subtle white divider at bottom */}
       <motion.div
         aria-hidden
-        className="h-px w-full bg-white/30"
-        initial={{ scaleX: 0 }}
-        whileInView={{ scaleX: 1 }}
-        viewport={{ once: true }}
-        transition={{ duration: 1, ease: "easeInOut" }}
-      />
+        className="section-container"
+        initial={{ opacity: 0, scaleX: 0 }}
+        whileInView={{ opacity: 1, scaleX: 1 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+      >
+        <motion.div
+          className="h-px w-full bg-white/20 origin-left"
+          initial={{ scaleX: 0 }}
+          whileInView={{ scaleX: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 1, ease: "easeInOut" }}
+        />
+      </motion.div>
     </section>
   );
 }

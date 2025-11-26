@@ -199,11 +199,11 @@ function RibbonRow({ index, title, blurb, accent }) {
         >
           {title}
         </h3>
-        <div
+        {/* <div
           className={`mt-2 h-[2px] w-20 rounded-full bg-gradient-to-r ${
             accent.lineGrad
           } ${left ? "ml-auto" : ""}`}
-        />
+        /> */}
       </div>
 
       {/* Blurb ribbon  -  outline/line look with accent left bar + tinted ring */}
@@ -213,25 +213,25 @@ function RibbonRow({ index, title, blurb, accent }) {
         } ${left ? "md:pl-8" : "md:pr-8"}`}
       >
         {/* left accent line */}
-        <span
+        {/* <span
           aria-hidden
           className={`absolute top-0 ${
             left ? "left-0" : "right-0"
           } h-full w-[3px] rounded-sm bg-gradient-to-b ${accent.lineGrad}`}
-        />
+        /> */}
         {/* subtle accent wash */}
-        <div
+        {/* <div
           aria-hidden
           className={`absolute inset-0 bg-gradient-to-r ${accent.wash} backdrop-blur-md`}
-        />
+        /> */}
         {/* moving sheen on hover */}
-        <motion.div
+        {/* <motion.div
           aria-hidden
           initial={{ x: "-120%" }}
           whileHover={{ x: "120%" }}
           transition={{ duration: 1.2, ease: "easeInOut" }}
           className="pointer-events-none absolute inset-y-0 -left-1/3 w-1/2 skew-x-12 bg-white/20"
-        />
+        /> */}
         <p className="relative p-5 md:p-6 section-paragraph text-black/75 leading-relaxed">
           {blurb}
         </p>

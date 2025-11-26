@@ -84,13 +84,13 @@ export default function MethodsSection() {
               transition={{ type: "spring", stiffness: 240, damping: 22 }}
               className="group relative overflow-hidden rounded-2xl bg-white/70 dark:bg-white/[0.06] backdrop-blur p-6 ring-1 ring-black/5 dark:ring-white/10 shadow-lg"
             >
-              {m.tag && (
+              {/* {m.tag && (
                 <span className="absolute right-3 top-3 rounded-full bg-primary/10 text-primary text-[10px] font-semibold px-2 py-1">
                   {m.tag}
                 </span>
-              )}
-              <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary ring-1 ring-primary/20">
-                <m.icon className="h-6 w-6" />
+              )} */}
+              <div className="inline-flex h-12 w-12 items-center justify-center rounded-xl  text-primary ">
+                <m.icon className="h-8 w-8" />
               </div>
               <h3 className="mt-3 section--subtitle">{m.title}</h3>
               <p className="mt-1 section-paragraph">{m.blurb}</p>
@@ -104,7 +104,7 @@ export default function MethodsSection() {
               </a>
 
               {/* radial glow on hover */}
-              <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-[radial-gradient(70%_70%_at_50%_0%,rgba(210,36,34,0.06),transparent)]" />
+              {/* <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-[radial-gradient(70%_70%_at_50%_0%,rgba(210,36,34,0.06),transparent)]" /> */}
             </motion.li>
           ))}
         </motion.ul>

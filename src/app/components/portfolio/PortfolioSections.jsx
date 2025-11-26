@@ -144,17 +144,17 @@ export function PremiumSpreadsSection() {
             className="group relative overflow-hidden rounded-2xl bg-white/80 backdrop-blur ring-1 ring-black/5 shadow-sm"
           >
             {/* sheen + halo */}
-            <motion.span
+            {/* <motion.span
               aria-hidden
               initial={{ x: "-120%" }}
               whileHover={{ x: "120%" }}
               transition={{ duration: 1.15, ease: "easeInOut" }}
               className="pointer-events-none absolute inset-y-0 -left-1/3 w-1/2 skew-x-12 bg-white/20"
-            />
-            <span
+            /> */}
+            {/* <span
               aria-hidden
               className="pointer-events-none absolute -right-12 -top-12 h-36 w-36 rounded-full bg-gradient-to-br from-primary to-primary/50 blur-3xl opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-            />
+            /> */}
             <div className="grid grid-cols-1 md:grid-cols-5">
               {/* Text */}
               <div className="p-6 md:col-span-3">
@@ -386,8 +386,8 @@ export function SystemsSection() {
               className="rounded-2xl bg-white/60 dark:bg-white/[0.06] backdrop-blur ring-1 ring-black/5 dark:ring-white/10 p-5"
             >
               <div className="flex items-start gap-3">
-                <span className="grid place-items-center size-10 rounded-xl bg-primary/10 mt-3 text-primary ring-1 ring-primary/20">
-                  <Icon className="h-5 w-5" />
+                <span className="grid place-items-center size-10 rounded-xl  mt-3 text-primary ">
+                  <Icon className="h-7 w-7" />
                 </span>
                 <div>
                   <h4 className="section-subtitle">{s.k}</h4>

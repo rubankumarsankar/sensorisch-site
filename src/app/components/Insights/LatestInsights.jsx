@@ -124,7 +124,8 @@ export default function LatestInsights({ posts = DEFAULT_POSTS }) {
                 <Tags tags={p.tags} />
                 <div className="mt-5">
                   <a
-                    href={`/insights/${p.id}`}
+                    // href={`/insights/${p.id}`}
+                    href={`#`}
                     className="inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm leading-none font-semibold text-white hover:bg-primary/90 transition"
                   >
                     Read More <ArrowRight className="h-4 w-4 shrink-0" />

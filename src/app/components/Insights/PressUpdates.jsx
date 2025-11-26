@@ -22,7 +22,7 @@ const DEFAULT_ITEMS = [
     title: "Sensorisch Expands Senso™ Range with New Pharmaceutical Solutions",
     tag: "Product Launch",
     date: "March 12, 2024",
-    href: "/press/senso-pharma-expansion",
+    href: "#",
   },
   {
     id: "beverage-partnership",
@@ -30,21 +30,21 @@ const DEFAULT_ITEMS = [
       "Partnership Announcement: Sensorisch and Leading Beverage Manufacturer",
     tag: "Partnership",
     date: "February 25, 2024",
-    href: "/press/beverage-partnership",
+    href: "#",
   },
   {
     id: "iso-22000",
     title: "Sensorisch Achieves ISO 22000 Certification for Quality Management",
     tag: "Certification",
     date: "February 10, 2024",
-    href: "/press/iso-22000",
+    href: "#",
   },
   {
     id: "innovation-award-2024",
     title: "Award: Best Innovation in Natural Flavour Solutions 2024",
     tag: "Award",
     date: "January 30, 2024",
-    href: "/press/innovation-award-2024",
+    href: "#",
   },
 ];
 
@@ -102,7 +102,7 @@ export default function PressUpdates({
                        ring-1 ring-black/5 dark:ring-white/10"
           >
             {/* glow + shimmer */}
-            <span
+            {/* <span
               aria-hidden
               className="pointer-events-none absolute -right-12 -top-10 h-28 w-28 rounded-full
                          bg-gradient-to-br from-primary to-primary/40 blur-3xl opacity-0 transition-opacity duration-300
@@ -112,7 +112,7 @@ export default function PressUpdates({
               aria-hidden
               className="pointer-events-none absolute inset-y-0 -left-1/3 w-1/2 skew-x-12 bg-white/20
                          opacity-0 transition-opacity duration-700 group-hover:opacity-100"
-            />
+            /> */}
 
             <a href={it.href} className="block focus:outline-none">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
@@ -153,15 +153,13 @@ export default function PressUpdates({
         >
           <div
             className="relative overflow-hidden rounded-2xl p-6 md:p-8
-                          bg-gradient-to-br from-primary/10 via-white/40 to-transparent
-                          dark:from-primary/15 dark:via-white/[0.06] dark:to-transparent
                           ring-1 ring-black/5 dark:ring-white/10 backdrop-blur"
           >
-            <span
+            {/* <span
               aria-hidden
               className="pointer-events-none absolute -right-16 -top-16 h-48 w-48 rounded-full
                          bg-gradient-to-br from-primary to-primary/50 blur-3xl opacity-50"
-            />
+            /> */}
             <div className="relative">
               <h3 className="section-subtitle">Stay Informed</h3>
               <p className="mt-1 section-paragraph max-w-2xl">

@@ -75,7 +75,7 @@ export default function ValuesSection() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.25 }}
-          className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"
+          className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4 p-2"
         >
           {values.map((v, i) => (
             <motion.article

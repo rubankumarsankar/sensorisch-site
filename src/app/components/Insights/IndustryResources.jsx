@@ -88,13 +88,13 @@ export default function IndustryResources({ items = CARDS }) {
             className="group relative overflow-hidden bg-white/80 backdrop-blur p-8"
           >
             {/* Glow */}
-            <span
+            {/* <span
               aria-hidden
               className={`pointer-events-none absolute -top-14 -right-14 h-40 w-40 rounded-full blur-3xl opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-gradient-to-br ${c.accent}`}
-            />
+            /> */}
 
             {/* Icon on top */}
-            <div className="relative mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-white shadow-md ring-1 ring-black/10">
+            <div className="relative mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-full ">
               <Image
                 src={c.iconImg}
                 alt={`${c.k} icon`}
@@ -103,11 +103,11 @@ export default function IndustryResources({ items = CARDS }) {
                 className="object-contain"
                 priority
               />
-              <span
+              {/* <span
                 aria-hidden
                 className="pointer-events-none absolute inset-0 rounded-full"
                 style={{ boxShadow: "inset 0 0 16px rgba(210,36,34,0.08)" }}
-              />
+              /> */}
             </div>
 
             <h3 className="section-subtitle text-primary mb-2">{c.k}</h3>

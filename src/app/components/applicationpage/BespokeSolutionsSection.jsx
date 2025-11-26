@@ -100,7 +100,7 @@ export function BespokeSolutionsIntro({
                          bg-white/60 dark:bg-neutral-900/60 backdrop-blur px-4 py-3 shadow-sm
                          max-w-xl w-full"
             >
-              <div className="grid size-8 place-items-center rounded-full bg-primary/10 text-primary shrink-0 mt-0.5">
+              <div className="grid size-8 place-items-center rounded-full  text-primary shrink-0 mt-0.5">
                 <CheckCircle2 className="h-6 w-6" />
               </div>
               <span className="text-sm md:text-base">{p}</span>
@@ -217,9 +217,9 @@ export function DevelopmentProcessSection() {
                         transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
                       />
                       <span className="grid size-4 place-items-center rounded-full ring-2 ring-primary/30 bg-primary" />
-                      <span className="absolute -top-7 left-1/2 -translate-x-1/2 text-sm font-bold bg-background px-2 py-0.5 rounded-md border border-black/10 shadow">
+                      {/* <span className="absolute -top-7 left-1/2 -translate-x-1/2 text-sm font-bold bg-background px-2 py-0.5 rounded-md border border-black/10 shadow">
                         {s.n}
-                      </span>
+                      </span> */}
                     </div>
                   </div>
 
@@ -241,8 +241,8 @@ export function DevelopmentProcessSection() {
                       <div className="pointer-events-none absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition shadow-[inset_0_0_0_1px_rgba(0,0,0,0.04)] ring-1 ring-transparent group-hover:ring-primary/20" />
 
                       <div className="flex items-start gap-4">
-                        <div className="grid size-11 place-items-center rounded-xl bg-primary/10 text-primary shrink-0">
-                          <s.icon className="h-5 w-5" />
+                        <div className="grid size-11 place-items-center rounded-xl  text-primary shrink-0">
+                          <s.icon className="h-8 w-8" />
                         </div>
 
                         <div>
