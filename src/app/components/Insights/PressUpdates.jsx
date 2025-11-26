@@ -130,12 +130,13 @@ export default function PressUpdates({
                 </div>
 
                 <span
-                  className="mt-1 inline-flex items-center gap-2 self-start rounded-lg bg-primary px-3 py-1.5 text-xs font-semibold text-white
-                                  hover:bg-primary/90 transition"
+                  className="inline-flex items-center gap-2 rounded-lg bg-primary px-3 py-1.5 
+             text-xs font-semibold text-white hover:bg-primary/90 transition"
                 >
                   Learn More
                   <ArrowRight className="h-4 w-4" />
                 </span>
+
               </div>
             </a>
           </motion.li>

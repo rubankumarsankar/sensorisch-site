@@ -34,7 +34,7 @@ export default function QualityResponsibility() {
   const progress = useSpring(scrollYProgress, { stiffness: 120, damping: 20, mass: 0.3 });
 
   return (
-    <section ref={sectionRef} className="section relative overflow-hidden">
+    <section ref={sectionRef} className="py-15 relative overflow-hidden">
       <motion.div
         variants={container}
         initial="hidden"

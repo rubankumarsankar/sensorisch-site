@@ -13,7 +13,7 @@ export default function ProfileCTA({
   secondaryLabel = "View Our Portfolio",
 }) {
   return (
-    <section className="relative section-container bg-[#f5f5f5] w-full overflow-hidden">
+    <section className="relative section-container  w-full overflow-hidden">
       {/* Main block */}
       <div className="section-container  py-14 md:py-20 text-center text-black">
         {/* Heading */}

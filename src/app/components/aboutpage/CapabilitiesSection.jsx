@@ -133,7 +133,7 @@ export default function CapabilitiesSection() {
               <h3 className="section-subtitle">{g.title}</h3>
               {/* animated accent line */}
               <motion.div
-                className={`h-[3px] w-0 my-3 rounded bg-gradient-to-r ${g.accent}`}
+                className={`h-[3px] w-0 my-3 rounded bg-black`}
                 initial={{ width: 0 }}
                 whileInView={{ width: 64 }}
                 viewport={{ once: true, amount: 0.6 }}

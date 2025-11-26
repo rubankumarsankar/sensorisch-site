@@ -101,7 +101,7 @@ export default function ValuesSection() {
 
               {/* animated accent line */}
               <motion.div
-                className={`h-[3px] w-16 my-3 rounded bg-gradient-to-r ${v.line}`}
+                className={`h-[3px] w-16 my-3 rounded bg-black`}
                 initial={{ width: 0 }}
                 whileInView={{ width: 64 }}
                 viewport={{ once: true, amount: 0.6 }}

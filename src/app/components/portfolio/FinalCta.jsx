@@ -16,7 +16,7 @@ export default function CTA({
   secondaryLabel = "Schedule Tasting Session",
 }) {
   return (
-    <section className="relative section-container bg-[#f5f5f5] w-full overflow-hidden">
+    <section className="relative section-container  w-full overflow-hidden">
       <div className=" py-14 md:py-20 text-center text-priamry">
         {/* Heading */}
         <motion.h2

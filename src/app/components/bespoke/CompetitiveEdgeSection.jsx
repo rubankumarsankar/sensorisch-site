@@ -83,7 +83,7 @@ export default function CompetitiveEdgeSection() {
           {/* Right: features grid */}
           <motion.ul
             variants={list}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-3"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-8"
           >
             {FEATURES.map((f, i) => (
               <FeatureItem key={f.label} i={i} Icon={f.icon} label={f.label} />

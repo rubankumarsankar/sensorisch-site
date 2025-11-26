@@ -11,18 +11,18 @@ export default function BriefToScale() {
     { n: 4, title: "Scale", desc: "QA/QC & production ready" },
   ];
 
-  // animation presets
   const fadeUp = {
     hidden: { opacity: 0, y: 16 },
     show: { opacity: 1, y: 0, transition: { duration: 0.45, ease: "easeOut" } },
   };
+
   const list = {
     hidden: {},
     show: { transition: { staggerChildren: 0.12 } },
   };
 
   return (
-    <section className="section">
+    <section className="">
       <div className="section-container">
         {/* Heading */}
         <motion.div
@@ -30,25 +30,27 @@ export default function BriefToScale() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.4 }}
-          className="text-center max-w-2xl mx-auto mb-10"
+          className="text-center max-w-2xl mx-auto"
         >
-          <h2 className="section-title text-black">From Brief to <span className="text-primary">Scale</span>
-          <motion.div
-                              initial={{ width: 0 }}
-                              whileInView={{ width: 112 }}
-                              viewport={{ once: true }}
-                              transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                              className="mx-auto mt-6 h-1 rounded bg-black"
-                            />
-                            </h2>
+          <h2 className="section-title text-black">
+            From Brief to <span className="text-primary">Scale</span>
+            <motion.div
+              initial={{ width: 0 }}
+              whileInView={{ width: 112 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+              className="mx-auto mt-6 h-1 rounded bg-black"
+            />
+          </h2>
           <p className="section-paragraph mt-4 text-black/80">
-            We align targets, prototype fast, validate in your matrix, then transfer SOPs for reliable production
+            We align targets, prototype fast, validate in your matrix, then
+            transfer SOPs for reliable production
           </p>
         </motion.div>
 
-        {/* Left (image) | Right (content) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-start">
-          {/* LEFT: Image block */}
+        {/* IMAGE + TIMELINE (aligned) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
+          {/* LEFT: Image */}
           <motion.figure
             variants={fadeUp}
             initial="hidden"
@@ -56,12 +58,12 @@ export default function BriefToScale() {
             viewport={{ once: true, amount: 0.3 }}
             whileHover={{ scale: 1.02, rotateZ: -0.4 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
-            className="order-1 md:order-none overflow-hidden "
+            className="order-1 md:order-none overflow-hidden rounded-xl"
           >
             <img
-              src="/assets/home-banner-4.png" // <- replace with your asset
+              src="/assets/home-banner-4.png"
               alt="Cheese stack"
-              className="w-full h-full"
+              className="w-full max-h-[420px] md:max-h-[480px] lg:max-h-[580px] rounded-xl"
             />
           </motion.figure>
 
@@ -71,11 +73,12 @@ export default function BriefToScale() {
             initial="hidden"
             whileInView="show"
             viewport={{ once: true, amount: 0.3 }}
-            className="relative flex items-start md:ml-4 lg:ml-20 lg:mt-35"
+            className="relative flex items-start md:ml-6 lg:ml-10"
           >
-            {/* vertical dashed rail */}
+            {/* vertical rail */}
             <div className="absolute left-4 top-2 bottom-2 border-l-2 border-dashed border-gray-300" />
-            {/* animated progress fill */}
+
+            {/* progress line */}
             <motion.div
               className="absolute left-[14px] top-2 bottom-2 w-[4px] rounded bg-primary/20 overflow-hidden"
               initial={{ height: 0 }}
@@ -92,10 +95,10 @@ export default function BriefToScale() {
               />
             </motion.div>
 
-            <ol className="w-full space-y-12 md:space-y-12">
+            {/* Steps */}
+            <ol className="w-full space-y-12">
               {steps.map((s) => (
                 <motion.li key={s.n} variants={fadeUp} className="relative pl-16">
-                  {/* number badge (spring pop) */}
                   <motion.div
                     className="absolute left-0 top-0"
                     initial={{ scale: 0.6, opacity: 0, y: 8 }}
@@ -108,7 +111,6 @@ export default function BriefToScale() {
                     </div>
                   </motion.div>
 
-                  {/* text block */}
                   <div className="space-y-6">
                     <h3 className="text-4xl section-title">{s.title}</h3>
                     <p className="section-paragraph text-xl">{s.desc}</p>

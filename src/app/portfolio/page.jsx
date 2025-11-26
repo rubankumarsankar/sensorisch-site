@@ -12,7 +12,7 @@ import NaturalColoursShowcase from "../components/portfolio/NaturalColoursShowca
 export default function PortfolioPage() {
   return (
     <main className="relative overflow-hidden">
-      <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-b from-primary/5 via-transparent to-transparent" />
+      <div aria-hidden className="absolute inset-0 -z-10 " />
 
       <HeroComponent
         data={{
@@ -29,7 +29,7 @@ export default function PortfolioPage() {
           showUnderline: true,
           showShimmer: true,
           showHalo: true,
-          className: "bg-background",
+          className: "",
           containerClassName: "section-container py-16 md:py-24",
         }}
       />

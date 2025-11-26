@@ -162,13 +162,13 @@ export default function InsightsExplorer({ posts = ALL_POSTS }) {
                   }`}
                 >
                   {c}
-                  {isActive && (
+                  {/* {isActive && (
                     <span
                       aria-hidden
                       className="pointer-events-none absolute inset-0 rounded-full"
                       style={{ boxShadow: "0 0 18px rgba(210,36,34,0.35)" }}
                     />
-                  )}
+                  )} */}
                 </button>
               );
             })}

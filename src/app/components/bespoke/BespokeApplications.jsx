@@ -191,7 +191,7 @@ function RibbonRow({ index, title, blurb, accent }) {
           className={`hidden md:block absolute top-1/2 -translate-y-1/2 size-3 rounded-full ${
             accent.dot
           } ring-4 ring-white dark:ring-background ${
-            left ? "-right-[1.625rem]" : "-left-[1.625rem]"
+            left ? "-right-[1.910rem]" : "-left-[1.910rem]"
           }`}
         />
         <h3

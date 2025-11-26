@@ -13,7 +13,7 @@ processes, and how we can support your product development goals.`,
   buttonLabel = "Download Company Profile",
 }) {
   return (
-    <section className="relative isolate w-full bg-[#f5f5f5] section-container text-black">
+    <section className="relative isolate w-full  section-container text-black">
       <div className="section-container py-12 md:py-16 text-center">
         {/* heading */}
         <motion.h2
