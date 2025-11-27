@@ -38,17 +38,17 @@ export default function LocationsPanel() {
               variants={fadeUp}
               className="w-full rounded-2xl  p-6 md:p-7 "
             >
-              <h3 className="section-subtitle font-semibold text-primary text-center md:text-center">
+              <h3 className="section-subtitle font-semibold text-primary text-center md:text-left">
                 Sensorisch Formulation Lab (P) Ltd
               </h3>
 
-              <p className="text-sm md:text-base text-black/70 mt-2 leading-relaxed text-center md:text-center">
+              <p className="text-sm md:text-base text-black/70 mt-2 leading-relaxed text-center md:text-left">
                 B9, 1st Floor, SIDCO Industrial Estate, Villivakkam, Chennai —
                 600 049
               </p>
 
               {/* CONTACT LIST */}
-              <ul className="mt-4 space-y-2 text-sm md:text-[15px] text-center md:text-center">
+              <ul className="mt-4 space-y-2 text-sm md:text-[15px] text-center md:text-left">
                 <li>
                   <a
                     href="tel:+917397397037"
