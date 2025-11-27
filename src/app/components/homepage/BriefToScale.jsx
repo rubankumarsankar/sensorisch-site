@@ -49,7 +49,7 @@ export default function BriefToScale() {
         </motion.div>
 
         {/* IMAGE + TIMELINE (aligned) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-center p-10">
           {/* LEFT: Image */}
           <motion.figure
             variants={fadeUp}
@@ -61,7 +61,7 @@ export default function BriefToScale() {
             className="order-1 md:order-none overflow-hidden rounded-xl"
           >
             <img
-              src="/assets/home-banner-4.png"
+              src="/assets/img01.jpg"
               alt="Cheese stack"
               className="w-full max-h-[420px] md:max-h-[480px] lg:max-h-[580px] rounded-xl"
             />
