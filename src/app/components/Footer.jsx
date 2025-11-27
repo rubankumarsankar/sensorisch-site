@@ -1,58 +1,104 @@
 // components/Footer.jsx
 "use client";
 
+import Image from "next/image";
+
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="w-full  text-white">
+    <footer className="w-full text-white bg-primary">
       {/* Main footer */}
-      <div className="section-container bg-primary">
-        <div className="mx-auto px-6 py-14">
+      <div className="border-b border-white/15">
+        <div className="max-w-6xl mx-auto px-6 py-14">
           {/* 4 columns on lg, stack on mobile */}
           <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4 items-start">
             {/* 1) Brand + tagline */}
-            <div>
-              <img
-                src="/footer-logo.png"
-                alt="Sensorisch"
-                className="h-20 w-20 object-contain mb-6"
-              />
-              <p className="text-lg/7 font-medium">
-                Flavours & Fragrances.<br />Engineered for Impact.
+            <div className="space-y-4">
+              <div className="inline-flex items-center justify-center rounded-md bg-white px-4 py-2">
+                <Image
+                  src="/sensorisch-logo.png"
+                  alt="Sensorisch"
+                  width={180}
+                  height={56}
+                  className="object-contain"
+                />
+              </div>
+              <p className="text-sm sm:text-base font-medium tracking-[0.18em] uppercase text-center sm:text-left">
+                Where Science Meets Senses
               </p>
             </div>
 
             {/* 2) Solutions */}
             <div>
-              <h4 className="text-2xl font-medium tracking-tight mb-6">Solutions</h4>
-              <ul className="space-y-1 text-lg">
-                <li><a className="hover:opacity-90 transition-opacity" href="#">Senso Ranges</a></li>
-                <li><a className="hover:opacity-90 transition-opacity" href="#">Bespoke Solutions</a></li>
-                <li><a className="hover:opacity-90 transition-opacity" href="#">Flavours</a></li>
-                <li><a className="hover:opacity-90 transition-opacity" href="#">Natural Colours</a></li>
+              <h4 className="text-xl sm:text-2xl font-medium tracking-tight mb-4 sm:mb-6">
+                Solutions
+              </h4>
+              <ul className="space-y-1 text-sm sm:text-lg">
+                <li>
+                  <a className="hover:opacity-90 transition-opacity" href="#">
+                    Senso Ranges
+                  </a>
+                </li>
+                <li>
+                  <a className="hover:opacity-90 transition-opacity" href="#">
+                    Bespoke Solutions
+                  </a>
+                </li>
+                <li>
+                  <a className="hover:opacity-90 transition-opacity" href="#">
+                    Flavours
+                  </a>
+                </li>
+                <li>
+                  <a className="hover:opacity-90 transition-opacity" href="#">
+                    Natural Colours
+                  </a>
+                </li>
               </ul>
             </div>
 
             {/* 3) Company */}
             <div>
-              <h4 className="text-2xl font-medium tracking-tight mb-6">Company</h4>
-              <ul className="space-y-1 text-lg">
-                <li><a className="hover:opacity-90 transition-opacity" href="#">About Sensorisch</a></li>
-                <li><a className="hover:opacity-90 transition-opacity" href="#">News & Trends</a></li>
-                <li><a className="hover:opacity-90 transition-opacity" href="#">Contact Us</a></li>
-                <li><a className="hover:opacity-90 transition-opacity" href="#">Natural Colours</a></li>
+              <h4 className="text-xl sm:text-2xl font-medium tracking-tight mb-4 sm:mb-6">
+                Company
+              </h4>
+              <ul className="space-y-1 text-sm sm:text-lg">
+                <li>
+                  <a className="hover:opacity-90 transition-opacity" href="#">
+                    About Sensorisch
+                  </a>
+                </li>
+                <li>
+                  <a className="hover:opacity-90 transition-opacity" href="#">
+                    News &amp; Trends
+                  </a>
+                </li>
+                <li>
+                  <a className="hover:opacity-90 transition-opacity" href="#">
+                    Contact Us
+                  </a>
+                </li>
+                <li>
+                  <a className="hover:opacity-90 transition-opacity" href="#">
+                    Careers
+                  </a>
+                </li>
               </ul>
             </div>
 
             {/* 4) Contact + CTA */}
             <div className="lg:justify-self-end">
-              <h4 className="text-2xl font-medium tracking-tight mb-6">Contact</h4>
-              <p className="text-lg/7 mb-8 opacity-95">Ready to start your project?</p>
+              <h4 className="text-xl sm:text-2xl font-medium tracking-tight mb-4 sm:mb-6">
+                Contact
+              </h4>
+              <p className="text-sm sm:text-lg leading-relaxed mb-6 opacity-95">
+                Ready to start your project?
+              </p>
 
               <a
                 href="/contact"
-                className="inline-block rounded-md bg-white text-primary px-5 py-3 text-lg font-medium
+                className="inline-block rounded-md bg-white text-primary px-5 py-3 text-sm sm:text-lg font-medium
                            shadow-[0_12px_30px_-12px_rgba(0,0,0,0.4)] ring-1 ring-white/60
                            hover:bg-white/95 transition-colors"
               >
@@ -64,12 +110,12 @@ export default function Footer() {
       </div>
 
       {/* Bottom strip */}
-      <div className="border-t border-white/20 bg-primary  section-container">
-        <div className="px-20">
-          <div className="mx-auto flex flex-col items-center justify-between gap-3 px-6 py-4 text-center sm:flex-row sm:text-left">
+      <div>
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="flex flex-col items-center justify-between gap-3 py-4 text-center sm:flex-row sm:text-left">
             {/* Left: Copyright */}
-            <p className="text-sm tracking-wide text-white/90">
-              © {new Date().getFullYear()} Sensorisch. All rights reserved.
+            <p className="text-xs sm:text-sm tracking-wide text-white/90">
+              © {year} Sensorisch. All rights reserved.
             </p>
 
             {/* Right: Developer credit */}
@@ -80,21 +126,22 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 transition hover:opacity-90"
               >
-                <span className="text-sm text-white">
-                  Designed & Developed by
+                <span className="text-xs sm:text-sm text-white">
+                  Designed &amp; Developed by
                 </span>
 
-                <img
-                  src="/web_logo.png" // 👉 replace with your actual image
+                <Image
+                  src="/web_logo.png"
                   alt="Ayatiworks"
-                  className="h-15 w-auto brightness-110"
+                  width={90}
+                  height={24}
+                  className="object-contain brightness-110"
                 />
               </a>
             </div>
           </div>
         </div>
       </div>
-
     </footer>
   );
 }
