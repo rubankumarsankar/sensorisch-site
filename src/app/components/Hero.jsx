@@ -133,7 +133,7 @@ export default function HeroComponent({ data = {} }) {
           {/* RIGHT  -  image column (contained card, not full bleed) */}
           {image?.src && (
             <motion.div
-              className="order-2 relative w-full overflow-hidden border border-black/5 shadow-md"
+              className="order-2 relative w-full overflow-hidden "
               initial={{ opacity: 0, scale: 0.98 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.15, duration: 0.6, ease: "easeOut" }}
@@ -144,7 +144,7 @@ export default function HeroComponent({ data = {} }) {
                 style={{ aspectRatio: "4 / 3" }} // 4:3; change to "16 / 9" if you prefer
               >
                 <motion.div
-                  style={enableTilt ? { rotateX, rotateY } : undefined}
+                  // style={enableTilt ? { rotateX, rotateY } : undefined}
                   onMouseMove={onMove}
                   onMouseLeave={onLeave}
                   className="relative h-full w-full will-change-transform"
@@ -160,7 +160,7 @@ export default function HeroComponent({ data = {} }) {
                   />
 
                   {/* optional shimmer */}
-                  <motion.div
+                  {/* <motion.div
                     aria-hidden
                     initial={{ x: "-120%", opacity: 0.0 }}
                     animate={{ x: "120%", opacity: [0, 0.22, 0] }}
@@ -172,11 +172,11 @@ export default function HeroComponent({ data = {} }) {
                     className="pointer-events-none absolute inset-y-0 -left-1/3 w-1/2
                                bg-gradient-to-r from-transparent via-white/35 to-transparent
                                skew-x-12"
-                  />
+                  /> */}
                 </motion.div>
 
                 {/* subtle halo */}
-                <motion.div
+                {/* <motion.div
                   aria-hidden
                   animate={{ opacity: [0.25, 0.45, 0.25], scale: [1, 1.03, 1] }}
                   transition={{
@@ -185,7 +185,7 @@ export default function HeroComponent({ data = {} }) {
                     ease: "easeInOut",
                   }}
                   className="pointer-events-none absolute -inset-2 rounded-[18px] bg-primary/10 blur-2xl"
-                />
+                /> */}
               </div>
             </motion.div>
           )}
