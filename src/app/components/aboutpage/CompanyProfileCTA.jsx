@@ -52,7 +52,7 @@ processes, and how we can support your product development goals.`,
           transition={{ duration: 0.45, delay: 0.15 }}
           className="mt-6"
         >
-          <a
+          {/* <a
             href={fileUrl}
             download={fileName}
             className="inline-flex items-center gap-2 rounded-md bg-white/95 px-4 py-2 text-lg font-semibold
@@ -60,10 +60,9 @@ processes, and how we can support your product development goals.`,
                        hover:bg-primary hover:text-white transition-colors"
           >
             {buttonLabel}
-            {/* download icon */}
-
+           
             <HiArrowDownTray className="w-8 h-8" />
-          </a>
+          </a> */}
         </motion.div>
       </div>
       <motion.div

@@ -36,7 +36,6 @@ function Counter({
 
   useEffect(() => {
     if (inView) {
-      // animate from current to target
       const start = mv.get();
       const startTime = performance.now();
       const run = (t) => {
@@ -49,14 +48,13 @@ function Counter({
   }, [inView, value, duration, mv]);
 
   return (
-    <motion.span ref={ref} style={{}} className="inline-block">
-      <motion.span style={{}}>{text}</motion.span>
+    <motion.span ref={ref} className="inline-block">
+      <motion.span>{text}</motion.span>
     </motion.span>
   );
 }
 
 export default function VisionMission() {
-  // Use numeric values + suffixes so counters are robust
   const KPIS = [
     { value: 500, suffix: "+", label: "Flavour Profiles" },
     { value: 50, suffix: "+", label: "Application Systems" },
@@ -66,7 +64,7 @@ export default function VisionMission() {
 
   return (
     <section className="relative bg-background text-black">
-      <div className="section-container py-16 md:py-24">
+      <div className="section-container py-12 md:py-20">
         {/* Header */}
         <motion.div
           variants={fadeUp}
@@ -75,7 +73,7 @@ export default function VisionMission() {
           viewport={{ once: true, amount: 0.35 }}
           className="mx-auto max-w-3xl text-center"
         >
-          <h2 className="mt-4 text-3xl md:text-5xl font-bold tracking-tight">
+          <h2 className="mt-4 text-2xl sm:text-3xl md:text-5xl font-bold tracking-tight">
             Our <span className="text-primary">Vision</span> &{" "}
             <span className="text-primary">Mission</span>
           </h2>
@@ -84,12 +82,12 @@ export default function VisionMission() {
             whileInView={{ width: 96 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-            className="mx-auto mt-6 h-1 rounded bg-black"
+            className="mx-auto mt-5 h-1 rounded bg-black"
           />
         </motion.div>
 
         {/* Two cards: Vision / Mission */}
-        <div className="mt-10 md:mt-14 grid gap-6 md:grid-cols-2">
+        <div className="mt-8 md:mt-12 grid gap-6 md:grid-cols-2">
           {/* Vision */}
           <motion.article
             variants={fadeUp}
@@ -97,11 +95,10 @@ export default function VisionMission() {
             whileInView="show"
             viewport={{ once: true, amount: 0.35 }}
             whileHover={{ y: -4 }}
-            className="relative overflow-hidden rounded-2xl bg-white/70 dark:bg-white/5 backdrop-blur p-6 md:p-8 ring-1 ring-black/5 dark:ring-white/10 shadow-sm"
+            className="relative overflow-hidden rounded-2xl bg-white/70 dark:bg-white/5 backdrop-blur p-5 sm:p-6 md:p-8 ring-1 ring-black/5 dark:ring-white/10 shadow-sm"
           >
-            {/* <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-primary/10 blur-2xl" /> */}
-            <h3 className="section-subtitle text-primary ">Our Vision</h3>
-            <p className="mt-3 section-paragraph leading-relaxed">
+            <h3 className="section-subtitle text-primary">Our Vision</h3>
+            <p className="mt-3 section-paragraph leading-relaxed text-sm sm:text-base">
               to be the most trusted global partner for sensory innovation,
               delivering precision driven flavours, colours, and ingredient
               solutions that inspire product excellence and emotional consumer
@@ -116,11 +113,10 @@ export default function VisionMission() {
             whileInView="show"
             viewport={{ once: true, amount: 0.35 }}
             whileHover={{ y: -4 }}
-            className="relative overflow-hidden rounded-2xl bg-white/70 dark:bg-white/5 backdrop-blur p-6 md:p-8 ring-1 ring-black/5 dark:ring-white/10 shadow-sm"
+            className="relative overflow-hidden rounded-2xl bg-white/70 dark:bg-white/5 backdrop-blur p-5 sm:p-6 md:p-8 ring-1 ring-black/5 dark:ring-white/10 shadow-sm"
           >
-            {/* <div className="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-primary/10 blur-2xl" /> */}
-            <h3 className="section-subtitle text-primary ">Our Mission</h3>
-            <p className="mt-3 section-paragraph leading-relaxed">
+            <h3 className="section-subtitle text-primary">Our Mission</h3>
+            <p className="mt-3 section-paragraph leading-relaxed text-sm sm:text-base">
               sensorisch is committed to empowering creators in the bakery,
               beverage, dairy,culinary, and wellness industries by co-developing
               sensory solutions that are scientifically advanced, creatively
@@ -137,19 +133,19 @@ export default function VisionMission() {
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, amount: 0.25 }}
-          className="mt-10 md:mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4"
+          className="mt-8 md:mt-12 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4"
         >
           {KPIS.map((x, i) => (
             <motion.li
               key={i}
               variants={fadeUp}
               whileHover={{ y: -3 }}
-              className=" p-6 text-center "
+              className="p-3 sm:p-4 text-center"
             >
-              <div className="text-3xl md:text-4xl font-bold text-primary">
+              <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary">
                 <Counter value={x.value} suffix={x.suffix} />
               </div>
-              <div className="mt-1 text-sm md:text-base font-medium text-black/80">
+              <div className="mt-1 text-xs sm:text-sm md:text-base font-medium text-black/80">
                 {x.label}
               </div>
             </motion.li>

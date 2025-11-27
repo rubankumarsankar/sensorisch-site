@@ -76,7 +76,7 @@ export default function HeroComponent({ data = {} }) {
           {secondary?.href && (
             <a
               href={secondary.href}
-              className="px-6 py-3 border border-primary/40 bg-primary/10 text-primary font-semibold rounded-lg hover:bg-white hover:text-primary transition"
+              className="px-6 py-3 border border-primary/40 bg-white text-primary font-semibold rounded-lg hover:bg-white hover:text-primary transition"
             >
               {secondary.label || "Button Two"}
             </a>
