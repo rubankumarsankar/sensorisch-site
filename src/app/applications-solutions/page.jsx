@@ -4,6 +4,7 @@ import BespokeSolutionsSection from "../components/applicationpage/BespokeSoluti
 import ProfileCTA from "../components/applicationpage/CTA";
 import SensoRangeHero from "../components/applicationpage/SensoRangeHero";
 import WhyChooseSenso from "../components/applicationpage/WhyChooseSenso";
+import HeroComponent from "../components/Hero";
 import HeroCompnonet from "../components/Hero";
 import StickyFullpageSlides from "../components/StickyFullpageSlides";
 const ranges = [
@@ -459,7 +460,7 @@ const ranges = [
 export default function ApplicationSolutions() {
   return (
     <>
-      <HeroCompnonet
+      {/* <HeroCompnonet
         data={{
           eyebrow: "Applications & Solutions",
           title: "Senso ",
@@ -481,6 +482,24 @@ export default function ApplicationSolutions() {
           // layout
           className: "bg-background",
           containerClassName: "section-container py-16 md:py-24",
+        }}
+      /> */}
+      <HeroComponent
+        data={{
+          imageMobile: { src: "/banners/applications-mob.jpg", alt: "Mobile Banner" },
+          imageDesktop: { src: "/banners/applications-web.jpg", alt: "Desktop Banner" },
+      
+          primary: {
+            href: "/applications-solutions",
+            label: "Explore Solutions"
+          },
+      
+          secondary: {
+            href: "/contact",
+            label: "Request Samples"
+          },
+      
+          scrollToId: "application"
         }}
       />
 

@@ -5,12 +5,12 @@ import FAQSection from "../components/contactpage/FAQSection";
 import FormSection from "../components/contactpage/FormSection";
 import LocationsPanel from "../components/contactpage/LocationsPanel";
 import MethodsSection from "../components/contactpage/MethodsSection";
-import HeroCompnonet from "../components/Hero";
+import HeroComponent from "../components/Hero";
 
 export default function ContactUs() {
   return (
     <>
-      <HeroCompnonet
+      {/* <HeroCompnonet
         data={{
           eyebrow: "Contact Us",
           title: "Let's Create Something ",
@@ -31,6 +31,25 @@ export default function ContactUs() {
           // layout
           className: "bg-background",
           containerClassName: "section-container py-16 md:py-24",
+        }}
+      /> */}
+
+      <HeroComponent
+        data={{
+          imageMobile: { src: "/banners/contact-mob.jpg", alt: "Mobile Banner" },
+          imageDesktop: { src: "/banners/contact-web.jpg", alt: "Desktop Banner" },
+      
+          // primary: {
+          //   href: "/contact",
+          //   label: "Explore Solutions"
+          // },
+      
+          // secondary: {
+          //   href: "/contact",
+          //   label: "Request Samples"
+          // },
+      
+          scrollToId: "contact"
         }}
       />
       {/* <ContactPage /> */}

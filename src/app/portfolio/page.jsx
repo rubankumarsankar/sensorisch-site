@@ -14,7 +14,7 @@ export default function PortfolioPage() {
     <main className="relative overflow-hidden">
       <div aria-hidden className="absolute inset-0 -z-10 " />
 
-      <HeroComponent
+      {/* <HeroComponent
         data={{
           eyebrow: "Our Portfolio",
           title: "Complete",
@@ -31,6 +31,24 @@ export default function PortfolioPage() {
           showHalo: true,
           className: "",
           containerClassName: "section-container py-16 md:py-24",
+        }}
+      /> */}
+      <HeroComponent
+        data={{
+          imageMobile: { src: "/banners/portfolio-mob.jpg", alt: "Mobile Banner" },
+          imageDesktop: { src: "/banners/portfolio-web.jpg", alt: "Desktop Banner" },
+      
+          primary: {
+            href: "/applications-solutions",
+            label: "Request Full Catalogue"
+          },
+      
+          secondary: {
+            href: "/contact",
+            label: "Get Samples"
+          },
+      
+          scrollToId: "portfolio"
         }}
       />
       <FlavourFamiliesGrid />

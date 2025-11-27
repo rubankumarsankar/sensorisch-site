@@ -1,5 +1,6 @@
 "use client";
 
+import HeroComponent from "../components/Hero";
 import HeroCompnonet from "../components/Hero";
 import CTA from "../components/Insights/FinalCta";
 import IndustryResources from "../components/Insights/IndustryResources";
@@ -10,7 +11,7 @@ import PressUpdates from "../components/Insights/PressUpdates";
 export default function Insights() {
   return (
     <>
-      <HeroCompnonet
+      {/* <HeroCompnonet
         data={{
           eyebrow: "News & Trends",
           title: "Industry ",
@@ -29,6 +30,24 @@ export default function Insights() {
           // layout
           className: "bg-background",
           containerClassName: "section-container py-16 md:py-24",
+        }}
+      /> */}
+      <HeroComponent
+        data={{
+          imageMobile: { src: "/banners/insights-mob.jpg", alt: "Mobile Banner" },
+          imageDesktop: { src: "/banners/insights-web.jpg", alt: "Desktop Banner" },
+      
+          primary: {
+            href: "/applications-solutions",
+            label: "Request Full Catalogue"
+          },
+      
+          secondary: {
+            href: "/contact",
+            label: "Request Samples"
+          },
+      
+          scrollToId: "insights"
         }}
       />
       <InsightsExplorer />

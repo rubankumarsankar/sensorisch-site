@@ -15,14 +15,14 @@ export default function PromoSection() {
         >
           <source src="/videos/food-bg.mp4" type="video/mp4" />
         </video>
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0" />
       </section>
 
       {/* SECTION 2  -  CARD */}
       <section className="relative w-full bg-gray-50 dark:bg-black">
         <div className="section-container py-10 sm:pb-24">
           {/* On mobile: normal flow (mt-6). On desktop: overlap using sm:absolute */}
-          <div className="mt-6 sm:mt-0 w-full flex justify-center px-0 sm:px-4
+          <div className="mt-6 sm:mt-0 w-full flex justify-center px-0 
                           sm:absolute sm:-top-36 sm:left-1/2 sm:-translate-x-1/2">
             <div
               className="grid grid-cols-1 sm:grid-cols-12 max-w-4xl w-full sm:w-[85%] md:w-[70%]
@@ -34,7 +34,7 @@ export default function PromoSection() {
                 <img
                   src="/assets/home-banner-2.png"
                   alt="cheese"
-                  className="h-56 sm:h-72 md:h-82 w-full sm:w-auto object-cover sm:object-contain"
+                  className="h-52 sm:h-80 md:h-88 w-full sm:w-auto object-cover sm:object-contain"
                 />
               </div>
 

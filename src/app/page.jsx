@@ -1,6 +1,6 @@
 "use client";
 
-import HeroCompnonet from "./components/Hero";
+import HeroComponent from "./components/Hero";
 import ApplicationExpertise from "./components/homepage/ApplicationExpertise";
 import BriefToScale from "./components/homepage/BriefToScale";
 import PromoSection from "./components/homepage/CheesePromoSection";
@@ -11,9 +11,9 @@ import WhyChooseSection from "./components/homepage/whychooseSection";
 export default function Home() {
   return (
     <>
-      <HeroCompnonet
+      {/* <HeroCompnonet
         data={{
-          eyebrow: "Flavours & Fragrances. Engineered for Impact.",
+          // eyebrow: "Flavours & Fragrances. Engineered for Impact.",
           title: "Make Everyday Products Feel",
           highlight: "Extraordinary",
           blurb:
@@ -22,7 +22,7 @@ export default function Home() {
           primary: { href: "/applications-solutions", label: "Explore Solutions" },
           secondary: { href: "/contact", label: "Request Samples" },
 
-          image: { src: "/banners/home.png", alt: "Lab and product banner" },
+          image: { src: "/banners/home.jpg", alt: "Lab and product banner" },
 
           scrollToId: "why-sensorisch",
 
@@ -36,7 +36,27 @@ export default function Home() {
           className: "bg-background",
           containerClassName: "section-container py-16 md:py-24",
         }}
-      />
+      /> */}
+
+      <HeroComponent
+  data={{
+    imageMobile: { src: "/banners/home-mob.jpg", alt: "Mobile Banner" },
+    imageDesktop: { src: "/banners/home-web.jpg", alt: "Desktop Banner" },
+
+    primary: {
+      href: "/appointment",
+      label: "Book Appointment"
+    },
+
+    secondary: {
+      href: "/contact",
+      label: "Contact Us"
+    },
+
+    scrollToId: "why-sensorisch"
+  }}
+/>
+
       
       {/* <HeroSection /> */}
       <WhyChooseSection />

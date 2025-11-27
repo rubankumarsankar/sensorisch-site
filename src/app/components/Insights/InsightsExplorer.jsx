@@ -100,7 +100,7 @@ export default function InsightsExplorer({ posts = ALL_POSTS }) {
   }, [posts, query, active]);
 
   return (
-    <section id="insights" className="section-container">
+    <section id="insights" className="section-container pt-8">
       {/* Header */}
       <motion.div
         variants={fadeUp}

@@ -6,12 +6,13 @@ import CompetitiveEdgeSection from "../components/bespoke/CompetitiveEdgeSection
 import CTA from "../components/bespoke/cta";
 import PartnerSection from "../components/bespoke/PartnerSection";
 import QualityComplianceSection from "../components/bespoke/QualityComplianceSection";
+import HeroComponent from "../components/Hero";
 import HeroCompnonet from "../components/Hero";
 
 export default function bespoke() {
   return (
     <>
-      <HeroCompnonet
+      {/* <HeroCompnonet
         data={{
           eyebrow: "Bespoke Solutions",
           title: "Tailored to Your ",
@@ -37,7 +38,25 @@ export default function bespoke() {
           className: "bg-background",
           containerClassName: "section-container py-16 md:py-24",
         }}
-      />
+      /> */}
+      <HeroComponent
+              data={{
+                imageMobile: { src: "/banners/bespoke-mob.jpg", alt: "Mobile Banner" },
+                imageDesktop: { src: "/banners/bespoke-web.jpg", alt: "Desktop Banner" },
+            
+                primary: {
+                  href: "/applications-solutions",
+                  label: "Start Your Project"
+                },
+            
+                secondary: {
+                  href: "/portfolio",
+                  label: "View Our Portfolio"
+                },
+            
+                scrollToId: "bespoke"
+              }}
+            />
       <PartnerSection />
       <BespokeProcessSection />
       <BespokeApplications />
