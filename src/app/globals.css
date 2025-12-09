@@ -52,16 +52,7 @@
 }
 
 /* ---------- Dark Mode ---------- */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --black: #ededed;
 
-    /* Adjust brand shades for dark mode */
-    --primary: #D22422;
-    --secondary: #0000;
-  }
-}
 
 /* html, body { cursor: none; }
 a, button, .cursor-hover, input, textarea, [contenteditable] { cursor: none; } */
