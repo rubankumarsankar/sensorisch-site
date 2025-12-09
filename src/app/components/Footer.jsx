@@ -135,7 +135,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/faq"
+                    href="/"
                     className="hover:opacity-90 transition-opacity"
                   >
                     FAQ
