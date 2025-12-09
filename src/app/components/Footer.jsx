@@ -119,7 +119,7 @@ export default function Footer() {
               <ul className="space-y-1 text-sm sm:text-lg">
                 <li>
                   <Link
-                    href="/privacy-policy"
+                    href="#"
                     className="hover:opacity-90 transition-opacity"
                   >
                     Privacy Policy
@@ -127,7 +127,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/terms"
+                    href="#"
                     className="hover:opacity-90 transition-opacity"
                   >
                     Terms & Conditions
@@ -135,7 +135,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link
-                    href="/"
+                    href="#"
                     className="hover:opacity-90 transition-opacity"
                   >
                     FAQ
