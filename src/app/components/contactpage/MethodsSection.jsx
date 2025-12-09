@@ -9,6 +9,7 @@ import {
   FlaskConical,
   ArrowRight,
 } from "lucide-react";
+import Link from "next/link";
 
 const METHODS = [
   {
@@ -95,13 +96,13 @@ export default function MethodsSection() {
               <h3 className="mt-3 section--subtitle">{m.title}</h3>
               <p className="mt-1 section-paragraph">{m.blurb}</p>
 
-              <a
+              <Link
                 href={m.href}
                 className="mt-4 inline-flex items-center gap-2 rounded-md bg-primary px-3.5 py-2 text-sm font-semibold text-white shadow hover:bg-primary/90 transition-colors"
               >
                 {m.cta}
                 <ArrowRight className="h-4 w-4" />
-              </a>
+              </Link>
 
               {/* radial glow on hover */}
               {/* <div className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-[radial-gradient(70%_70%_at_50%_0%,rgba(210,36,34,0.06),transparent)]" /> */}

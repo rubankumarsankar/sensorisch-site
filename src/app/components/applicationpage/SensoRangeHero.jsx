@@ -4,6 +4,7 @@
 import { motion } from "framer-motion";
 // import Image from "next/image";
 import * as Lucide from "lucide-react"; // for dynamic Lucide icons by name
+import Link from "next/link";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 14 },
@@ -70,9 +71,9 @@ export default function SensoRangeHero({
   iconSrc = "/icons/icon-4.png", // badge icon image (left of badge text)
   imageAlt = "SensoBake application visual",
 
-  primaryHref = "#",
+  primaryHref = "/contact",
   primaryLabel = "Request Sample",
-  secondaryHref = "#",
+  secondaryHref = "/contact",
   secondaryLabel = "Technical Sheet",
 }) {
   const contentOrder = reverse ? "order-1 lg:order-2" : "order-1 lg:order-1";
@@ -174,18 +175,18 @@ export default function SensoRangeHero({
 
             {/* CTAs */}
             <div className="pt-4 flex flex-wrap gap-4">
-              <a
+              <Link
                 href={primaryHref}
                 className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-3 text-white font-semibold shadow hover:bg-primary/90 transition"
               >
                 {primaryLabel}
-              </a>
-              <a
+              </Link>
+              <Link
                 href={secondaryHref}
                 className="inline-flex items-center justify-center rounded-md border-2 border-primary/30 px-6 py-3 text-primary font-semibold bg-white hover:bg-primary/5 transition"
               >
                 {secondaryLabel}
-              </a>
+              </Link>
             </div>
           </div>
 

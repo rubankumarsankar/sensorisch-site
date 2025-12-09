@@ -9,7 +9,7 @@ export default function ProfileCTA({
   blurb = `Partner with Sensorisch for science-led flavours that scale consistently, comply regionally, and delight consumers.`,
   primaryHref = "/contact",
   primaryLabel = "Start Your Project",
-  secondaryHref = "/contact",
+  secondaryHref = "/portfolio",
   secondaryLabel = "View Our Portfolio",
 }) {
   return (

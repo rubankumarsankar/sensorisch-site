@@ -3,6 +3,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, CalendarDays, Megaphone, Mail } from "lucide-react";
+import Link from "next/link";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 16, filter: "blur(6px)" },
@@ -114,7 +115,7 @@ export default function PressUpdates({
                          opacity-0 transition-opacity duration-700 group-hover:opacity-100"
             /> */}
 
-            <a href={it.href} className="block focus:outline-none">
+            <Link href={it.href} className="block focus:outline-none">
               <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
                 <div className="min-w-0">
                   <div className="flex flex-wrap items-center gap-2 text-xs text-foreground/70">
@@ -138,7 +139,7 @@ export default function PressUpdates({
                 </span>
 
               </div>
-            </a>
+            </Link>
           </motion.li>
         ))}
       </motion.ul>

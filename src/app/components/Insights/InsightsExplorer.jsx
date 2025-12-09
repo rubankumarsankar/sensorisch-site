@@ -5,6 +5,7 @@ import { useMemo, useState, useId } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, Clock, Tag, BookOpen } from "lucide-react";
+import Link from "next/link";
 
 /* ------------ sample data (swap with CMS later) ------------ */
 const ALL_POSTS = [
@@ -241,7 +242,7 @@ export default function InsightsExplorer({ posts = ALL_POSTS }) {
 
                   {/* CTA */}
                   <div className="mt-5">
-                    <a
+                    <Link
                       href="#"
                       className="inline-flex items-center gap-2 rounded-lg bg-primary px-3.5 py-2 text-sm font-semibold text-white hover:bg-primary/90 transition"
                     >
@@ -258,7 +259,7 @@ export default function InsightsExplorer({ posts = ALL_POSTS }) {
                         <path d="M5 12h14" />
                         <path d="m12 5 7 7-7 7" />
                       </svg>
-                    </a>
+                    </Link>
                   </div>
                 </div>
 

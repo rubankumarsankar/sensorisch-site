@@ -9,9 +9,9 @@ import Link from "next/link";
 export default function CTA({
   title = "Ready to Create Your Signature Flavour?",
   blurb = `Partner with Sensorisch for bespoke flavour solutions that differentiate your brand and delight your customers. Let's build something extraordinary together.`,
-  primaryHref = "/contact",
+  primaryHref = "/applications-solutions",
   primaryLabel = "Start Your Custom Project",
-  secondaryHref = "/capabilities",
+  secondaryHref = "/contact",
   secondaryLabel = "Explore Our Capabilities",
 }) {
   return (

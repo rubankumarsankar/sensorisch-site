@@ -3,6 +3,7 @@
 
 import { motion } from "framer-motion";
 import { HiArrowDownTray } from "react-icons/hi2";
+import Link from "next/link";
 
 export default function CompanyProfileCTA({
   title = "Company Profile",
@@ -52,7 +53,7 @@ processes, and how we can support your product development goals.`,
           transition={{ duration: 0.45, delay: 0.15 }}
           className="mt-6"
         >
-          {/* <a
+          {/* <Link
             href={fileUrl}
             download={fileName}
             className="inline-flex items-center gap-2 rounded-md bg-white/95 px-4 py-2 text-lg font-semibold
@@ -62,7 +63,7 @@ processes, and how we can support your product development goals.`,
             {buttonLabel}
            
             <HiArrowDownTray className="w-8 h-8" />
-          </a> */}
+          </Link> */}
         </motion.div>
       </div>
       <motion.div

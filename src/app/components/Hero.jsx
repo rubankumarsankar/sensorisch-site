@@ -4,6 +4,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { FaArrowDownLong } from "react-icons/fa6";
+import Link from "next/link";
 
 export default function HeroComponent({ data = {} }) {
   const {
@@ -65,21 +66,21 @@ export default function HeroComponent({ data = {} }) {
       <div className="section-container pb-14 md:pb-20 w-full">
         <div className="flex flex-wrap gap-4 justify-center md:justify-start">
           {primary?.href && (
-            <a
+            <Link
               href={primary.href}
               className="px-6 py-3 bg-primary text-white font-semibold rounded-lg shadow hover:bg-primary/90 transition"
             >
               {primary.label || "Button One"}
-            </a>
+            </Link>
           )}
 
           {secondary?.href && (
-            <a
+            <Link
               href={secondary.href}
               className="px-6 py-3 border border-primary/40 bg-white text-primary font-semibold rounded-lg hover:bg-white hover:text-primary transition"
             >
               {secondary.label || "Button Two"}
-            </a>
+            </Link>
           )}
         </div>
       </div>

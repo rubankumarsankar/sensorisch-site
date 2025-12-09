@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function PromoSection() {
   return (
@@ -65,12 +66,12 @@ export default function PromoSection() {
                 </p>
 
                 <div className="flex justify-center sm:justify-start">
-                  <a
+                  <Link
                     href="/applications-solutions"
                     className="px-6 py-3 rounded-sm bg-primary text-white font-semibold hover:bg-primary/90 transition"
                   >
                     Start Production
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

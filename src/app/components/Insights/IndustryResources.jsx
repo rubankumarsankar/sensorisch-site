@@ -4,6 +4,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 14, filter: "blur(6px)" },
@@ -23,7 +24,7 @@ const CARDS = [
     blurb:
       "Comprehensive guides on flavour applications, stability, and formulation best practices.",
     iconImg: "/icons/icon-r-1.png",
-    cta: { label: "Access Guides", href: "/resources/guides" },
+    cta: { label: "Access Guides", href: "/contact" },
     accent: "from-primary to-primary/50",
   },
   {
@@ -31,7 +32,7 @@ const CARDS = [
     blurb:
       "Industry trends, consumer insights, and market analysis for strategic planning.",
     iconImg: "/icons/icon-r-2.png",
-    cta: { label: "Download Reports", href: "/resources/reports" },
+    cta: { label: "Download Reports", href: "/contact" },
     accent: "from-amber-500 to-rose-500",
   },
   {
@@ -39,7 +40,7 @@ const CARDS = [
     blurb:
       "Expert-led sessions on emerging trends, technologies, and application innovations.",
     iconImg: "/icons/icon-r-3.png",
-    cta: { label: "View Schedule", href: "/resources/webinars" },
+    cta: { label: "View Schedule", href: "/contact" },
     accent: "from-emerald-500 to-sky-500",
   },
 ];
@@ -115,13 +116,13 @@ export default function IndustryResources({ items = CARDS }) {
 
             {/* CTA */}
             <div>
-              <a
-                href={c.cta.href}
+              <Link
+                              href={c.cta.href}
                 className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white hover:bg-primary/90 transition"
               >
                 {c.cta.label}
                 <ArrowRight className="h-4 w-4" />
-              </a>
+              </Link>
             </div>
           </motion.li>
         ))}

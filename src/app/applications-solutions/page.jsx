@@ -54,9 +54,9 @@ const ranges = [
         cls: "bg-orange-50 text-orange-600 ring-orange-200",
       },
     ],
-    primaryHref: "#",
+    primaryHref: "/contact",
     primaryLabel: "Request Sample",
-    secondaryHref: "#",
+    secondaryHref: "/contact",
     secondaryLabel: "Technical Sheet",
   },
   {
@@ -99,9 +99,9 @@ const ranges = [
       { t: "Chocolates", cls: "bg-stone-100 text-stone-700 ring-stone-300" },
       { t: "Chewing Gum", cls: "bg-indigo-50 text-indigo-700 ring-indigo-200" },
     ],
-    primaryHref: "#",
+    primaryHref: "/contact",
     primaryLabel: "Request Sample",
-    secondaryHref: "#",
+    secondaryHref: "/contact",
     secondaryLabel: "Technical Sheet",
   },
   {
@@ -150,9 +150,9 @@ const ranges = [
         cls: "bg-amber-50 text-amber-700 ring-amber-200",
       },
     ],
-    primaryHref: "#",
+    primaryHref: "/contact",
     primaryLabel: "Request Sample",
-    secondaryHref: "#",
+    secondaryHref: "/contact",
     secondaryLabel: "Technical Sheet",
   },
   {
@@ -201,9 +201,9 @@ const ranges = [
         cls: "bg-emerald-50 text-emerald-700 ring-emerald-200",
       },
     ],
-    primaryHref: "#",
+    primaryHref: "/contact",
     primaryLabel: "Request Sample",
-    secondaryHref: "#",
+    secondaryHref: "/contact",
     secondaryLabel: "Technical Sheet",
   },
   {
@@ -255,9 +255,9 @@ const ranges = [
         cls: "bg-emerald-50 text-emerald-700 ring-emerald-200",
       },
     ],
-    primaryHref: "#",
+    primaryHref: "/contact",
     primaryLabel: "Request Sample",
-    secondaryHref: "#",
+    secondaryHref: "/contact",
     secondaryLabel: "Technical Sheet",
   },
   {
@@ -306,9 +306,9 @@ const ranges = [
         cls: "bg-orange-50 text-orange-700 ring-orange-200",
       },
     ],
-    primaryHref: "#",
+    primaryHref: "/contact",
     primaryLabel: "Request Sample",
-    secondaryHref: "#",
+    secondaryHref: "/contact",
     secondaryLabel: "Technical Sheet",
   },
   {
@@ -351,9 +351,9 @@ const ranges = [
       { t: "Soups", cls: "bg-orange-50 text-orange-700 ring-orange-200" },
       { t: "Snacks", cls: "bg-yellow-50 text-yellow-700 ring-yellow-200" },
     ],
-    primaryHref: "#",
+    primaryHref: "/contact",
     primaryLabel: "Request Sample",
-    secondaryHref: "#",
+    secondaryHref: "/contact",
     secondaryLabel: "Technical Sheet",
   },
   {
@@ -399,9 +399,9 @@ const ranges = [
         cls: "bg-fuchsia-50 text-fuchsia-700 ring-fuchsia-200",
       },
     ],
-    primaryHref: "#",
+    primaryHref: "/contact",
     primaryLabel: "Request Sample",
-    secondaryHref: "#",
+    secondaryHref: "/contact",
     secondaryLabel: "Technical Sheet",
   },
   {
@@ -450,9 +450,9 @@ const ranges = [
       { t: "Natural Beverages", cls: "bg-teal-50 text-teal-700 ring-teal-200" },
       { t: "Premium Ranges", cls: "bg-amber-50 text-amber-700 ring-amber-200" },
     ],
-    primaryHref: "#",
+    primaryHref: "/contact",
     primaryLabel: "Request Sample",
-    secondaryHref: "#",
+    secondaryHref: "/contact",
     secondaryLabel: "Technical Sheet",
   },
 ];
@@ -525,7 +525,7 @@ export default function ApplicationSolutions() {
       <BespokeSolutionsSection
         onPrimaryHref="/contact"
         onPrimaryLabel="Discuss Your Bespoke Needs"
-        onProcessHref="#process"
+        onProcessHref="/contact"
       />
       <ProfileCTA />
     </>

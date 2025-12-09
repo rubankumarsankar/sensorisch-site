@@ -10,7 +10,7 @@ import Link from "next/link";
 export default function CTA({
   title = "Explore Our Complete Portfolio",
   blurb = `From concept to completion, our comprehensive portfolio supports every stage of your product development journey.`,
-  primaryHref = "/contact",
+  primaryHref = "/applications-solutions",
   primaryLabel = "Request Full Catalogue",
   secondaryHref = "/contact",
   secondaryLabel = "Schedule Tasting Session",

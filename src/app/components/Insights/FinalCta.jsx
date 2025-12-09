@@ -9,7 +9,7 @@ import Link from "next/link";
 export default function CTA({
   title = "Have a Specific Question?",
   blurb = `Our experts are here to provide insights tailored to your industry challenges and opportunities.`,
-  primaryHref = "/contact",
+  primaryHref = "/about",
   primaryLabel = "Ask Our Experts",
   secondaryHref = "/contact",
   secondaryLabel = "Request Custom Research",

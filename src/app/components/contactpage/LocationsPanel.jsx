@@ -50,44 +50,44 @@ export default function LocationsPanel() {
               {/* CONTACT LIST */}
               <ul className="mt-4 space-y-2 text-sm md:text-[15px] text-center md:text-left">
                 <li>
-                  <a
+                  <Link
                     href="tel:+917397397037"
                     className="inline-flex items-center gap-2 hover:opacity-90 transition"
                   >
                     <Phone className="h-4 w-4 text-primary" />
                     +91 7397397037
                     <span className="text-black/60">(customer care)</span>
-                  </a>
+                  </Link>
                 </li>
 
                 <li>
-                  <a
+                  <Link
                     href="tel:+917397397434"
                     className="inline-flex items-center gap-2 hover:opacity-90 transition"
                   >
                     <Phone className="h-4 w-4 text-primary" />
                     +91 7397397434
-                  </a>
+                  </Link>
                 </li>
 
                 <li>
-                  <a
+                  <Link
                     href="mailto:sales@sensorisch.com"
                     className="inline-flex items-center gap-2 hover:opacity-90 transition"
                   >
                     <Mail className="h-4 w-4 text-primary" />
                     sales@sensorisch.com
-                  </a>
+                  </Link>
                 </li>
 
                 <li>
-                  <a
+                  <Link
                     href="mailto:info@sensorisch.com"
                     className="inline-flex items-center gap-2 hover:opacity-90 transition"
                   >
                     <Mail className="h-4 w-4 text-primary" />
                     info@sensorisch.com
-                  </a>
+                  </Link>
                 </li>
 
                 <li className="inline-flex items-center gap-2 text-black/70">
@@ -99,7 +99,7 @@ export default function LocationsPanel() {
               {/* ACTION BUTTONS */}
               <div className="mt-5 grid grid-cols-1 sm:grid-cols-3 gap-3">
                 {/* Google Maps → External */}
-                <a
+                <Link
                   href="https://maps.google.com/?q=SIDCO+Industrial+Estate,+Villivakkam,+Chennai+600049"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -107,25 +107,25 @@ export default function LocationsPanel() {
                 >
                   <MapPin className="h-4 w-4" />
                   Get Directions
-                </a>
+                </Link>
 
                 {/* Call */}
-                <a
+                <Link
                   href="tel:+917397397037"
                   className="inline-flex items-center justify-center gap-2 rounded-md border border-primary text-primary bg-white dark:bg-white/10 px-3 py-2 text-sm font-medium ring-1 ring-black/5 hover:bg-primary/90 hover:text-white transition"
                 >
                   <Phone className="h-4 w-4" />
                   Call
-                </a>
+                </Link>
 
                 {/* Email */}
-                <a
+                <Link
                   href="mailto:info@sensorisch.com"
                   className="inline-flex items-center justify-center gap-2 rounded-md bg-white text-primary border border-primary dark:bg-white/10 px-3 py-2 text-sm font-medium ring-1 ring-black/5 hover:bg-primary/90 hover:text-white transition"
                 >
                   <Mail className="h-4 w-4" />
                   Email
-                </a>
+                </Link>
               </div>
             </motion.article>
           </div>

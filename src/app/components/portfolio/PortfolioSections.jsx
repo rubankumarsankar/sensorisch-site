@@ -168,11 +168,11 @@ export function PremiumSpreadsSection() {
                     </li>
                   ))}
                 </ul>
-                <div className="mt-5">
+                {/* <div className="mt-5">
                   <button className="rounded-md bg-primary px-3.5 py-2 text-sm font-semibold text-white hover:bg-primary/90 transition">
                     Sample
                   </button>
-                </div>
+                </div> */}
               </div>
 
               {/* Image */}
@@ -291,11 +291,11 @@ export function DecorSection() {
               <h4 className="section-subtitle">{d.k}</h4>
               <p className="section-paragraph">{d.sub}</p>
             </div>
-            <div className="mt-3 flex justify-end">
+            {/* <div className="mt-3 flex justify-end">
               <button className="rounded-md bg-white text-primary font-semibold ring-1 ring-primary/20 px-3 py-2 hover:bg-white/90 transition">
                 Order Sample
               </button>
-            </div>
+            </div> */}
           </motion.div>
         ))}
       </motion.div>

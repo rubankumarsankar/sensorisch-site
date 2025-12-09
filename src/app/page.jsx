@@ -44,7 +44,7 @@ export default function Home() {
     imageDesktop: { src: "/banners/home-web.jpg", alt: "Desktop Banner" },
 
     primary: {
-      href: "/appointment",
+      href: "/contact",
       label: "Book Appointment"
     },
 

@@ -3,6 +3,7 @@
 
 import { useRef } from "react";
 import { motion, useMotionValue, useTransform, useScroll, useSpring } from "framer-motion";
+import Link from "next/link";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 18 },
@@ -139,14 +140,14 @@ export default function AboutSensorisch() {
 
             {/* CTA with sheen */}
             <motion.div variants={fadeUp} className="mt-6">
-              <a
-                href="#solutions"
+              <Link
+                href="/applications-solutions"
                 className="relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-lg bg-primary px-6 py-3 font-semibold text-white shadow hover:bg-primary/90 transition active:scale-[0.99]"
               >
                 <span>Explore Our Solutions</span>
                 {/* sheen */}
                 <span className="pointer-events-none absolute inset-0 -translate-x-full skew-x-[-20deg] bg-gradient-to-r from-transparent via-white/25 to-transparent transition-transform duration-700 hover:translate-x-full" />
-              </a>
+              </Link>
             </motion.div>
           </motion.div>
         </div>
